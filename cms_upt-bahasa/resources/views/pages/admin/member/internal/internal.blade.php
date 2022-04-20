@@ -1,18 +1,18 @@
 @extends('layouts.admin.admin')
 
-@section('titlePage', 'UPT Bahasa | Teaching Staff')
+@section('titlePage', 'UPT Bahasa | Member Internal')
 @section('content')
                     <!-- Main Content -->
                 <div class="main-content">
                     <section class="section">
                         <div class="section-header">
-                            <h1>Teaching Staff</h1>
+                            <h1>Member Internal</h1>
                             <div class="section-header-breadcrumb">
                                 <div class="breadcrumb-item active">
                                     <a href="{{ route('dashboard') }}">Dashboard</a>
                                 </div>
                                 <div class="breadcrumb-item">
-                                    <a>Teaching Staff</a>
+                                    <a>Member Internal</a>
                                 </div>
                                 <!-- <div class="breadcrumb-item">DataTables</div> -->
                             </div>
@@ -30,11 +30,11 @@
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h4>Teaching Staff</h4>
+                                            <h4>Member Internal</h4>
                                         </div>
                                         <div class="card-body">
                                             <a
-                                                href="{{ route('teacher.add') }}"
+                                                href="{{ route('internal.add') }}"
                                                 class="btn btn-success"
                                             >+ Add Data
                                             </a>
@@ -47,12 +47,11 @@
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>NIP</th>
+                                                            <th>NIM</th>
                                                             <th>Fullame</th>
-                                                            <th>Email</th>
-                                                            <th>Phone</th>
-                                                            <th>Social Media</th>
-                                                            <th>Functional Position</th>
+                                                            <th>Departmen</th>
+                                                            <th>Study Program</th>
+                                                            <th>Year of Entry</th>
                                                             <th>Display Image</th>
                                                             <th>Action</th>
                                                         </tr>
@@ -60,16 +59,36 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>1.</td>
-                                                            <td>19880117 201903 1 008</td>
-                                                            <td>I Gede Wiryawan, S.Kom, M.Kom</td>
-                                                            <td>igedewiryawan@gmail.com</td>
-                                                            <td>081234567899</td>
-                                                            <td>@igdwiryawan</td>
-                                                            <td>Lecture</td>
+                                                            <td>E41201354</td>
+                                                            <td>Salsabila Purnami</td>
+                                                            <td>Teknologi Informasi</td>
+                                                            <td>Teknik Informatika</td>
+                                                            <td>2020</td>
                                                             <td>Avatar.jpg</td>
                                                             <td>
                                                                 <a
-                                                                    href="{{ route('teacher.edit') }}"
+                                                                    href="{{ route('internal.add') }}"
+                                                                    class="btn btn-primary"
+                                                                >Edit
+                                                                </a>
+                                                                <a
+                                                                    href="#"
+                                                                    class="btn btn-danger"
+                                                                >Delete
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2.</td>
+                                                            <td>E41201730</td>
+                                                            <td>Kei Takebuci</td>
+                                                            <td>Kesehatan</td>
+                                                            <td>Gizi Klinik</td>
+                                                            <td>2019</td>
+                                                            <td>images2.jpg</td>
+                                                            <td>
+                                                                <a
+                                                                    href="{{ route('internal.add') }}"
                                                                     class="btn btn-primary"
                                                                 >Edit
                                                                 </a>

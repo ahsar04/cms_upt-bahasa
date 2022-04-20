@@ -39,7 +39,7 @@
                                                 <input type="number" class="form-control">
                                             </div>
                                             <div class="form-group">
-                                                <label>Complete Name</label>
+                                                <label>Fullame</label>
                                                 <input type="text" class="form-control">
                                             </div>
                                             <div class="form-group">

@@ -24,11 +24,14 @@ Route::prefix('admin')
             ->name('teacher');
         Route::get('/teacher/add', 'TeacherController@add')
             ->name('teacher.add');
-        
-        Route::get('/news/news', 'NewsController@index')
-            ->name('news');
-        Route::get('/news/add', 'NewsController@add')
-            ->name('news.add');
-        Route::get('/news/edit', 'NewsController@edit')
-            ->name('news.edit');
+<<<<<<< HEAD
+
+=======
+        Route::get('/teacher/edit', 'TeacherController@edit')
+            ->name('teacher.edit');
+        Route::get('member/internal/internal', 'InternalController@index')
+            ->name('internal');
+        Route::get('member/internal/add', 'InternalController@add')
+            ->name('internal.add');
+>>>>>>> 948bfe5041c8156288d5504ef4cfac49a65dc2fd
     });
