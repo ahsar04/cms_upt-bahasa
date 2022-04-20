@@ -39,7 +39,7 @@
                                                 <input type="number" class="form-control">
                                             </div>
                                             <div class="form-group">
-                                                <label>Complete Name</label>
+                                                <label>Fullname</label>
                                                 <input type="text" class="form-control">
                                             </div>
                                             <div class="form-group">
@@ -61,7 +61,7 @@
                                                 <input type="text" class="form-control">
                                             </div>
                                             <div class="form-group">
-                                                <label>Dislay Image</label>
+                                                <label>Display Image</label>
                                                 <input type="file" class="form-control">
                                             </div>
                                             <div class="card-footer text-right">

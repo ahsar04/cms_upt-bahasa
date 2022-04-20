@@ -24,4 +24,10 @@ Route::prefix('admin')
             ->name('teacher');
         Route::get('/teacher/add', 'TeacherController@add')
             ->name('teacher.add');
+        Route::get('/teacher/edit', 'TeacherController@edit')
+            ->name('teacher.edit');
+        Route::get('member/internal/internal', 'InternalController@index')
+            ->name('internal');
+        Route::get('member/internal/add', 'InternalController@add')
+            ->name('internal.add');
     });

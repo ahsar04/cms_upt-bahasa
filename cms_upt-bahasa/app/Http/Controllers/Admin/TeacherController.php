@@ -13,4 +13,7 @@ class TeacherController extends Controller
     public function add(Request $request){
         return view('pages.admin.teacher.add');
     }
+    public function edit(Request $request){
+        return view('pages.admin.teacher.edit');
+    }
 }
