@@ -148,6 +148,13 @@ h6,
 
 .navbar-dark .navbar-brand h1 {
     color: #FFFFFF;
+    font-size: 35px;
+    font-family:'Nunito', sans-serif;
+}
+.navbar-dark .navbar-brand h4 {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-family:'Nunito', sans-serif;
 }
 
 .navbar-dark .navbar-toggler {
@@ -169,6 +176,9 @@ h6,
     }
 
     .navbar-dark .navbar-brand h1 {
+        color: var(--primary);
+    }
+    .navbar-dark .navbar-brand h4 {
         color: var(--primary);
     }
 }
@@ -210,6 +220,9 @@ h6,
     }
 
     .sticky-top.navbar-dark .navbar-brand h1 {
+        color: var(--primary);
+    }
+    .sticky-top.navbar-dark .navbar-brand h4 {
         color: var(--primary);
     }
 }
@@ -473,7 +486,7 @@ h6,
 }
 
 .bg-header {
-    background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url(../img/carousel-1.jpg) center center no-repeat;
+    background: linear-gradient(rgba(9, 30, 62, .7), rgba(9, 30, 62, .7)), url(../img/img_bahasa2.jpg) center center no-repeat;
     background-size: cover;
 }
 
