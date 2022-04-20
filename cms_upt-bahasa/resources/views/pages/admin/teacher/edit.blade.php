@@ -1,6 +1,6 @@
 @extends('layouts.admin.admin')
 
-@section('titlePage', 'UPT Bahasa | Add Teaching Staff')
+@section('titlePage', 'UPT Bahasa | Edit Teaching Staff')
 @section('content')
                     <!-- Main Content -->
                 <div class="main-content">
@@ -12,10 +12,10 @@
                                     <a href="{{ route('dashboard') }}">Dashboard</a>
                                 </div>
                                 <div class="breadcrumb-item">
-                                    <a href="{{ route('teacher') }}">Teaching Staff</a>
+                                    <a href="{{ route('teacher') }}">Teacher</a>
                                 </div>
                                 <div class="breadcrumb-item">
-                                    <a>Add Teaching Staff</a>
+                                    <a>Edit Teaching Staff</a>
                                 </div>
                                 <!-- <div class="breadcrumb-item">DataTables</div> -->
                             </div>
@@ -30,7 +30,7 @@
                                 <div class="col-12">
                                     <div class="card">
                                     <div class="card-header">
-                                        <h4>Add Data Teaching Staff</h4>
+                                        <h4>Edit Data Teaching Staff</h4>
                                     </div>
                                     <div class="row ml-2 mr-2 mt-3">
                                         <div class="col">

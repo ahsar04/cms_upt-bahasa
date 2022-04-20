@@ -22,6 +22,6 @@ Route::prefix('admin')
             ->name('dashboard');
         Route::get('/teacher/teacher', 'TeacherController@index')
             ->name('teacher');
-        Route::get('/teacher/add', 'TeacherController@index')
-            ->name('teacherAdd');
+        Route::get('/teacher/add', 'TeacherController@add')
+            ->name('teacher.add');
     });
