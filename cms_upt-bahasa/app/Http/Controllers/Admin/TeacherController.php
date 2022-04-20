@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class TeacherController extends Controller
 {
     public function index(Request $request){
-        return view('pages.admin.teacher.index');
+        return view('pages.admin.teacher.teacher');
     }
     public function add(Request $request){
         return view('pages.admin.teacher.add');

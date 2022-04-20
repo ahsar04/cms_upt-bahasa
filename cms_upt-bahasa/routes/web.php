@@ -20,8 +20,8 @@ Route::prefix('admin')
     ->group(function(){
         Route::get('/dashboard', 'DashboardController@index')
             ->name('dashboard');
-        Route::get('/teacher/index', 'TeacherController@index')
-            ->name('index');
+        Route::get('/teacher/teacher', 'TeacherController@index')
+            ->name('teacher');
         Route::get('/teacher/add', 'TeacherController@index')
-            ->name('add');
+            ->name('teacherAdd');
     });
