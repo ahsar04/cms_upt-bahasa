@@ -6,7 +6,7 @@
             content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"
             name="viewport"
         />
-        <title>Modules &rsaquo; DataTables &mdash; Stisla</title>
+        <title>@yield('titlePage')</title>
 
         @include('includes.admin.style')
 

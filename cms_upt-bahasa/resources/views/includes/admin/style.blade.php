@@ -9,7 +9,7 @@
         />
         <link
             rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
+            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
             integrity="BADD11D0-3875-43A2-AAE7-7975458C832C"
             crossorigin="anonymous"
         />
