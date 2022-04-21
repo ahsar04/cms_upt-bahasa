@@ -88,7 +88,7 @@
                                                             <td>images2.jpg</td>
                                                             <td>
                                                                 <a
-                                                                    href="{{ route('internal.add') }}"
+                                                                    href="{{ route('internal.edit') }}"
                                                                     class="btn btn-primary"
                                                                 >Edit
                                                                 </a>

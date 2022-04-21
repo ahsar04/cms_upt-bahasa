@@ -13,4 +13,7 @@ class InternalController extends Controller
     public function add(Request $request){
         return view('pages.admin.member.internal.add ');
     }
+    public function edit(Request $request){
+        return view('pages.admin.member.internal.edit ');
+    }
 }
