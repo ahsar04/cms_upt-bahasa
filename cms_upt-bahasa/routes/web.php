@@ -38,4 +38,10 @@ Route::prefix('admin')
             ->name('news.add');
         Route::get('/news/edit', 'NewsController@edit')
             ->name('news.edit');
+        Route::get('/service/course/course', 'CourseController@index')
+            ->name('course');
+        Route::get('/service/course/add', 'CourseController@add')
+            ->name('course.add');
+        Route::get('/service/course/edit', 'CourseController@edit')
+            ->name('course.edit');
     });
