@@ -87,5 +87,11 @@ Route::prefix('admin')
          ->name('procedure.edit');
 
         //Training
+        Route::get('/training/training', 'TrainingController@index')
+         ->name('training');
+        Route::get('/training/add', 'TrainingController@add')
+         ->name('training.add');
+        Route::get('/training/edit', 'TrainingController@edit')
+         ->name('training.edit');
 
     });
