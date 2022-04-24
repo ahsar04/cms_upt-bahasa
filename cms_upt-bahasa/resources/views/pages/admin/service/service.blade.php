@@ -1,15 +1,15 @@
 @extends('layouts.admin.admin')
 
-@section('titlePage', 'UPT Bahasa | Service Course')
+@section('titlePage', 'UPT Bahasa | Service')
 @section('content')
                     <!-- Main Content -->
                 <div class="main-content">
                     <section class="section">
                         <div class="section-header">
-                            <h1>Service Course</h1>
+                            <h1>Service</h1>
                             <div class="section-header-breadcrumb">
                                 <div class="breadcrumb-item">
-                                    <a>Service Course</a>
+                                    <a>Service</a>
                                 </div>
                                 <!-- <div class="breadcrumb-item">DataTables</div> -->
                             </div>
@@ -27,11 +27,11 @@
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h4>Service Course</h4>
+                                            <h4>Service</h4>
                                         </div>
                                         <div class="card-body">
                                             <a
-                                                href="{{ route('course.add') }}"
+                                                href="{{ route('service.add') }}"
                                                 class="btn btn-success"
                                             >+ Add Data
                                             </a>
@@ -56,15 +56,15 @@
                                                             <td>UPT Bahasa POLIJE opens a special Korean language class online and offline</td>
                                                             <td>
                                                                 <a
-                                                                    href="{{ route('course.edit') }}"
+                                                                    href="{{ route('service.edit') }}"
                                                                     class="btn btn-primary"
                                                                 >Edit
                                                                 </a>
-                                                                <a
-                                                                    href="#"
+                                                                <button
                                                                     class="btn btn-danger"
-                                                                >Delete
-                                                                </a>
+                                                                    data-confirm="Delete Data Teaching Staff|Do you want to delete this data?"
+                                                                    data-confirm-yes="alert('Deleted');"
+                                                                >Delete</button>
                                                             </td>
                                                         </tr>
                                                     </tbody>

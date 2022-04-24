@@ -59,12 +59,12 @@ Route::prefix('admin')
             ->name('news.edit');
 
         //Service
-        Route::get('/service/course/course', 'CourseController@index')
-            ->name('course');
-        Route::get('/service/course/add', 'CourseController@add')
-            ->name('course.add');
-        Route::get('/service/course/edit', 'CourseController@edit')
-            ->name('course.edit');
+        Route::get('/service/service', 'ServiceController@index')
+            ->name('service');
+        Route::get('/service/add', 'ServiceController@add')
+            ->name('service.add');
+        Route::get('/service/edit', 'ServiceController@edit')
+            ->name('service.edit');
 
         // Schedule
         Route::get('/schedule/schedule', 'ScheduleController@index')

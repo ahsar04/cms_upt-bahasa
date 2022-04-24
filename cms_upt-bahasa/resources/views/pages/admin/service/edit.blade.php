@@ -1,18 +1,18 @@
 @extends('layouts.admin.admin')
 
-@section('titlePage', 'UPT Bahasa | Add Service Course')
+@section('titlePage', 'UPT Bahasa | Edit Service')
 @section('content')
                     <!-- Main Content -->
                 <div class="main-content">
                     <section class="section">
                         <div class="section-header">
-                            <h1>Service Course</h1>
+                            <h1>Service</h1>
                             <div class="section-header-breadcrumb">
                                 <div class="breadcrumb-item active">
-                                    <a href="{{ route('news') }}">Service Course</a>
+                                    <a href="{{ route('service') }}">Service</a>
                                 </div>
                                 <div class="breadcrumb-item">
-                                    <a>Add Service Course</a>
+                                    <a>Edit Service</a>
                                 </div>
                                 <!-- <div class="breadcrumb-item">DataTables</div> -->
                             </div>
@@ -27,7 +27,7 @@
                                 <div class="col-12">
                                     <div class="card">
                                     <div class="card-header">
-                                        <h4>Add Data Service Course</h4>
+                                        <h4>Edit Data Service</h4>
                                     </div>
                                     <div class="row ml-2 mr-2 mt-3">
                                         <div class="col">
@@ -41,7 +41,7 @@
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a
-                                                    href="{{ route('course') }}"
+                                                    href="{{ route('service') }}"
                                                     class="btn btn-danger"
                                                 >Cancel
                                                 </a>
