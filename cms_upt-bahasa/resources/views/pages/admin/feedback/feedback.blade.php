@@ -59,7 +59,7 @@
                                                         <tr>
                                                             <td>2.</td>
                                                             <td>Salsabila Purnami</td>
-                                                            <td>Thank You! I got highest score TOEFL teest.</td>
+                                                            <td>Thank You! I got highest score TOEFL test.</td>
                                                             <td>
                                                                 <button
                                                                     class="btn btn-danger"
