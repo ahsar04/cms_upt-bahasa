@@ -1,6 +1,6 @@
 @extends('layouts.admin.admin')
 
-@section('titlePage', 'UPT Bahasa | Add Procedure')
+@section('titlePage', 'UPT Bahasa | Edit Procedure')
 @section('content')
                     <!-- Main Content -->
                 <div class="main-content">
@@ -12,7 +12,7 @@
                                     <a href="{{ route('procedure') }}">Procedure</a>
                                 </div>
                                 <div class="breadcrumb-item">
-                                    <a>Add Procedure</a>
+                                    <a>Edit Procedure</a>
                                 </div>
                                 <!-- <div class="breadcrumb-item">DataTables</div> -->
                             </div>
@@ -27,7 +27,7 @@
                                 <div class="col-12">
                                     <div class="card">
                                     <div class="card-header">
-                                        <h4>Add Data Procedure</h4>
+                                        <h4>Edit Data Procedure</h4>
                                     </div>
                                     <div class="row ml-2 mr-2 mt-3">
                                         <div class="col">
