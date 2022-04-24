@@ -62,7 +62,7 @@
                                                                 </a>
                                                                 <button
                                                                     class="btn btn-danger"
-                                                                    data-confirm="Delete Data Teaching Staff|Do you want to delete this data?"
+                                                                    data-confirm="Delete Data Service|Do you want to delete this data?"
                                                                     data-confirm-yes="alert('Deleted');"
                                                                 >Delete</button>
                                                             </td>
