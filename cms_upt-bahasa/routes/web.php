@@ -30,10 +30,18 @@ Route::prefix('admin')
             ->name('internal');
         Route::get('member/internal/add', 'InternalController@add')
             ->name('internal.add');
+        Route::get('member/internal/edit', 'InternalController@edit')
+            ->name('internal.edit');
         Route::get('/news/news', 'NewsController@index')
             ->name('news');
         Route::get('/news/add', 'NewsController@add')
             ->name('news.add');
         Route::get('/news/edit', 'NewsController@edit')
             ->name('news.edit');
+        Route::get('/service/course/course', 'CourseController@index')
+            ->name('course');
+        Route::get('/service/course/add', 'CourseController@add')
+            ->name('course.add');
+        Route::get('/service/course/edit', 'CourseController@edit')
+            ->name('course.edit');
     });
