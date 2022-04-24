@@ -27,7 +27,7 @@ Route::prefix('admin')
             ->name('dashboard');
 
         //Teacher
-        Route::get('/teacher/teacher', 'TeacherController@index')
+        Route::get('/teacher', 'TeacherController@index')
             ->name('teacher');
         Route::get('/teacher/add', 'TeacherController@add')
             ->name('teacher.add');
@@ -35,23 +35,23 @@ Route::prefix('admin')
             ->name('teacher.edit');
 
         //Member Internal
-        Route::get('member/internal/internal', 'InternalController@index')
-            ->name('internal');
+        Route::get('member/internal', 'InternalController@index')
+            ->name('member.internal');
         Route::get('member/internal/add', 'InternalController@add')
             ->name('internal.add');
         Route::get('member/internal/edit', 'InternalController@edit')
             ->name('internal.edit');
 
         //External
-        Route::get('member/external/external', 'ExternalController@index')
-            ->name('external');
+        Route::get('member/external', 'ExternalController@index')
+            ->name('member.external');
         Route::get('member/external/add', 'ExternalController@add')
             ->name('external.add');
         Route::get('member/external/edit', 'ExternalController@edit')
             ->name('external.edit');
         
         //News
-        Route::get('/news/news', 'NewsController@index')
+        Route::get('/news', 'NewsController@index')
             ->name('news');
         Route::get('/news/add', 'NewsController@add')
             ->name('news.add');
@@ -59,7 +59,7 @@ Route::prefix('admin')
             ->name('news.edit');
 
         //Service
-        Route::get('/service/service', 'ServiceController@index')
+        Route::get('/service', 'ServiceController@index')
             ->name('service');
         Route::get('/service/add', 'ServiceController@add')
             ->name('service.add');
@@ -67,7 +67,7 @@ Route::prefix('admin')
             ->name('service.edit');
 
         // Schedule
-        Route::get('/schedule/schedule', 'ScheduleController@index')
+        Route::get('/schedule', 'ScheduleController@index')
          ->name('schedule');
         Route::get('/schedule/add', 'ScheduleController@add')
          ->name('schedule.add');
@@ -75,11 +75,11 @@ Route::prefix('admin')
          ->name('schedule.edit');
 
         //Feedback
-        Route::get('/feedback/feedback', 'FeedbackController@index')
+        Route::get('/feedback', 'FeedbackController@index')
          ->name('feedback');
 
         //Procedure
-        Route::get('/procedure/procedure', 'ProcedureController@index')
+        Route::get('/procedure', 'ProcedureController@index')
          ->name('procedure');
         Route::get('/procedure/add', 'ProcedureController@add')
          ->name('procedure.add');
