@@ -77,4 +77,10 @@ Route::prefix('admin')
         //Feedback
         Route::get('/feedback/feedback', 'FeedbackController@index')
          ->name('feedback');
+
+        //Procedure
+        
+
+        //Pelatihan
+
     });

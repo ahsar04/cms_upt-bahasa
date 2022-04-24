@@ -44,16 +44,46 @@
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>Headline Service</th>
-                                                            <th>Description</th>
+                                                            <th>Service Type</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
                                                             <td>1.</td>
-                                                            <td>Korean Language Course Opening</td>
-                                                            <td>UPT Bahasa POLIJE opens a special Korean language class online and offline</td>
+                                                            <td>Course</td>
+                                                            <td>
+                                                                <a
+                                                                    href="{{ route('service.edit') }}"
+                                                                    class="btn btn-primary"
+                                                                >Edit
+                                                                </a>
+                                                                <button
+                                                                    class="btn btn-danger"
+                                                                    data-confirm="Delete Data Service|Do you want to delete this data?"
+                                                                    data-confirm-yes="alert('Deleted');"
+                                                                >Delete</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2.</td>
+                                                            <td>EPT</td>
+                                                            <td>
+                                                                <a
+                                                                    href="{{ route('service.edit') }}"
+                                                                    class="btn btn-primary"
+                                                                >Edit
+                                                                </a>
+                                                                <button
+                                                                    class="btn btn-danger"
+                                                                    data-confirm="Delete Data Service|Do you want to delete this data?"
+                                                                    data-confirm-yes="alert('Deleted');"
+                                                                >Delete</button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3.</td>
+                                                            <td>Placement Test</td>
                                                             <td>
                                                                 <a
                                                                     href="{{ route('service.edit') }}"

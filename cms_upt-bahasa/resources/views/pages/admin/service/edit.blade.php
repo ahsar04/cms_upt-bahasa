@@ -32,12 +32,8 @@
                                     <div class="row ml-2 mr-2 mt-3">
                                         <div class="col">
                                             <div class="form-group">
-                                                <label>Headline Service</label>
-                                                <input type="number" class="form-control">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Description</label>
-                                                <textarea class="form-control" id="" cols="30" rows="10"></textarea>
+                                                <label>Service Type</label>
+                                                <input type="text" class="form-control">
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a
