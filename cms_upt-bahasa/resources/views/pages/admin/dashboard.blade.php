@@ -1,5 +1,5 @@
 @extends('layouts.admin.admin')
-@section('titlePage','UPT-Bahasa | Dashboard')
+@section('titlePage','Dashboard | UPT - Bahasa POLIJE')
 @section('content')
                     <!-- Main Content -->
       <div class="main-content">

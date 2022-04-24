@@ -11,9 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::prefix('/')
+    ->namespace('LandingPage')
+    ->group(function(){
+        Route::get('/', 'HomeController@index')
+            ->name('home');
+    });
+
+
 
 Route::prefix('admin')
     ->namespace('Admin')

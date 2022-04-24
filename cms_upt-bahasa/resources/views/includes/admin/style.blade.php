@@ -1,5 +1,5 @@
 <!-- Favicon icon -->
-        <link rel="icon" type="image/png" sizes="16x16" href="{{url('backend/assets/img/style.css')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{url('frontend/img/logo_polije.png')}}">
 <!-- General CSS Files -->
         <link
             rel="stylesheet"
