@@ -68,4 +68,8 @@ Route::prefix('admin')
          ->name('schedule.add');
         Route::get('/schedule/edit', 'ScheduleController@edit')
          ->name('schedule.edit');
+
+        //Feedback
+        Route::get('/feedback/feedback', 'FeedbackController@index')
+         ->name('feedback');
     });
