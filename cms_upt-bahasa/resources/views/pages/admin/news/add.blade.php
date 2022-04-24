@@ -33,7 +33,7 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Headline News</label>
-                                                <input type="number" class="form-control">
+                                                <input type="text" class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label>Description</label>
