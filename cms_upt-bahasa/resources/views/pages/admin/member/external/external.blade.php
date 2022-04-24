@@ -76,11 +76,11 @@
                                                                     class="btn btn-primary"
                                                                 >Edit
                                                                 </a>
-                                                                <a
-                                                                    href="#"
+                                                                <button
                                                                     class="btn btn-danger"
-                                                                >Delete
-                                                                </a>
+                                                                    data-confirm="Delete Data Member External|Do you want to delete this data?"
+                                                                    data-confirm-yes="alert('Deleted');"
+                                                                >Delete</button>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -99,11 +99,11 @@
                                                                     class="btn btn-primary"
                                                                 >Edit
                                                                 </a>
-                                                                <a
-                                                                    href="#"
+                                                                <button
                                                                     class="btn btn-danger"
-                                                                >Delete
-                                                                </a>
+                                                                    data-confirm="Delete Data Member External|Do you want to delete this data?"
+                                                                    data-confirm-yes="alert('Deleted');"
+                                                                >Delete</button>
                                                             </td>
                                                         </tr>
                                                     </tbody>
