@@ -35,6 +35,10 @@
                                                 <label>Service Type</label>
                                                 <input type="text" class="form-control">
                                             </div>
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                <textarea class="form-control" id="" cols="30" rows="10"></textarea>
+                                            </div>
                                             <div class="card-footer text-right">
                                                 <a
                                                     href="{{ route('service') }}"

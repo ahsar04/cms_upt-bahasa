@@ -45,6 +45,7 @@
                                                         <tr>
                                                             <th>No</th>
                                                             <th>Service Type</th>
+                                                            <th>Description</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
@@ -52,6 +53,8 @@
                                                         <tr>
                                                             <td>1.</td>
                                                             <td>Course</td>
+                                                            <td>At the UPT Bahasa POLIJE, there are several courses, 
+                                                                including English courses</td>
                                                             <td>
                                                                 <a
                                                                     href="{{ route('service.edit') }}"
@@ -68,6 +71,8 @@
                                                         <tr>
                                                             <td>2.</td>
                                                             <td>EPT (English Proficiency Test)</td>
+                                                            <td>A comprehensive test that measures all aspects 
+                                                                of English language proficiency especially for academic purposes.</td>
                                                             <td>
                                                                 <a
                                                                     href="{{ route('service.edit') }}"
@@ -84,6 +89,9 @@
                                                         <tr>
                                                             <td>3.</td>
                                                             <td>Placement Test</td>
+                                                            <td>A Placement Test is an exam that will be given to students who will enter 
+                                                                an institution in order to determine the level of skill in a 
+                                                                particular field, so that groups can be obtained according to students' abilities.</td>
                                                             <td>
                                                                 <a
                                                                     href="{{ route('service.edit') }}"
