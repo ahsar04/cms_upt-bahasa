@@ -1,15 +1,19 @@
+@@ -0,0 +1,118 @@
 @extends('layouts.admin.admin')
 
-@section('titlePage', 'UPT Bahasa | Member Internal')
+@section('titlePage', 'UPT Bahasa | Member External')
 @section('content')
                     <!-- Main Content -->
                 <div class="main-content">
                     <section class="section">
                         <div class="section-header">
-                            <h1>Member Internal</h1>
+                            <h1>Member External</h1>
                             <div class="section-header-breadcrumb">
+                                <div class="breadcrumb-item active">
+                                    <a href="{{ route('dashboard') }}">Dashboard</a>
+                                </div>
                                 <div class="breadcrumb-item">
-                                    <a>Member Internal</a>
+                                    <a>Member External</a>
                                 </div>
                                 <!-- <div class="breadcrumb-item">DataTables</div> -->
                             </div>
@@ -27,11 +31,11 @@
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h4>Member Internal</h4>
+                                            <h4>Member External</h4>
                                         </div>
                                         <div class="card-body">
                                             <a
-                                                href="{{ route('internal.add') }}"
+                                                href="{{ route('external.add') }}"
                                                 class="btn btn-success"
                                             >+ Add Data
                                             </a>
@@ -44,9 +48,11 @@
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>NIM</th>
-                                                            <th>Fullame</th>
-                                                            <th>Departmen</th>
+                                                            <th>NIK</th>
+                                                            <th>Fullname</th>
+                                                            <th>Email</th>
+                                                            <th>Phone</th>
+                                                            <th>University</th>
                                                             <th>Study Program</th>
                                                             <th>Year of Entry</th>
                                                             <th>Display Image</th>
@@ -56,15 +62,17 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>1.</td>
-                                                            <td>E41201354</td>
-                                                            <td>Salsabila Purnami</td>
-                                                            <td>Teknologi Informasi</td>
-                                                            <td>Teknik Informatika</td>
-                                                            <td>2020</td>
+                                                            <td>E41201256</td>
+                                                            <td>Ariana Kumalasari</td>
+                                                            <td>ariana@gmail.com</td>
+                                                            <td>085335712782</td>
+                                                            <td>Universitas Jember</td>
+                                                            <td>Informatika</td>
+                                                            <td>2018</td>
                                                             <td>Avatar.jpg</td>
                                                             <td>
                                                                 <a
-                                                                    href="{{ route('internal.edit') }}"
+                                                                    href="{{ route('external.edit') }}"
                                                                     class="btn btn-primary"
                                                                 >Edit
                                                                 </a>
@@ -77,15 +85,17 @@
                                                         </tr>
                                                         <tr>
                                                             <td>2.</td>
-                                                            <td>E41201730</td>
-                                                            <td>Kei Takebuci</td>
-                                                            <td>Kesehatan</td>
-                                                            <td>Gizi Klinik</td>
-                                                            <td>2019</td>
+                                                            <td>E41201390</td>
+                                                            <td>Karin Angraeni</td>
+                                                            <td>karinang@gmail.com</td>
+                                                            <td>082126870024</td>
+                                                            <td>Universitas Muhammadhiyah Jember</td>
+                                                            <td>Manajemen</td>
+                                                            <td>2020</td>
                                                             <td>images2.jpg</td>
                                                             <td>
                                                                 <a
-                                                                    href="{{ route('internal.edit') }}"
+                                                                    href="{{ route('external.edit') }}"
                                                                     class="btn btn-primary"
                                                                 >Edit
                                                                 </a>

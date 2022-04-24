@@ -1,15 +1,16 @@
+@@ -0,0 +1,85 @@
 @extends('layouts.admin.admin')
 
-@section('titlePage', 'UPT Bahasa | Member Internal')
+@section('titlePage', 'UPT Bahasa | Schedule')
 @section('content')
                     <!-- Main Content -->
                 <div class="main-content">
                     <section class="section">
                         <div class="section-header">
-                            <h1>Member Internal</h1>
+                            <h1>Schedule</h1>
                             <div class="section-header-breadcrumb">
                                 <div class="breadcrumb-item">
-                                    <a>Member Internal</a>
+                                    <a>Schedule</a>
                                 </div>
                                 <!-- <div class="breadcrumb-item">DataTables</div> -->
                             </div>
@@ -27,11 +28,11 @@
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h4>Member Internal</h4>
+                                            <h4>Schedule</h4>
                                         </div>
                                         <div class="card-body">
                                             <a
-                                                href="{{ route('internal.add') }}"
+                                                href="{{ route('schedule.add') }}"
                                                 class="btn btn-success"
                                             >+ Add Data
                                             </a>
@@ -44,56 +45,32 @@
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>NIM</th>
-                                                            <th>Fullame</th>
-                                                            <th>Departmen</th>
-                                                            <th>Study Program</th>
-                                                            <th>Year of Entry</th>
-                                                            <th>Display Image</th>
+                                                            <th>Headline Schedule</th>
+                                                            <th>Description</th>
+                                                            <th>Opening Date</th>
+                                                            <th>Deadline</th>
+                                                            <th>Picture</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
                                                             <td>1.</td>
-                                                            <td>E41201354</td>
-                                                            <td>Salsabila Purnami</td>
-                                                            <td>Teknologi Informasi</td>
-                                                            <td>Teknik Informatika</td>
-                                                            <td>2020</td>
-                                                            <td>Avatar.jpg</td>
+                                                            <td>Korean Language Course Opening</td>
+                                                            <td>UPT Bahasa POLIJE opens a special Korean language class online and offline</td>
+                                                            <td>2022-04-30</td>
+                                                            <td>2022-05-30</td>
+                                                            <td>course.jpg</td>
                                                             <td>
                                                                 <a
-                                                                    href="{{ route('internal.edit') }}"
+                                                                    href="{{ route('schedule.edit') }}"
                                                                     class="btn btn-primary"
                                                                 >Edit
                                                                 </a>
-                                                                <a
-                                                                    href="#"
+                                                                <button
                                                                     class="btn btn-danger"
-                                                                >Delete
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>2.</td>
-                                                            <td>E41201730</td>
-                                                            <td>Kei Takebuci</td>
-                                                            <td>Kesehatan</td>
-                                                            <td>Gizi Klinik</td>
-                                                            <td>2019</td>
-                                                            <td>images2.jpg</td>
-                                                            <td>
-                                                                <a
-                                                                    href="{{ route('internal.edit') }}"
-                                                                    class="btn btn-primary"
-                                                                >Edit
-                                                                </a>
-                                                                <a
-                                                                    href="#"
-                                                                    class="btn btn-danger"
-                                                                >Delete
-                                                                </a>
+                                                                    data-confirm="Delete Data Schedule|Do you want to delete this data?"
+                                                                >Delete</button>
                                                             </td>
                                                         </tr>
                                                     </tbody>
