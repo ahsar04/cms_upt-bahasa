@@ -79,8 +79,13 @@ Route::prefix('admin')
          ->name('feedback');
 
         //Procedure
-        
+        Route::get('/procedure/procedure', 'ProcedureController@index')
+         ->name('procedure');
+        Route::get('/procedure/add', 'ProcedureController@add')
+         ->name('procedure.add');
+        Route::get('/procedure/edit', 'ProcedureController@edit')
+         ->name('procedure.edit');
 
-        //Pelatihan
+        //Training
 
     });

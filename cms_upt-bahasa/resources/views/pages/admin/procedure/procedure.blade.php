@@ -1,15 +1,15 @@
 @extends('layouts.admin.admin')
 
-@section('titlePage', 'UPT Bahasa | Service')
+@section('titlePage', 'UPT Bahasa | Procedure')
 @section('content')
                     <!-- Main Content -->
                 <div class="main-content">
                     <section class="section">
                         <div class="section-header">
-                            <h1>Service</h1>
+                            <h1>Procedure</h1>
                             <div class="section-header-breadcrumb">
                                 <div class="breadcrumb-item">
-                                    <a>Service</a>
+                                    <a>Procedure</a>
                                 </div>
                                 <!-- <div class="breadcrumb-item">DataTables</div> -->
                             </div>
@@ -27,11 +27,11 @@
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h4>Service</h4>
+                                            <h4>Procedure</h4>
                                         </div>
                                         <div class="card-body">
                                             <a
-                                                href="{{ route('service.add') }}"
+                                                href="{{ route('procedure.add') }}"
                                                 class="btn btn-success"
                                             >+ Add Data
                                             </a>
@@ -44,55 +44,31 @@
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>Service Type</th>
+                                                            <th>Headline Procedure</th>
+                                                            <th>Description</th>
+                                                            <th>Attachment</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
                                                             <td>1.</td>
-                                                            <td>Course</td>
+                                                            <td>Tata Cara Membuat Akun</td>
+                                                            <td>Cara Pembuatan Akun Baru
+                                                                Kepada para pengguna jasa UPT. Bahasa POLIJE,
+                                                                kami informasikan bahwa untuk keperluan pendaftaran layanan kami, 
+                                                                Anda harus memiliki akun terlebih dahulu. Berikut  ini kami sampaikan 
+                                                                tata cara pembuatan akun baru di website .....</td>
+                                                            <td>tatacara.pdf</td>
                                                             <td>
                                                                 <a
-                                                                    href="{{ route('service.edit') }}"
+                                                                    href="{{ route('procedure.edit') }}"
                                                                     class="btn btn-primary"
                                                                 >Edit
                                                                 </a>
                                                                 <button
                                                                     class="btn btn-danger"
-                                                                    data-confirm="Delete Data Service|Do you want to delete this data?"
-                                                                    data-confirm-yes="alert('Deleted');"
-                                                                >Delete</button>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>2.</td>
-                                                            <td>EPT (English Proficiency Test)</td>
-                                                            <td>
-                                                                <a
-                                                                    href="{{ route('service.edit') }}"
-                                                                    class="btn btn-primary"
-                                                                >Edit
-                                                                </a>
-                                                                <button
-                                                                    class="btn btn-danger"
-                                                                    data-confirm="Delete Data Service|Do you want to delete this data?"
-                                                                    data-confirm-yes="alert('Deleted');"
-                                                                >Delete</button>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>3.</td>
-                                                            <td>Placement Test</td>
-                                                            <td>
-                                                                <a
-                                                                    href="{{ route('service.edit') }}"
-                                                                    class="btn btn-primary"
-                                                                >Edit
-                                                                </a>
-                                                                <button
-                                                                    class="btn btn-danger"
-                                                                    data-confirm="Delete Data Service|Do you want to delete this data?"
+                                                                    data-confirm="Delete Data Procedure|Do you want to delete this data?"
                                                                     data-confirm-yes="alert('Deleted');"
                                                                 >Delete</button>
                                                             </td>
