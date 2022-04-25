@@ -45,7 +45,7 @@
                                                         <tr>
                                                             <th>No</th>
                                                             <th>NIM</th>
-                                                            <th>Fullame</th>
+                                                            <th>Fullname</th>
                                                             <th>Departmen</th>
                                                             <th>Study Program</th>
                                                             <th>Year of Entry</th>
