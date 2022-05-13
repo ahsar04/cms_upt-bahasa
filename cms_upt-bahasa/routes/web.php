@@ -16,6 +16,33 @@ Route::prefix('/')
     ->group(function(){
         Route::get('/', 'HomeController@index')
             ->name('home');
+
+        Route::get('/visimisi', 'VisiMisiController@index')
+            ->name('visimisi');
+
+        Route::get('/teachingstaff', 'TeachingStaffController@index')
+            ->name('teachingstaff');
+        
+        Route::get('/ept', 'EptController@index')
+            ->name('ept');
+            
+        Route::get('placement-test', 'PlacementtestController@index')
+            ->name('placement-test');
+        
+        Route::get('new-account', 'NewAccountController@index')
+            ->name('new-account');
+            
+        Route::get('test_skema', 'TestSkemaController@index')
+            ->name('test_skema');
+
+        Route::get('test-result', 'TestResultController@index')
+            ->name('test-result');
+
+        Route::get('certificate', 'CertificateController@index')
+            ->name('certificate');
+
+        Route::get('contact', 'ContactController@index')
+            ->name('contact');
     });
 
 

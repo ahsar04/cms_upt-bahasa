@@ -30,7 +30,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active"
+                        <a href="{{ route('home') }}" class="nav-item nav-link active"
                             >Home</a
                         >
                         <div class="nav-item dropdown">
@@ -41,11 +41,11 @@
                                 >Profile</a
                             >
                             <div class="dropdown-menu m-0">
-                                <a href="visimisi.html" class="dropdown-item"
+                                <a href="{{ route('visimisi') }}" class="dropdown-item"
                                     >Visi Misi</a
                                 >
                                 <a
-                                    href="teaching-staff.html"
+                                    href="{{ route('teachingstaff') }}"
                                     class="dropdown-item"
                                     >Teaching Staff</a
                                 >
@@ -60,11 +60,11 @@
                                 >Services</a
                             >
                             <div class="dropdown-menu m-0">
-                                <a href="ept.html" class="dropdown-item"
+                                <a href="{{ route('ept')}}" class="dropdown-item"
                                     >English Proficiency Test</a
                                 >
                                 <a
-                                    href="placement_test.html"
+                                    href="{{ route('placement-test') }}"
                                     class="dropdown-item"
                                     >Placement Test</a
                                 >
@@ -78,21 +78,21 @@
                                 >Procedure</a
                             >
                             <div class="dropdown-menu m-0">
-                                <a href="#" class="dropdown-item"
-                                    >Tata Cara Membuat Akun</a
+                                <a href="{{ route('new-account')}}" class="dropdown-item"
+                                    >Procedure to Make Account </a
                                 >
-                                <a href="#" class="dropdown-item"
-                                    >Tata Cara Daftar Test Skema</a
+                                <a href="{{ route('test_skema')}}" class="dropdown-item"
+                                    >Procedure Test Skema</a
                                 >
-                                <a href="#" class="dropdown-item"
-                                    >Tata Cara Melihat Hasil Test</a
+                                <a href="{{ route('test-result')}}" class="dropdown-item"
+                                    >Procedure to See Result Test</a
                                 >
-                                <a href="#" class="dropdown-item"
-                                    >Tata Cara Mengambil Sertifikat Hasil</a
+                                <a href="{{ route('certificate')}}" class="dropdown-item"
+                                    >Procedure to Take Certificate</a
                                 >
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link"
+                        <a href="{{ route('contact')}}" class="nav-item nav-link"
                             >Contact</a
                         >
                     </div>
