@@ -12,9 +12,6 @@
                                     <a href="{{ route('dashboard') }}">Dashboard</a>
                                 </div>
                                 <div class="breadcrumb-item">
-                                    <a href="{{ route('teacher') }}">Teacher</a>
-                                </div>
-                                <div class="breadcrumb-item">
                                     <a>Edit Teaching Staff</a>
                                 </div>
                                 <!-- <div class="breadcrumb-item">DataTables</div> -->
@@ -26,6 +23,8 @@
                                 Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
                             </p> -->
                             
+                            <form action="{{ route('teacher.update', $teaching_staff->id_teaching_staff) }}" method="POST">
+                            {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-12">
                                     <div class="card">
@@ -36,33 +35,45 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>NIP</label>
-                                                <input type="number" class="form-control">
+                                                <input type="number" class="form-control" name="nip" value="{{ $teaching_staff->nip }}">
                                             </div>
                                             <div class="form-group">
-                                                <label>Fullame</label>
-                                                <input type="text" class="form-control">
+                                                <label>Fullname</label>
+                                                <input type="text" class="form-control" name="fullname" value="{{ $teaching_staff->fullname }}">
                                             </div>
                                             <div class="form-group">
-                                                <label>Email</label>
-                                                <input type="email" class="form-control">
+                                                <label>Functional Position</label>
+                                                <input type="text" class="form-control" name="position" value="{{ $teaching_staff->position }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Google Scholar</label>
+                                                <input type="text" class="form-control" name="google_scholar" value="{{ $teaching_staff->google_scholar }}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Phone</label>
-                                                <input type="number" class="form-control">
+                                                <input type="number" class="form-control" name="phone" value="{{ $teaching_staff->phone }}">
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
-                                                <label>Social Media</label>
-                                                <input type="text" class="form-control">
+                                                <label>Email</label>
+                                                <input type="email" class="form-control" name="email" value="{{ $teaching_staff->email }}">
                                             </div>
                                             <div class="form-group">
-                                                <label>Functional Position</label>
-                                                <input type="text" class="form-control">
+                                                <label>Address</label>
+                                                <input type="text" class="form-control" name="address" value="{{ $teaching_staff->address }}">
                                             </div>
                                             <div class="form-group">
-                                                <label>Dislay Image</label>
-                                                <input type="file" class="form-control">
+                                                <label>Facebook</label>
+                                                <input type="text" class="form-control" name="facebook" value="{{ $teaching_staff->facebook }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Instagram</label>
+                                                <input type="text" class="form-control" name="instagram" value="{{ $teaching_staff->instagram }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Picture</label>
+                                                <input type="file" class="form-control" name="picture" value="{{ $teaching_staff->picture }}">
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a
@@ -70,7 +81,7 @@
                                                     class="btn btn-danger"
                                                 >Cancel
                                                 </a>
-                                                <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                                                <button class="btn btn-primary mr-1" type="submit">Update</button>
                                             </div>
                                         </div>
                                     </div> 

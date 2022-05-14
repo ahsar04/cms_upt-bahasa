@@ -60,7 +60,7 @@
                                 >
                             </li>
                             <li>
-                                <a class="nav-link" href="{{-- route('training') --}}"
+                                <a class="nav-link" href="{{ route('training') }}"
                                     ><i class="fas fa-book-reader"></i>
                                     <span>Training</span></a
                                 >

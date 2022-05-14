@@ -58,8 +58,14 @@ Route::prefix('admin')
             ->name('teacher');
         Route::get('/teacher/add', 'TeacherController@add')
             ->name('teacher.add');
-        Route::get('/teacher/edit', 'TeacherController@edit')
+        Route::get('/teacher/edit/{id_teaching_staff}', 'TeacherController@edit')
             ->name('teacher.edit');
+        Route::post('/teacher/save', 'TeacherController@store')
+            ->name('teacher.store');
+        Route::post('/teacher/update/{id_teaching_staff}', 'TeacherController@update')
+            ->name('teacher.update');
+        Route::get('/teacher/delete/{id_teaching_staff}', 'TeacherController@destroy')
+            ->name('teacher.delete');
 
         //Member Internal
         Route::get('member/internal', 'InternalController@index')
@@ -120,7 +126,7 @@ Route::prefix('admin')
          ->name('procedure.edit');
 
         //Training
-        Route::get('/training/training', 'TrainingController@index')
+        Route::get('/training', 'TrainingController@index')
          ->name('training');
         Route::get('/training/add', 'TrainingController@add')
          ->name('training.add');

@@ -49,37 +49,44 @@
                                                             <th>No</th>
                                                             <th>NIP</th>
                                                             <th>Fullame</th>
-                                                            <th>Email</th>
-                                                            <th>Phone</th>
-                                                            <th>Social Media</th>
                                                             <th>Functional Position</th>
-                                                            <th>Display Image</th>
+                                                            <th>Google Scholar</th>
+                                                            <th>Phone</th>
+                                                            <th>Email</th>
+                                                            <th>Address</th>
+                                                            <th>Facebook</th>
+                                                            <th>Picture</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        @foreach ($teaching_staff as $item)
                                                         <tr>
-                                                            <td>1.</td>
-                                                            <td>19880117 201903 1 008</td>
-                                                            <td>I Gede Wiryawan, S.Kom, M.Kom</td>
-                                                            <td>igedewiryawan@gmail.com</td>
-                                                            <td>081234567899</td>
-                                                            <td>@igdwiryawan</td>
-                                                            <td>Lecture</td>
-                                                            <td>Avatar.jpg</td>
+                                                            <td>{{ $loop->iteration }}</td>
+                                                            <td>{{ $item->nip }}</td>
+                                                            <td>{{ $item->fullname }}</td>
+                                                            <td>{{ $item->position }}</td>
+                                                            <td>{{ $item->google_scholar }}</td>
+                                                            <td>{{ $item->phone }}</td>
+                                                            <td>{{ $item->email }}</td>
+                                                            <td>{{ $item->address }}</td>
+                                                            <td>{{ $item->facebook }}</td>
+                                                            <td>{{ $item->picture }}</td>
                                                             <td>
                                                                 <a
-                                                                    href="{{ route('teacher.edit') }}"
+                                                                    href="{{ route('teacher.edit', $item->id_teaching_staff) }}"
                                                                     class="btn btn-primary"
                                                                 >Edit
                                                                 </a>
-                                                                <button
+                                                                <a 
                                                                     class="btn btn-danger"
-                                                                    data-confirm="Delete Data Teaching Staff|Do you want to delete this data?"
-                                                                    data-confirm-yes="alert('Deleted');"
-                                                                >Delete</button>
+                                                                    onclick="return confirm('Are you sure?');"
+                                                                    href="{{ route('teacher.delete', $item->id_teaching_staff) }}"
+                                                                >Delete
+                                                                </a> 
                                                             </td>
                                                         </tr>
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -90,4 +97,5 @@
                         </div>
                     </section>
                 </div>
+@include('sweetalert::alert')   
 @endsection
