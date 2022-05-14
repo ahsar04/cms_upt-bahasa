@@ -47,28 +47,34 @@
                                                             <th>Headline News</th>
                                                             <th>Description</th>
                                                             <th>Picture</th>
+                                                            <th>Author</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        @foreach ($news as $item)
                                                         <tr>
-                                                            <td>1.</td>
-                                                            <td>Korean Language Course Opening</td>
-                                                            <td>UPT Bahasa POLIJE opens a special Korean language class online and offline</td>
-                                                            <td>course.jpg</td>
+                                                            <td>{{ $loop->iteration }}</td>
+                                                            <td>{{ $item->headline_news }}</td>
+                                                            <td>{{ $item->description_news }}</td>
+                                                            <td>{{ $item->picture }}</td>
+                                                            <td>{{ $item->author}}</td>
                                                             <td>
                                                                 <a
-                                                                    href="{{ route('news.edit') }}"
+                                                                    href="{{ route('news.edit', $item->id_news) }}"
                                                                     class="btn btn-primary"
-                                                                >Edit
+                                                                ><i class="fas fa-edit"></i>
                                                                 </a>
-                                                                <button
+                                                                <!-- data-confirm="Delete Data News|Do you want to delete this data?" -->
+                                                                <a 
                                                                     class="btn btn-danger"
-                                                                    data-confirm="Delete Data News|Do you want to delete this data?"
-                                                                    data-confirm-yes="alert('Deleted');"
-                                                                >Delete</button>
+                                                                    onclick="return confirm('Are you sure?');"
+                                                                    href="{{ route('news.delete', $item->id_news) }}"
+                                                                ><i class="fas fa-trash"></i>
+                                                                </a>    
                                                             </td>
                                                         </tr>
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -79,4 +85,5 @@
                         </div>
                     </section>
                 </div>
+@include('sweetalert::alert')                
 @endsection

@@ -1,4 +1,3 @@
-@@ -0,0 +1,85 @@
 @extends('layouts.admin.admin')
 
 @section('titlePage', 'UPT Bahasa | Schedule')

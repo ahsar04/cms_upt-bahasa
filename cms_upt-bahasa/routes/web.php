@@ -82,8 +82,14 @@ Route::prefix('admin')
             ->name('news');
         Route::get('/news/add', 'NewsController@add')
             ->name('news.add');
-        Route::get('/news/edit', 'NewsController@edit')
+        Route::get('/news/edit/{id_news}', 'NewsController@edit')
             ->name('news.edit');
+        Route::post('/news/save', 'NewsController@store')
+            ->name('news.store');
+        Route::post('/news/update/{id_news}', 'NewsController@update')
+            ->name('news.update');
+        Route::get('/news/delete/{id_news}', 'NewsController@destroy')
+            ->name('news.delete');
 
         //Service
         Route::get('/service', 'ServiceController@index')

@@ -22,7 +22,8 @@
                             <!-- <p class="section-lead">
                                 Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
                             </p> -->
-                            
+                            <form action="{{ route('news.update', $news->id_news) }}" method="POST">
+                            {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-12">
                                     <div class="card">
@@ -33,15 +34,19 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Headline News</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" name="headline_news" value="{{ $news->headline_news }}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Description</label>
-                                                <textarea class="form-control" id="" cols="30" rows="10"></textarea>
+                                                <textarea class="form-control" id="" name="description_news" cols="30" rows="10">{{ $news->description_news }}</textarea>
                                             </div>
                                             <div class="form-group">
-                                                <label>Dislay Image</label>
-                                                <input type="file" class="form-control">
+                                                <label>Picture</label>
+                                                <input type="file" class="form-control" name="picture" value="{{ $news->picture }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Author</label>
+                                                <input type="text" class="form-control" name="author" value="{{ $news->author }}">
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a
@@ -49,12 +54,13 @@
                                                     class="btn btn-danger"
                                                 >Cancel
                                                 </a>
-                                                <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                                                <button class="btn btn-primary mr-1" type="submit">Update</button>
                                             </div>
                                         </div>
                                     </div> 
                                 </div>
                                 </div>
+                                </form>
                             </div>
                     </section>
                 </div>
