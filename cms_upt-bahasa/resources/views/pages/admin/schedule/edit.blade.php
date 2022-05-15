@@ -48,11 +48,11 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Opening Date</label>
-                                                <input type="text" class="form-control datetimepicker">
+                                                <input type="date" class="form-control datetimepicker">
                                             </div>
                                             <div class="form-group">
                                                 <label>Deadline</label>
-                                                <input type="text" class="form-control datetimepicker">
+                                                <input type="date" class="form-control datetimepicker">
                                             </div>
                                             <div class="form-group">
                                                 <label>Pictures</label>

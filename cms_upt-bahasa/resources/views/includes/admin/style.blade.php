@@ -23,6 +23,7 @@
             rel="stylesheet"
             href="{{url('backend/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css')}}"
         />
+        <link rel="stylesheet" href="../node_modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
 
         <!-- Template CSS -->
         <link rel="stylesheet" href="{{url('backend/assets/css/style.css')}}" />
