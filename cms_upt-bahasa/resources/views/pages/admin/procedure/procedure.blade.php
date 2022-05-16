@@ -51,28 +51,29 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        @foreach ($procedure as $item)
                                                         <tr>
-                                                            <td>1.</td>
-                                                            <td>Tata Cara Membuat Akun</td>
-                                                            <td>Cara Pembuatan Akun Baru
-                                                                Kepada para pengguna jasa UPT. Bahasa POLIJE,
-                                                                kami informasikan bahwa untuk keperluan pendaftaran layanan kami, 
-                                                                Anda harus memiliki akun terlebih dahulu. Berikut  ini kami sampaikan 
-                                                                tata cara pembuatan akun baru di website .....</td>
-                                                            <td>tatacara.pdf</td>
+                                                            <td>{{ $loop->iteration }}</td>
+                                                            <td>{{ $item->headline_procedure }}</td>
+                                                            <td>{{ $item->description_procedure }}</td>
+                                                            <td>{{ $item->link_procedure }}</td>
                                                             <td>
+                                                            <div class="btn-group" role="group" aria-label="Basic example">
                                                                 <a
-                                                                    href="{{ route('procedure.edit') }}"
+                                                                    href="{{ route('procedure.edit', $item->id_procedure) }}"
                                                                     class="btn btn-primary"
-                                                                >Edit
+                                                                ><i class="fas fa-edit"></i>
                                                                 </a>
-                                                                <button
+                                                                <a
+                                                                    onclick="return confirm('Are you sure?')"
+                                                                    href="{{ route('procedure.delete', $item->id_procedure) }}"
                                                                     class="btn btn-danger"
-                                                                    data-confirm="Delete Data Procedure|Do you want to delete this data?"
-                                                                    data-confirm-yes="alert('Deleted');"
-                                                                >Delete</button>
+                                                                ><i class="fas fa-trash"></i>
+                                                                </a>
+                                                            </div>
                                                             </td>
                                                         </tr>
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>

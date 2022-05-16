@@ -23,6 +23,8 @@
                                 Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
                             </p> -->
                             
+                            <form action="{{ route('procedure.update', $procedure->id_procedure) }}" method="POST">
+                            {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-12">
                                     <div class="card">
@@ -33,15 +35,15 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Headline Procedure</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" name="headline_procedure" value="{{ $procedure->headline_procedure }}">
                                             </div>
                                             <div class="form-group">
-                                                <label>Description</label>
-                                                <textarea class="form-control" id="" cols="30" rows="10"></textarea>
+                                                <label>Description Procedure</label>
+                                                <textarea class="form-control" id="" cols="30" rows="10" name="description_procedure">{{ $procedure->description_procedure }}</textarea>
                                             </div>
                                             <div class="form-group">
-                                                <label>Attachment</label>
-                                                <input type="file" class="form-control">
+                                                <label>Link Procedure</label>
+                                                <input type="text" class="form-control" name="link_procedure" value="{{ $procedure->link_procedure }}">
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a
@@ -49,7 +51,7 @@
                                                     class="btn btn-danger"
                                                 >Cancel
                                                 </a>
-                                                <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                                                <button class="btn btn-primary mr-1" type="submit">Update</button>
                                             </div>
                                         </div>
                                     </div> 

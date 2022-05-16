@@ -130,8 +130,14 @@ Route::prefix('admin')
          ->name('procedure');
         Route::get('/procedure/add', 'ProcedureController@add')
          ->name('procedure.add');
-        Route::get('/procedure/edit', 'ProcedureController@edit')
+        Route::get('/procedure/edit/{id_procedure}', 'ProcedureController@edit')
          ->name('procedure.edit');
+        Route::post('/procedure/save', 'ProcedureController@store')
+         ->name('procedure.store');
+        Route::post('/procedure/update/{id_procedure}', 'ProcedureController@update')
+         ->name('procedure.update');
+        Route::get('/procedure/delete/{id_procedure}', 'ProcedureController@destroy')
+         ->name('procedure.delete');
 
         //Training
         Route::get('/training', 'TrainingController@index')
