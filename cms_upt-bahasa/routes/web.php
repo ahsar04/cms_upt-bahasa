@@ -102,8 +102,14 @@ Route::prefix('admin')
             ->name('service');
         Route::get('/service/add', 'ServiceController@add')
             ->name('service.add');
-        Route::get('/service/edit', 'ServiceController@edit')
+        Route::get('/service/edit/{id_service}', 'ServiceController@edit')
             ->name('service.edit');
+        Route::post('/service/save', 'ServiceController@store')
+            ->name('service.store');
+        Route::post('/service/update/{id_service}', 'ServiceController@update')
+            ->name('service.update');
+        Route::get('/service/delete/{id_service}', 'ServiceController@destroy')
+            ->name('service.delete');
 
         // Schedule
         Route::get('/schedule', 'ScheduleController@index')

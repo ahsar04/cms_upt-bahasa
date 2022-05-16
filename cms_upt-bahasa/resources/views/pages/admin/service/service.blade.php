@@ -45,66 +45,31 @@
                                                         <tr>
                                                             <th>No</th>
                                                             <th>Service Type</th>
-                                                            <th>Description</th>
+                                                            <th>Description Service</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        @foreach ($service as $item)
                                                         <tr>
-                                                            <td>1.</td>
-                                                            <td>Course</td>
-                                                            <td>At the UPT Bahasa POLIJE, there are several courses, 
-                                                                including English courses</td>
+                                                            <td>{{ $loop->iteration }}</td>
+                                                            <td>{{ $item->service_type }}</td>
+                                                            <td>{{ $item->description_service }}</td>
                                                             <td>
                                                                 <a
-                                                                    href="{{ route('service.edit') }}"
+                                                                    href="{{ route('service.edit', $item->id_service) }}"
                                                                     class="btn btn-primary"
-                                                                >Edit
+                                                                ><i class="fas fa-edit"></i>
                                                                 </a>
-                                                                <button
+                                                                <a 
                                                                     class="btn btn-danger"
-                                                                    data-confirm="Delete Data Service|Do you want to delete this data?"
-                                                                    data-confirm-yes="alert('Deleted');"
-                                                                >Delete</button>
+                                                                    onclick="return confirm('Are you sure?')"
+                                                                    href="{{ route('service.delete', $item->id_service) }}"
+                                                                ><i class="fas fa-trash"></i>
+                                                                </a>  
                                                             </td>
                                                         </tr>
-                                                        <tr>
-                                                            <td>2.</td>
-                                                            <td>EPT (English Proficiency Test)</td>
-                                                            <td>A comprehensive test that measures all aspects 
-                                                                of English language proficiency especially for academic purposes.</td>
-                                                            <td>
-                                                                <a
-                                                                    href="{{ route('service.edit') }}"
-                                                                    class="btn btn-primary"
-                                                                >Edit
-                                                                </a>
-                                                                <button
-                                                                    class="btn btn-danger"
-                                                                    data-confirm="Delete Data Service|Do you want to delete this data?"
-                                                                    data-confirm-yes="alert('Deleted');"
-                                                                >Delete</button>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>3.</td>
-                                                            <td>Placement Test</td>
-                                                            <td>A Placement Test is an exam that will be given to students who will enter 
-                                                                an institution in order to determine the level of skill in a 
-                                                                particular field, so that groups can be obtained according to students' abilities.</td>
-                                                            <td>
-                                                                <a
-                                                                    href="{{ route('service.edit') }}"
-                                                                    class="btn btn-primary"
-                                                                >Edit
-                                                                </a>
-                                                                <button
-                                                                    class="btn btn-danger"
-                                                                    data-confirm="Delete Data Service|Do you want to delete this data?"
-                                                                    data-confirm-yes="alert('Deleted');"
-                                                                >Delete</button>
-                                                            </td>
-                                                        </tr>
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>

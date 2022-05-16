@@ -23,6 +23,8 @@
                                 Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
                             </p> -->
                             
+                            <form action="{{ route('service.store') }}" method="post">
+                            {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-12">
                                     <div class="card">
@@ -33,11 +35,15 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Service Type</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control @error('service_type') is-invalid @enderror"
+                                                id="exampleInputServiceType" name="service_type" value="{{old('service_type')}}">
+                                                @error('service_type') <span class="text-danger">{{$message}}</span> @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label>Description</label>
-                                                <textarea class="form-control" id="" cols="30" rows="10"></textarea>
+                                                <label>Description Service</label>
+                                                <textarea class="form-control @error('description_service') is-invalid @enderror"
+                                                id="exampleInputDescriptionService" name="description_service" value="{{old('description_service')}}" cols="30" rows="10"></textarea>
+                                                @error('description_service') <span class="text-danger">{{$message}}</span> @enderror
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a
@@ -45,7 +51,7 @@
                                                     class="btn btn-danger"
                                                 >Cancel
                                                 </a>
-                                                <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                                                <button class="btn btn-primary mr-1" type="submit">Save</button>
                                             </div>
                                         </div>
                                     </div> 
