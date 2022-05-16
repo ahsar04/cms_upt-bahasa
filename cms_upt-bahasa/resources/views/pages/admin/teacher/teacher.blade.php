@@ -55,6 +55,7 @@
                                                             <th>Email</th>
                                                             <th>Address</th>
                                                             <th>Facebook</th>
+                                                            <th>Instagram</th>
                                                             <th>Picture</th>
                                                             <th>Action</th>
                                                         </tr>
@@ -71,18 +72,19 @@
                                                             <td>{{ $item->email }}</td>
                                                             <td>{{ $item->address }}</td>
                                                             <td>{{ $item->facebook }}</td>
+                                                            <td>{{ $item->instagram }}</td>
                                                             <td>{{ $item->picture }}</td>
                                                             <td>
                                                                 <a
                                                                     href="{{ route('teacher.edit', $item->id_teaching_staff) }}"
                                                                     class="btn btn-primary"
-                                                                >Edit
+                                                                ><i class="fas fa-edit"></i>
                                                                 </a>
                                                                 <a 
                                                                     class="btn btn-danger"
                                                                     onclick="return confirm('Are you sure?');"
                                                                     href="{{ route('teacher.delete', $item->id_teaching_staff) }}"
-                                                                >Delete
+                                                                ><i class="fas fa-trash"></i>
                                                                 </a> 
                                                             </td>
                                                         </tr>
