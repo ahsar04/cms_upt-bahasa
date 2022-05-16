@@ -1,4 +1,3 @@
-@@ -0,0 +1,85 @@
 @extends('layouts.admin.admin')
 
 @section('titlePage', 'UPT Bahasa | Feedback')
@@ -38,36 +37,27 @@
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>User</th>
+                                                            <th>Email</th>
                                                             <th>Feedback</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td>1.</td>
-                                                            <td>Kei Takebuchi</td>
-                                                            <td>This course very good</td>
+                                                            @foreach ($feedback as $item)   
+                                                            <td>{{ $loop->iteration }}</td>
+                                                            <td>{{ $item->email }}</td>
+                                                            <td>{{ $item->feedback }}</td>
                                                             <td>
-                                                                <button
+                                                                <a 
                                                                     class="btn btn-danger"
-                                                                    data-confirm="Delete Data Feedback|Do you want to delete this data?"
-                                                                    data-confirm-yes="alert('Deleted');"
-                                                                >Delete</button>
+                                                                    onclick="return confirm('Are you sure?')"
+                                                                    href="{{ route('feedback.delete', $item->id_feedback) }}"
+                                                                ><i class="fas fa-trash"></i>
+                                                                </a>    
                                                             </td>
                                                         </tr>
-                                                        <tr>
-                                                            <td>2.</td>
-                                                            <td>Salsabila Purnami</td>
-                                                            <td>Thank You! I got highest score TOEFL test.</td>
-                                                            <td>
-                                                                <button
-                                                                    class="btn btn-danger"
-                                                                    data-confirm="Delete Data Feedback|Do you want to delete this data?"
-                                                                    data-confirm-yes="alert('Deleted');"
-                                                                >Delete</button>
-                                                            </td>
-                                                        </tr>
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -78,4 +68,5 @@
                         </div>
                     </section>
                 </div>
+@include('sweetalert::alert') 
 @endsection

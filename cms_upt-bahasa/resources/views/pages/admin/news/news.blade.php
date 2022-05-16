@@ -68,7 +68,7 @@
                                                                 <!-- data-confirm="Delete Data News|Do you want to delete this data?" -->
                                                                 <a 
                                                                     class="btn btn-danger"
-                                                                    onclick="return confirm('Are you sure?');"
+                                                                    onclick="return confirm('Are you sure?')"
                                                                     href="{{ route('news.delete', $item->id_news) }}"
                                                                 ><i class="fas fa-trash"></i>
                                                                 </a>    

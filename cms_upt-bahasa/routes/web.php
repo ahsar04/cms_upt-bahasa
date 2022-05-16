@@ -116,6 +116,8 @@ Route::prefix('admin')
         //Feedback
         Route::get('/feedback', 'FeedbackController@index')
          ->name('feedback');
+        Route::get('/feedback/delete/{id_feedback}', 'FeedbackController@destroy')
+         ->name('feedback.delete');
 
         //Procedure
         Route::get('/procedure', 'ProcedureController@index')
