@@ -47,29 +47,39 @@
                                                             <th>Training</th>
                                                             <th>Service Type</th>
                                                             <th>Description</th>
+                                                            <th>Quota</th>
+                                                            <th>Opening Date</th>
+                                                            <th>Excercise Date</th>
+                                                            <th>Closing Date</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        @foreach ($training as $item)
                                                         <tr>
-                                                            <td>1.</td>
-                                                            <td>Korean Language Course Opening</td>
-                                                            <td>Course</td>
-                                                            <td>UPT Bahasa POLIJE opens a special Korean 
-                                                                language class online and offline</td>
+                                                            <td>{{ $loop->iteration }}</td>
+                                                            <td>{{ $item->training }}</td>
+                                                            <td>{{ $item->service_type }}</td>
+                                                            <td>{{ $item->description_training }}</td>
+                                                            <td>{{ $item->quota }}</td>
+                                                            <td>{{ date('d-m-Y', strtotime($item->opening_date)) }}</td>
+                                                            <td>{{ date('d-m-Y', strtotime($item->excercise_date)) }}</td>
+                                                            <td>{{ date('d-m-Y', strtotime($item->closing_date)) }}</td>
                                                             <td>
                                                                 <a
-                                                                    href="{{ route('training.edit') }}"
+                                                                    href="{{ route('training.edit', $item->id_training) }}"
                                                                     class="btn btn-primary"
-                                                                >Edit
+                                                                ><i class="fas fa-edit"></i>
                                                                 </a>
-                                                                <button
+                                                                <a 
                                                                     class="btn btn-danger"
-                                                                    data-confirm="Delete Data Training|Do you want to delete this data?"
-                                                                    data-confirm-yes="alert('Deleted');"
-                                                                >Delete</button>
+                                                                    onclick="return confirm('Are you sure?');"
+                                                                    href="{{ route('training.delete', $item->id_training) }}"
+                                                                ><i class="fas fa-trash"></i>
+                                                                </a>       
                                                             </td>
                                                         </tr>
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -80,4 +90,5 @@
                         </div>
                     </section>
                 </div>
+@include('sweetalert::alert')              
 @endsection

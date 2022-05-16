@@ -130,7 +130,12 @@ Route::prefix('admin')
          ->name('training');
         Route::get('/training/add', 'TrainingController@add')
          ->name('training.add');
-        Route::get('/training/edit', 'TrainingController@edit')
+        Route::get('/training/edit/{id_training}', 'TrainingController@edit')
          ->name('training.edit');
-
+        Route::post('/training/store', 'TrainingController@store')
+         ->name('training.store');
+        Route::post('/training/update/{id_training}', 'TrainingController@update')
+         ->name('training.update');
+        Route::get('/training/destroy/{id_training}', 'TrainingController@destroy')
+         ->name('training.delete');
     });

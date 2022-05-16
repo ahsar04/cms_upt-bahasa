@@ -22,7 +22,8 @@
                             <!-- <p class="section-lead">
                                 Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
                             </p> -->
-                            
+                            <form action="{{ route('training.update', $training->id_training) }}" method="POST">
+                            {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-12">
                                     <div class="card">
@@ -33,22 +34,38 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Training</label>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="training" class="form-control" value="{{ $training->training }}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Service Type</label>
-                                                <select class="form-control">
+                                                <select class="form-control" name="service_type" value="{{ $training->service_type }}">
                                                     <option>- Select Service Type -</option>
                                                     <option>Course</option>
                                                     <option>EPT (English Proficiency Test)</option>
                                                     <option>Placement Test</option>
                                                 </select>
                                             </div>
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                <textarea class="form-control" name="description_training" id="" cols="30" rows="10">{{ $training->description_training }}</textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Quota</label>
+                                                <input type="text" name="quota" class="form-control" value="{{ $training->quota }}">
+                                            </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
-                                                <label>Description</label>
-                                                <textarea class="form-control" id="" cols="30" rows="10"></textarea>
+                                                <label>Opening Date</label>
+                                                <input type="date" name="opening_date" class="form-control datetimepicker" value="{{ $training->opening_date }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Excercise Date</label>
+                                                <input type="date" name="excercise_date" class="form-control datetimepicker" value="{{ $training->excercise_date }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Closing Date</label>
+                                                <input type="date" name="closing_date" class="form-control datetimepicker" value="{{ $training->closing_date }}">
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a
@@ -56,13 +73,14 @@
                                                     class="btn btn-danger"
                                                 >Cancel
                                                 </a>
-                                                <button class="btn btn-primary mr-1" type="submit">Submit</button>
+                                                <button class="btn btn-primary mr-1" type="submit">Update</button>
                                             </div>
                                         </div>
                                     </div> 
                                 </div>
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </section>
                 </div>
