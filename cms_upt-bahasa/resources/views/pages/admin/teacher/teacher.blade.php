@@ -75,17 +75,19 @@
                                                             <td>{{ $item->instagram }}</td>
                                                             <td>{{ $item->picture }}</td>
                                                             <td>
+                                                            <div class="btn-group" role="group" aria-label="Basic example">
                                                                 <a
-                                                                    href="{{ route('teacher.edit', $item->id_teaching_staff) }}"
+                                                                    href="{{ route('teacher.edit', $item->id_teacher) }}"
                                                                     class="btn btn-primary"
                                                                 ><i class="fas fa-edit"></i>
                                                                 </a>
-                                                                <a 
+                                                                <a
+                                                                    onclick="return confirm('Are you sure?')"
+                                                                    href="{{ route('teacher.delete', $item->id_teacher) }}"
                                                                     class="btn btn-danger"
-                                                                    onclick="return confirm('Are you sure?');"
-                                                                    href="{{ route('teacher.delete', $item->id_teaching_staff) }}"
                                                                 ><i class="fas fa-trash"></i>
-                                                                </a> 
+                                                                </a>
+                                                            </div>
                                                             </td>
                                                         </tr>
                                                         @endforeach

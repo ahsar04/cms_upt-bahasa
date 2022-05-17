@@ -56,17 +56,19 @@
                                                             <td>{{ $item->service_type }}</td>
                                                             <td>{{ $item->description_service }}</td>
                                                             <td>
+                                                            <div class="btn-group" role="group" aria-label="Basic example">
                                                                 <a
                                                                     href="{{ route('service.edit', $item->id_service) }}"
                                                                     class="btn btn-primary"
                                                                 ><i class="fas fa-edit"></i>
                                                                 </a>
-                                                                <a 
-                                                                    class="btn btn-danger"
+                                                                <a
                                                                     onclick="return confirm('Are you sure?')"
                                                                     href="{{ route('service.delete', $item->id_service) }}"
+                                                                    class="btn btn-danger"
                                                                 ><i class="fas fa-trash"></i>
-                                                                </a>  
+                                                                </a>
+                                                            </div>
                                                             </td>
                                                         </tr>
                                                         @endforeach

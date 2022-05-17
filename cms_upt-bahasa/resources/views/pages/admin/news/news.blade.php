@@ -60,18 +60,19 @@
                                                             <td>{{ $item->picture }}</td>
                                                             <td>{{ $item->author}}</td>
                                                             <td>
+                                                            <div class="btn-group" role="group" aria-label="Basic example">
                                                                 <a
                                                                     href="{{ route('news.edit', $item->id_news) }}"
                                                                     class="btn btn-primary"
                                                                 ><i class="fas fa-edit"></i>
                                                                 </a>
-                                                                <!-- data-confirm="Delete Data News|Do you want to delete this data?" -->
-                                                                <a 
-                                                                    class="btn btn-danger"
+                                                                <a
                                                                     onclick="return confirm('Are you sure?')"
                                                                     href="{{ route('news.delete', $item->id_news) }}"
+                                                                    class="btn btn-danger"
                                                                 ><i class="fas fa-trash"></i>
-                                                                </a>    
+                                                                </a>
+                                                            </div>
                                                             </td>
                                                         </tr>
                                                         @endforeach

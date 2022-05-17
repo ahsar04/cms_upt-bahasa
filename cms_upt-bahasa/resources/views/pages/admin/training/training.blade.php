@@ -66,17 +66,19 @@
                                                             <td>{{ date('d-m-Y', strtotime($item->excercise_date)) }}</td>
                                                             <td>{{ date('d-m-Y', strtotime($item->closing_date)) }}</td>
                                                             <td>
+                                                            <div class="btn-group" role="group" aria-label="Basic example">
                                                                 <a
                                                                     href="{{ route('training.edit', $item->id_training) }}"
                                                                     class="btn btn-primary"
                                                                 ><i class="fas fa-edit"></i>
                                                                 </a>
-                                                                <a 
-                                                                    class="btn btn-danger"
-                                                                    onclick="return confirm('Are you sure?');"
+                                                                <a
+                                                                    onclick="return confirm('Are you sure?')"
                                                                     href="{{ route('training.delete', $item->id_training) }}"
+                                                                    class="btn btn-danger"
                                                                 ><i class="fas fa-trash"></i>
-                                                                </a>       
+                                                                </a>
+                                                            </div>  
                                                             </td>
                                                         </tr>
                                                         @endforeach

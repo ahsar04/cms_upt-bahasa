@@ -61,16 +61,19 @@
                                                             <td>2022-05-30</td>
                                                             <td>course.jpg</td>
                                                             <td>
+                                                            <div class="btn-group" role="group" aria-label="Basic example">
                                                                 <a
-                                                                    href="{{ route('schedule.edit') }}"
+                                                                    href="{{ route('schedule.edit', $item->id_schedule) }}"
                                                                     class="btn btn-primary"
-                                                                >Edit
+                                                                ><i class="fas fa-edit"></i>
                                                                 </a>
-                                                                <button
+                                                                <a
+                                                                    onclick="return confirm('Are you sure?')"
+                                                                    href="{{ route('schedule.delete', $item->id_schedule) }}"
                                                                     class="btn btn-danger"
-                                                                    data-confirm="Delete Data Schedule|Do you want to delete this data?"
-                                                                    data-confirm-yes="alert('Deleted');"
-                                                                >Delete</button>
+                                                                ><i class="fas fa-trash"></i>
+                                                                </a>
+                                                            </div>
                                                             </td>
                                                         </tr>
                                                     </tbody>
