@@ -42,7 +42,7 @@
                                         <div class="card-body">
                                             <div class="table-responsive">
                                                 <table
-                                                    class="table table-striped"
+                                                    class="table table-striped  table-hover"
                                                     id="table-1">
                                                     <thead>
                                                         <tr>
