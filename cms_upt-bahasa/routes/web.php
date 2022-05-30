@@ -153,3 +153,7 @@ Route::prefix('admin')
         Route::get('/training/destroy/{id_training}', 'TrainingController@destroy')
          ->name('training.delete');
     });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

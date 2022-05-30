@@ -86,13 +86,13 @@
                             </li>
                         </ul>
 
-                        <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+                        {{-- <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
                             <a
                                 href="{{ route('home') }}"
                                 class="btn btn-secondary btn-lg btn-block"
                             >
                                 <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
-                        </div>
+                        </div> --}}
                     </aside>
                 </div>
