@@ -77,13 +77,13 @@
                                                             <td>
                                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                                 <a
-                                                                    href="{{ route('teacher.edit', $item->id_teacher) }}"
+                                                                    href="{{ route('teacher.edit', $item->id_teaching_staff) }}"
                                                                     class="btn btn-primary"
                                                                 ><i class="fas fa-edit"></i>
                                                                 </a>
                                                                 <a
                                                                     onclick="return confirm('Are you sure?')"
-                                                                    href="{{ route('teacher.delete', $item->id_teacher) }}"
+                                                                    href="{{ route('teacher.delete', $item->id_teaching_staff) }}"
                                                                     class="btn btn-danger"
                                                                 ><i class="fas fa-trash"></i>
                                                                 </a>
