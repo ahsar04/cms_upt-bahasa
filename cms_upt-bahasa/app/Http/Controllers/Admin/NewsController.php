@@ -28,19 +28,17 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'headline_news' => 'required',
-            'description_news' => 'required',
-            'picture' => 'required',
-            'author' => 'required',
-        ]);
+        $news = $request->picture;
+        $namafile = $news->getClientOriginalName();
 
-        News::create([
-            'headline_news' => $request->headline_news,
-            'description_news' => $request->description_news,
-            'picture' => $request->picture,
-            'author' => $request->author
-        ]);
+        $dtUpload = new News;
+        $dtUpload->headline_news = $request->headline_news;
+        $dtUpload->description_news = $request->description_news;
+        $dtUpload->picture = $namafile;
+        $dtUpload->author = $request->author;
+
+        $news->move(public_path().'/img/news', $namafile);
+        $dtUpload->save();
 
         return redirect('admin/news')->with('toast_success', 'Data Added Successfully');
     }
@@ -53,7 +51,17 @@ class NewsController extends Controller
     public function update(Request $request, $id_news)
     {
         $news = News::findorfail($id_news);
-        $news->update($request->all());
+        $gambarAwal = $news->picture;
+
+        $data = [
+            'headline_news' => $request['headline_news'],
+            'description_news' => $request['description_news'],
+            'picture' => $gambarAwal,
+            'author' => $request['author'],
+        ];
+
+        $request->picture->move(public_path().'/img/news', $gambarAwal);
+        $news->update($data);
         return redirect('admin/news')->with('toast_success', 'Data Updated Successfully');
     }
 
@@ -64,6 +72,11 @@ class NewsController extends Controller
     public function destroy($id_news)
     {
         $news = News::findorfail($id_news);
+
+        $file = public_path('/img/news/').$news->picture;
+        if (file_exists($file)) {
+            @unlink($file);
+        }
         $news->delete();
         return back()->with('toast_success', 'Data Deleted Successfully');;
     }

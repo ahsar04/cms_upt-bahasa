@@ -17,7 +17,7 @@ class CreateNewsTable extends Migration
             $table->bigIncrements('id_news');
             $table->text('headline_news');
             $table->longText('description_news');
-            $table->binary('picture');
+            $table->string('picture');
             $table->text('author');
             $table->timestamps();
         });

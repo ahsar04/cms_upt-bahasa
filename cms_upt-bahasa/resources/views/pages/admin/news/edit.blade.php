@@ -22,7 +22,7 @@
                             <!-- <p class="section-lead">
                                 Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
                             </p> -->
-                            <form action="{{ route('news.update', $news->id_news) }}" method="POST">
+                            <form action="{{ route('news.update', $news->id_news) }}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-12">
@@ -34,19 +34,23 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Headline News</label>
-                                                <input type="text" class="form-control" name="headline_news" value="{{ $news->headline_news }}">
+                                                <input type="text" class="form-control" id="headline_news" name="headline_news" value="{{ $news->headline_news }}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Description</label>
-                                                <textarea class="form-control" id="" name="description_news" cols="30" rows="10">{{ $news->description_news }}</textarea>
+                                                <textarea class="form-control" id="description_news" name="description_news" cols="30" rows="10">{{ $news->description_news }}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label>Picture</label>
-                                                <input type="file" class="form-control" name="picture" value="{{ $news->picture }}">
+                                                <img src="{{ asset('/img/news/'.$news->picture) }}" width="200px" class="d-block">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Change Picture</label>
+                                                <input type="file" class="form-control" id="picture" name="picture" value="{{ $news->picture }}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Author</label>
-                                                <input type="text" class="form-control" name="author" value="{{ $news->author }}">
+                                                <input type="text" class="form-control" id="author" name="author" value="{{ $news->author }}">
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a

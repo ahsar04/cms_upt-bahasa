@@ -23,7 +23,7 @@
                                 Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
                             </p> -->
                             
-                            <form action="{{ route('news.store') }}" method="post">
+                            <form action="{{ route('news.store') }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-12">
@@ -35,27 +35,23 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Headline News</label>
-                                                <input type="text" class="form-control @error('headline_news') is-invalid @enderror"
-                                                id="exampleInputHeadlineNews" name="headline_news" value="{{old('headline_news')}}">
-                                                @error('headline_news') <span class="text-danger">{{$message}}</span> @enderror
+                                                <input type="text" class="form-control"
+                                                id="headline_news" name="headline_news">
                                             </div>
                                             <div class="form-group">
                                                 <label>Description</label>
-                                                <textarea class="form-control @error('description_news') is-invalid @enderror"
-                                                id="exampleInputDescriptionNews" name="description_news" value="{{old('description_news')}}" cols="30" rows="10"></textarea>
-                                                @error('description_news') <span class="text-danger">{{$message}}</span> @enderror
+                                                <textarea class="form-control"
+                                                id="description_news" name="description_news" cols="30" rows="10"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label>Picture</label>
-                                                <input type="file" class="form-control @error('picture') is-invalid @enderror"
-                                                id="exampleInputpicture" name="picture" value="{{old('picture')}}">
-                                                @error('picture') <span class="text-danger">{{$message}}</span> @enderror
+                                                <input type="file" class="form-control"
+                                                id="picture" name="picture">
                                             </div>
                                             <div class="form-group">
                                                 <label>Author</label>
-                                                <input type="text" class="form-control @error('author') is-invalid @enderror"
-                                                id="exampleInputauthor" name="author" value="{{old('author')}}">
-                                                @error('author') <span class="text-danger">{{$message}}</span> @enderror
+                                                <input type="text" class="form-control"
+                                                id="author" name="author">
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a
