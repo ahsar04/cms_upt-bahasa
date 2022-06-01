@@ -244,7 +244,7 @@
                                     class="rounded-circle mr-1"
                                 />
                                 <div class="d-sm-none d-lg-inline-block">
-                                    Hi, Ujang Maman
+                                    Hi, {{ Auth::user()->name }}
                                 </div></a
                             >
                             <div class="dropdown-menu dropdown-menu-right">

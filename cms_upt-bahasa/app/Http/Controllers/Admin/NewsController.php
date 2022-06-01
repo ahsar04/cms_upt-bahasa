@@ -9,6 +9,10 @@ use routes\web;
 
 class NewsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $news = News::all();
         return view('pages.admin.news.news', compact('news'));

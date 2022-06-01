@@ -9,6 +9,10 @@ use routes\web;
 
 class ProcedureController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $procedure = Procedure::all();
         return view('pages.admin.procedure.procedure', compact('procedure'));

@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(Request $request){
         return view('pages.admin.schedule.schedule');
     }

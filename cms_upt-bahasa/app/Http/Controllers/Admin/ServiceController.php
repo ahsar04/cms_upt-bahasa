@@ -9,6 +9,10 @@ use routes\web;
 
 class ServiceController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $service = Service::all();
         return view('pages.admin.service.service', compact('service'));

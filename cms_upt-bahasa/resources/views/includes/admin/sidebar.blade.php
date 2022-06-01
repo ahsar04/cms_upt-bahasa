@@ -16,6 +16,12 @@
                             </li>
                             <li class="menu-header">Master</li>
                             <li>
+                                <a class="nav-link" href="{{--route('teacher')--}}"
+                                    ><i class="fas fa-user-graduate"></i>
+                                    <span>Admin</span></a
+                                >
+                            </li>
+                            <li>
                                 <a class="nav-link" href="{{route('teacher')}}"
                                     ><i class="fas fa-user-graduate"></i>
                                     <span>Teacher</span></a

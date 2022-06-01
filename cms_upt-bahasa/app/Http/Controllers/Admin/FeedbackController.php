@@ -9,6 +9,10 @@ use routes\web;
 
 class FeedbackController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $feedback = Feedback::all();
         return view('pages.admin.feedback.feedback', compact('feedback'));

@@ -46,13 +46,13 @@ Route::prefix('/')
     });
 
 
-
 Route::prefix('admin')
     ->namespace('Admin')
     ->group(function(){
         Route::get('/dashboard', 'DashboardController@index')
             ->name('dashboard');
-
+        Route::get('/', 'DashboardController@index')
+            ->name('admin');
         //Teacher
         Route::get('/teacher', 'TeacherController@index')
             ->name('teacher');
