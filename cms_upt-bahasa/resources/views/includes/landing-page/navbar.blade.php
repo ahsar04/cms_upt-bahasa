@@ -61,13 +61,15 @@
                             >
                             <div class="dropdown-menu m-0">
                                 <a href="{{ route('ept')}}" class="dropdown-item"
-                                    >English Proficiency Test</a
-                                >
+                                    >English Proficiency Test</a>
                                 <a
                                     href="{{ route('placement-test') }}"
                                     class="dropdown-item"
-                                    >Placement Test</a
-                                >
+                                    >Placement Test</a>
+                                <a
+                                    href="{{ route('course')}}"
+                                    class="dropdown-item"
+                                    >Course</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">

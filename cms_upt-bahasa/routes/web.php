@@ -43,6 +43,9 @@ Route::prefix('/')
 
         Route::get('contact', 'ContactController@index')
             ->name('contact');
+        
+        Route::get('course', 'CourseController@index')
+            ->name('course');
     });
 
 
