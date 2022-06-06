@@ -112,7 +112,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img
-                            class="w-100"
+                            class="w-100 h-50"
                             src="{{url('frontend/img/img_bahasa1.jpg')}}"
                             alt="Image"
                         />
@@ -141,7 +141,7 @@
                     </div>
                     <div class="carousel-item">
                         <img
-                            class="w-100"
+                            class="w-100 h-50"
                             src="{{url('frontend/img/img_bahasa2.jpg')}}"
                             alt="Image"
                         />
