@@ -159,10 +159,7 @@ Route::prefix('admin')
 Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home');
 
-<<<<<<< Updated upstream
-=======
-
-Route::prefix('/user')
+Route::prefix('/')
     ->namespace('User')
     ->group(function(){
         Route::get('/dashboard', 'DashboardController@index')
@@ -170,4 +167,3 @@ Route::prefix('/user')
         Route::get('/history', 'HistoryController@index')
             ->name('history');
     });
->>>>>>> Stashed changes
