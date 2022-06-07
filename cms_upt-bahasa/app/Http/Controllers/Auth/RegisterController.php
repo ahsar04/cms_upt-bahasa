@@ -61,7 +61,7 @@ class RegisterController extends Controller
             'address' => ['required', 'string'],
             'pas_photo' => ['required', 'string', 'max:255'],
             'identity_card' => ['required', 'string', 'max:255'],
-            'role' => ['required', 'string', 'max:5'],
+            'roles' => ['string', 'max:5'],
         ]);
     }
 
@@ -85,7 +85,7 @@ class RegisterController extends Controller
             'address' => $data['address'],
             'pas_photo' => $data['pas_photo'],
             'identity_card' => $data['identity_card'],
-            'role' => $data['role'],
+            'roles' => $data['roles'],
         ]);
     }
 }

@@ -51,7 +51,7 @@ Route::prefix('/')
 
 Route::prefix('admin')
     ->namespace('Admin')
-    ->middleware(['auth','admin'])
+    // ->middleware(['auth','admin'])
     ->group(function(){
         Route::get('/dashboard', 'DashboardController@index')
             ->name('dashboard');
@@ -158,5 +158,6 @@ Route::prefix('admin')
          ->name('training.delete');
     });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home');
+
