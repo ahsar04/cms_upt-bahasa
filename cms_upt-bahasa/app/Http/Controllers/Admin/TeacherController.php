@@ -67,6 +67,6 @@ class TeacherController extends Controller
     {
         $teaching_staff = Teacher::findorfail($id_teaching_staff);
         $teaching_staff->delete();
-        return back()->with('toast_success', 'Data Deleted Successfully');;
+        return back()->with('toast_success', 'Data Deleted Successfully');
     }
 }

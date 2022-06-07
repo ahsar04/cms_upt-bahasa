@@ -39,14 +39,14 @@
                                     <li>
                                         <a
                                             class="nav-link"
-                                            href="{{ route('member.internal') }}"
+                                            href="{{ route('internal') }}"
                                             >Internal</a
                                         >
                                     </li>
                                     <li>
                                         <a
                                             class="nav-link"
-                                            href="{{ route('member.external') }}"
+                                            href="{{ route('external') }}"
                                             >External</a
                                         >
                                     </li>

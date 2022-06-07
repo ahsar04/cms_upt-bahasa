@@ -48,7 +48,7 @@
                                                         <tr>
                                                             <th>No</th>
                                                             <th>NIP</th>
-                                                            <th>Fullame</th>
+                                                            <th>Fullname</th>
                                                             <th>Functional Position</th>
                                                             <th>Google Scholar</th>
                                                             <th>Phone</th>

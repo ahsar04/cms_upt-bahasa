@@ -72,20 +72,18 @@ Route::prefix('admin')
             ->name('teacher.delete');
 
         //Member Internal
-        Route::get('member/internal', 'InternalController@index')
-            ->name('member.internal');
-        Route::get('member/internal/add', 'InternalController@add')
+        Route::get('/member/internal', 'InternalController@index')
+            ->name('internal');
+        Route::get('/member/internal/add', 'InternalController@add')
             ->name('internal.add');
-        Route::get('member/internal/edit', 'InternalController@edit')
+        Route::get('/member/internal/edit/{id_member}', 'InternalController@edit')
             ->name('internal.edit');
-
-        //External
-        Route::get('member/external', 'ExternalController@index')
-            ->name('member.external');
-        Route::get('member/external/add', 'ExternalController@add')
-            ->name('external.add');
-        Route::get('member/external/edit', 'ExternalController@edit')
-            ->name('external.edit');
+        Route::post('/member/internal/save', 'InternalController@store')
+            ->name('internal.store');
+        Route::post('/member/internal/update/{id_member}', 'InternalController@update')
+            ->name('internal.update');
+        Route::get('/member/internal/delete/{id_member}', 'InternalController@destroy')
+            ->name('internal.delete');
         
         //News
         Route::get('/news', 'NewsController@index')
@@ -161,3 +159,15 @@ Route::prefix('admin')
 Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home');
 
+<<<<<<< Updated upstream
+=======
+
+Route::prefix('/user')
+    ->namespace('User')
+    ->group(function(){
+        Route::get('/dashboard', 'DashboardController@index')
+            ->name('dashboard');
+        Route::get('/history', 'HistoryController@index')
+            ->name('history');
+    });
+>>>>>>> Stashed changes
