@@ -27,31 +27,11 @@
                                     <span>Teacher</span></a
                                 >
                             </li>
-                            
                             <li>
                                 <a class="nav-link" href="{{route('member')}}"
                                     ><i class="fas fa-users"></i>
                                     <span>Member</span></a
                                 >
-<<<<<<< Updated upstream
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a
-                                            class="nav-link"
-                                            href="{{ route('internal') }}"
-                                            >Internal</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a
-                                            class="nav-link"
-                                            href="{{ route('external') }}"
-                                            >External</a
-                                        >
-                                    </li>
-                                </ul>
-=======
->>>>>>> Stashed changes
                             </li>
                             <li class="menu-header">Content</li>
                             <li>

@@ -72,7 +72,6 @@ Route::prefix('admin')
             ->name('teacher.delete');
 
         //Member Internal
-<<<<<<< Updated upstream
         Route::get('/member/internal', 'InternalController@index')
             ->name('internal');
         Route::get('/member/internal/add', 'InternalController@add')
@@ -85,7 +84,6 @@ Route::prefix('admin')
             ->name('internal.update');
         Route::get('/member/internal/delete/{id_member}', 'InternalController@destroy')
             ->name('internal.delete');
-=======
         Route::get('member', 'InternalController@index')
             ->name('member');
         Route::get('member/add', 'InternalController@add')
@@ -94,13 +92,13 @@ Route::prefix('admin')
             ->name('internal.edit');
 
         //External
-        // Route::get('member/external', 'ExternalController@index')
-        //     ->name('member.external');
-        // Route::get('member/external/add', 'ExternalController@add')
-        //     ->name('external.add');
-        // Route::get('member/external/edit', 'ExternalController@edit')
-        //     ->name('external.edit');
->>>>>>> Stashed changes
+        Route::get('member/external', 'ExternalController@index')
+            ->name('member.external');
+        Route::get('member/external/add', 'ExternalController@add')
+            ->name('external.add');
+        Route::get('member/external/edit', 'ExternalController@edit')
+            ->name('external.edit');
+
         
         //News
         Route::get('/news', 'NewsController@index')
