@@ -73,7 +73,7 @@
                                                             <td>{{ $item->address }}</td>
                                                             <td>{{ $item->facebook }}</td>
                                                             <td>{{ $item->instagram }}</td>
-                                                            <td>{{ $item->picture }}</td>
+                                                            <td><img src="{{ url('/img/teacher/'.$item->picture) }}" alt="picture" width="100px"></td>
                                                             <td>
                                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                                 <a

@@ -32,6 +32,13 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'headline_news' => 'required',
+            'description_news' => 'required',
+            'picture' => 'required|file|image|mimes:jpeg,jpg,png|max:1024',
+            'author' => 'required',
+        ]);
+
         $news = $request->picture;
         $namafile = $news->getClientOriginalName();
 
@@ -54,6 +61,13 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id_news)
     {
+        $this->validate($request, [
+            'headline_news' => 'required',
+            'description_news' => 'required',
+            'picture' => 'required|file|image|mimes:jpeg,jpg,png|max:1024',
+            'author' => 'required',
+        ]);
+
         $news = News::findorfail($id_news);
         $gambarAwal = $news->picture;
 

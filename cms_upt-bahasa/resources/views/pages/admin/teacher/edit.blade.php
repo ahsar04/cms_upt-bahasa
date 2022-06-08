@@ -23,7 +23,7 @@
                                 Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
                             </p> -->
                             
-                            <form action="{{ route('teacher.update', $teaching_staff->id_teaching_staff) }}" method="POST">
+                            <form action="{{ route('teacher.update', $teaching_staff->id_teaching_staff) }}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-12">
@@ -35,45 +35,49 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>NIP</label>
-                                                <input type="number" class="form-control" name="nip" value="{{ $teaching_staff->nip }}">
+                                                <input type="number" class="form-control" id="nip" name="nip" value="{{ $teaching_staff->nip }}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Fullname</label>
-                                                <input type="text" class="form-control" name="fullname" value="{{ $teaching_staff->fullname }}">
+                                                <input type="text" class="form-control" id="fullname" name="fullname" value="{{ $teaching_staff->fullname }}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Functional Position</label>
-                                                <input type="text" class="form-control" name="position" value="{{ $teaching_staff->position }}">
+                                                <input type="text" class="form-control" id="position" name="position" value="{{ $teaching_staff->position }}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Google Scholar</label>
-                                                <input type="text" class="form-control" name="google_scholar" value="{{ $teaching_staff->google_scholar }}">
+                                                <input type="text" class="form-control" id="google_scholar" name="google_scholar" value="{{ $teaching_staff->google_scholar }}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Phone</label>
-                                                <input type="number" class="form-control" name="phone" value="{{ $teaching_staff->phone }}">
+                                                <input type="number" class="form-control" id="phone" name="phone" value="{{ $teaching_staff->phone }}">
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Email</label>
-                                                <input type="email" class="form-control" name="email" value="{{ $teaching_staff->email }}">
+                                                <input type="email" class="form-control" id="email" name="email" value="{{ $teaching_staff->email }}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Address</label>
-                                                <input type="text" class="form-control" name="address" value="{{ $teaching_staff->address }}">
+                                                <input type="text" class="form-control" id="address" name="address" value="{{ $teaching_staff->address }}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Facebook</label>
-                                                <input type="text" class="form-control" name="facebook" value="{{ $teaching_staff->facebook }}">
+                                                <input type="text" class="form-control" id="facebook" name="facebook" value="{{ $teaching_staff->facebook }}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Instagram</label>
-                                                <input type="text" class="form-control" name="instagram" value="{{ $teaching_staff->instagram }}">
+                                                <input type="text" class="form-control" id="instagram" name="instagram" value="{{ $teaching_staff->instagram }}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Picture</label>
-                                                <input type="file" class="form-control" name="picture" value="{{ $teaching_staff->picture }}">
+                                                <img src="{{ asset('/img/teacher/'.$teaching_staff->picture) }}" width="200px" class="d-block">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Change Picture</label>
+                                                <input type="file" class="form-control" id="picture" name="picture" value="{{ $teaching_staff->picture }}">
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a

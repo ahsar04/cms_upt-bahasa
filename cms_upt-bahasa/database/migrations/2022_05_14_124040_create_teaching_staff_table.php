@@ -15,16 +15,16 @@ class CreateTeachingStaffTable extends Migration
     {
         Schema::create('teaching_staff', function (Blueprint $table) {
             $table->bigIncrements('id_teaching_staff');
-            $table->text('nip');
-            $table->text('fullname');
-            $table->text('position');
-            $table->text('google_scholar');
-            $table->text('phone');
-            $table->text('email');
-            $table->text('address');
-            $table->text('facebook');
-            $table->text('instagram');
-            $table->text('picture');
+            $table->string('nip', 25);
+            $table->string('fullname', 50);
+            $table->string('position', 20);
+            $table->string('google_scholar', 30);
+            $table->string('phone', 12);
+            $table->string('email', 30);
+            $table->string('address', 50);
+            $table->string('facebook', 20);
+            $table->string('instagram', 20);
+            $table->string('picture', 30);
             $table->timestamps();
         });
     }
