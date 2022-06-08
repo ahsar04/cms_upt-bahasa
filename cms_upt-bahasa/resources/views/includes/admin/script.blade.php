@@ -23,7 +23,8 @@
         <script src="{{url('backend/node_modules/datatables/media/js/jquery.dataTables.min.js')}}"></script>
         <script src="{{url('backend/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
         <script src="{{url('backend/node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js')}}"></script>
-        <script src="../node_modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+        <script src="{{url('backend/node_modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js')}}"></script>
+        <script src="{{url('backend/node_modules/fullcalendar/dist/fullcalendar.min.js')}}"></script>
 
         <!-- Template JS File -->
         <script src="{{url('backend/assets/js/scripts.js')}}"></script>
@@ -31,3 +32,4 @@
 
         <!-- Page Specific JS File -->
         <script src="{{url('backend/assets/js/page/modules-datatables.js')}}"></script>
+        <script src="{{url('backend/assets/js/page/modules-calendar.js')}}"></script>

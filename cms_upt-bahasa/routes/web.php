@@ -55,7 +55,7 @@ Route::prefix('admin')
     ->group(function(){
         Route::get('/dashboard', 'DashboardController@index')
             ->name('dashboard');
-        Route::get('/', 'DashboardController@index')
+        Route::get('/dashboard', 'DashboardController@index')
             ->name('admin');
         //Teacher
         Route::get('/teacher', 'TeacherController@index')
@@ -98,7 +98,12 @@ Route::prefix('admin')
             ->name('external.add');
         Route::get('member/external/edit', 'ExternalController@edit')
             ->name('external.edit');
-
+        // Route::get('member/external', 'ExternalController@index')
+        //     ->name('member.external');
+        // Route::get('member/external/add', 'ExternalController@add')
+        //     ->name('external.add');
+        // Route::get('member/external/edit', 'ExternalController@edit')
+        //     ->name('external.edit');
         
         //News
         Route::get('/news', 'NewsController@index')

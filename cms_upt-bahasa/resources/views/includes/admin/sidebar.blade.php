@@ -9,7 +9,7 @@
                         <ul class="sidebar-menu">
                             <li class="menu-header">Dashboard</li>
                             <li>
-                                <a class="nav-link" href="{{ route('dashboard') }}"
+                                <a class="nav-link" href="{{ route('admin') }}"
                                     ><i class="fas fa-table"></i>
                                     <span>Dashboard</span></a
                                 >
@@ -17,7 +17,7 @@
                             <li class="menu-header">Master</li>
                             <li>
                                 <a class="nav-link" href="{{--route('teacher')--}}"
-                                    ><i class="fas fa-user-graduate"></i>
+                                    ><i class="fas fa-user-cog"></i>
                                     <span>Admin</span></a
                                 >
                             </li>
@@ -58,12 +58,12 @@
                                     <span>Procedure</span></a
                                 >
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a class="nav-link" href="{{ route('schedule') }}"
                                     ><i class="fas fa-calendar-alt"></i>
                                     <span>Schedule</span></a
                                 >
-                            </li>
+                            </li> -->
                             <li class="menu-header">Feedback</li>
                             <li>
                                 <a class="nav-link" href="{{ route('feedback') }}"
