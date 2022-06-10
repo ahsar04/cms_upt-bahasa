@@ -9,7 +9,7 @@
                             <h1>Teaching Staff</h1>
                             <div class="section-header-breadcrumb">
                                 <div class="breadcrumb-item active">
-                                    <a href="{{ route('dashboard') }}">Dashboard</a>
+                                    <a href="{{ route('teacher') }}">Teaching Staff</a>
                                 </div>
                                 <div class="breadcrumb-item">
                                     <a>Add Teaching Staff</a>
