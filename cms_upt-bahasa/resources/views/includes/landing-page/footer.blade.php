@@ -17,10 +17,9 @@
                                 </h3>
                             </a>
                             <p class="mt-3 mb-4">
-                                Lorem diam sit erat dolor elitr et, diam lorem
-                                justo amet clita stet eos sit. Elitr dolor duo
-                                lorem, elitr clita ipsum sea. Diam amet erat
-                                lorem stet eos. Diam amet et kasd eos duo.
+                            UPT Bahasa merupakan sistem informasi berbasis control management system
+                            milik Unit Bahasa Politeknik Negeri Jember yang bertujuan untuk membantu
+                            memudahkan penyampaian informasi yang ada di UPT Bahasa kepada pengguna.
                             </p>
                             <!-- <form action="">
                             <div class="input-group">

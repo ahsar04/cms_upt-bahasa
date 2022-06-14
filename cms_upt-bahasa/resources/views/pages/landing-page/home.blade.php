@@ -145,11 +145,12 @@
                             </h1>
                         </div>
                         <p class="mb-4">
-                            Tempor erat elitr rebum at clita. Diam dolor diam
-                            ipsum et tempor sit. Aliqu diam amet diam et eos
-                            labore. Clita erat ipsum et lorem et sit, sed stet
-                            no labore lorem sit. Sanctus clita duo justo et
-                            tempor eirmod magna dolore erat amet
+                            UPT Bahasa merupakan sistem informasi berbasis control management system
+                            milik Unit Bahasa Politeknik Negeri Jember yang bertujuan untuk membantu
+                            memudahkan penyampaian informasi yang ada di UPT Bahasa kepada pengguna.
+                            UPT Bahasa merupakan unit pelaksana teknis di bidang pengembangan 
+                            pembelajaran dan layanan kebahasaan yang berada di bawah dan bertanggung jawab
+                            kepada Direktur dan dikoordinasikan oleh Wakil Direktur Bidang Akademik.
                         </p>
                         <div class="row g-0 mb-3">
                             <div

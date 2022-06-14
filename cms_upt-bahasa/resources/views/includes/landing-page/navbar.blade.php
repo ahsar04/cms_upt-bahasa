@@ -98,8 +98,8 @@
                             >Contact</a
                         >
                     </div>
-                    <a href="#" class="btn btn-primary py-2 px-4 ms-3"
-                        >Sign Up</a
+                    <a href="{{ route( 'login')}}" class="btn btn-primary py-2 px-4 ms-3"
+                        >Sign In</a
                     >
                 </div>
             </nav>
