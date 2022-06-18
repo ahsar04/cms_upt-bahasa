@@ -19,10 +19,7 @@
                         </div>
 
                         <div class="section-body">
-                            <!-- <p class="section-lead">
-                                Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
-                            </p> -->
-                            <form action="{{ route('regconfirm', $item->id_training_registration) }}" method="POST">
+                            <form action="{{ route('regconfirm') }}" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col-12">
@@ -82,4 +79,5 @@
                             </div>
                     </section>
                 </div>
+@include('sweetalert::alert')       
 @endsection

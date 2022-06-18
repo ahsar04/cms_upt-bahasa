@@ -79,9 +79,21 @@ Route::prefix('admin')
         //Member
         Route::get('/member', 'MemberController@index')
             ->name('member');
-        Route::get('/member/add', 'MemberController@add')
-            ->name('member.add');
+        Route::get('/member/delete/{id}', 'MemberController@destroy')
+            ->name('member.delete');
+
+        //Admin
+        Route::get('/administrator', 'AdminController@index')
+            ->name('administrator');
+        Route::get('/administrator/delete/{id}', 'AdminController@destroy')
+            ->name('administrator.delete');
         
+        //Profile Admin
+        Route::get('/profileadmin', 'ProfileAdminController@index')
+            ->name('profileadmin');
+        Route::post('/profileadmin/update', 'ProfileAdminController@update')
+            ->name('profileadmin.update');
+
         //News
         Route::get('/news', 'NewsController@index')
             ->name('news');
@@ -110,13 +122,15 @@ Route::prefix('admin')
         Route::get('/service/delete/{id_service}', 'ServiceController@destroy')
             ->name('service.delete');
 
-        // Schedule
-        Route::get('/schedule', 'ScheduleController@index')
-         ->name('schedule');
-        Route::get('/schedule/add', 'ScheduleController@add')
-         ->name('schedule.add');
-        Route::get('/schedule/edit', 'ScheduleController@edit')
-         ->name('schedule.edit');
+        // Register Training
+        Route::get('/registraining', 'RegisTrainingController@index')
+            ->name('registraining');
+        Route::get('/registraining/edit/{id_training_registration}', 'RegisTrainingController@edit')
+            ->name('registraining.edit');
+        Route::post('/registraining/update/{id_training_registration}', 'RegisTrainingController@update')
+            ->name('registraining.update');
+        Route::get('/registraining/delete/{id_training_registration}', 'RegisTrainingController@destroy')
+            ->name('registraining.delete');
 
         //Feedback
         Route::get('/feedback', 'FeedbackController@index')
@@ -174,6 +188,6 @@ Route::prefix('/')
         Route::post('/regconfirm', 'RegTrainingController@store')
             ->name('regconfirm');
         
-        Route::get('/qrcode/{id_training_registration}', 'QRCodeController@index')
-            ->name('/qrcode');
+        Route::get('/qrcode', 'QRCodeController@index')
+            ->name('qrcode');
     });

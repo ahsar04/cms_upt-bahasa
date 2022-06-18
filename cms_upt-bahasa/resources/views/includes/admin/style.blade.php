@@ -25,6 +25,7 @@
         />
         <link rel="stylesheet" href="{{url('backend/node_modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css')}}">
         <link rel="stylesheet" href="{{url('backend/node_modules/fullcalendar/dist/fullcalendar.min.css')}}">
+        <link rel="stylesheet" href="{{url('backend/node_modules/summernote/dist/summernote-bs4.css')}}">
 
 
         <!-- Template CSS -->

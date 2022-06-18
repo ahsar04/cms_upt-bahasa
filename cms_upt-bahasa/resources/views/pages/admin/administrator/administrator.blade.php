@@ -1,15 +1,15 @@
 @extends('layouts.admin.admin')
 
-@section('titlePage', 'UPT Bahasa | Schedule')
+@section('titlePage', 'UPT Bahasa | Admin')
 @section('content')
                     <!-- Main Content -->
                 <div class="main-content">
                     <section class="section">
                         <div class="section-header">
-                            <h1>Schedule</h1>
+                            <h1>Admin</h1>
                             <div class="section-header-breadcrumb">
-                                <div class="breadcrumb-item">
-                                    <a>Schedule</a>
+                                <div class="breadcrumb-item active">
+                                    <a>Admin</a>
                                 </div>
                                 <!-- <div class="breadcrumb-item">DataTables</div> -->
                             </div>
@@ -27,14 +27,14 @@
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h4>Schedule</h4>
+                                            <h4>Admin</h4>
                                         </div>
                                         <div class="card-body">
-                                            <a
-                                                href="{{ route('schedule.add') }}"
+                                            <!-- <a
+                                                href="{{--route('member.add')--}}"
                                                 class="btn btn-success"
                                             >+ Add Data
-                                            </a>
+                                            </a> -->
                                         </div>
                                         <div class="card-body">
                                             <div class="table-responsive">
@@ -44,38 +44,45 @@
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>Headline Schedule</th>
-                                                            <th>Description</th>
-                                                            <th>Opening Date</th>
-                                                            <th>Deadline</th>
-                                                            <th>Picture</th>
+                                                            <th>Name</th>
+                                                            <th>Identity Card</th>
+                                                            <th>Phone</th>
+                                                            <th>Email</th>
+                                                            <th>Gender</th>
+                                                            <th>Place Of Birth</th>
+                                                            <th>Date Of Birth</th>
+                                                            <th>Last Education</th>
+                                                            <th>Address</th>
+                                                            <th>Pas Photo</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                    @foreach ($admin as $item)
                                                         <tr>
-                                                            <td>1.</td>
-                                                            <td>Korean Language Course Opening</td>
-                                                            <td>UPT Bahasa POLIJE opens a special Korean language class online and offline</td>
-                                                            <td>2022-04-30</td>
-                                                            <td>2022-05-30</td>
-                                                            <td>course.jpg</td>
+                                                            <td>{{ $loop->iteration }}</td>
+                                                            <td>{{ $item->name }}</td>
+                                                            <td>{{ $item->identity_card }}</td>
+                                                            <td>{{ $item->phone }}</td>
+                                                            <td>{{ $item->email }}</td>
+                                                            <td>{{ $item->gender }}</td>
+                                                            <td>{{ $item->place_of_birth }}</td>
+                                                            <td>{{ $item->date_of_birth }}</td>
+                                                            <td>{{ $item->last_education }}</td>
+                                                            <td>{{ $item->address }}</td>
+                                                            <td>{{ $item->pas_photo }}</td>
                                                             <td>
                                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                                 <a
-                                                                    href="{{ route('schedule.edit', $item->id_schedule) }}"
-                                                                    class="btn btn-primary"
-                                                                ><i class="fas fa-edit"></i>
-                                                                </a>
-                                                                <a
                                                                     onclick="return confirm('Are you sure?')"
-                                                                    href="{{ route('schedule.delete', $item->id_schedule) }}"
+                                                                    href="{{ route('administrator.delete', $item->id) }}"
                                                                     class="btn btn-danger"
                                                                 ><i class="fas fa-trash"></i>
                                                                 </a>
                                                             </div>
                                                             </td>
                                                         </tr>
+                                                    @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -86,4 +93,5 @@
                         </div>
                     </section>
                 </div>
+@include('sweetalert::alert')                   
 @endsection

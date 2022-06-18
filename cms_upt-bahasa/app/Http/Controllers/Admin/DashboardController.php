@@ -21,6 +21,7 @@ class DashboardController extends Controller
         $service = DB::table('service')->count();
         $training = DB::table('training')->count();
         $procedure = DB::table('procedure')->count();
-        return view('pages.admin.dashboard', compact('admin', 'users', 'teaching_staff', 'news', 'service', 'training', 'procedure'));
+        $registraining = DB::table('training_registration')->count();
+        return view('pages.admin.dashboard', compact('admin', 'users', 'teaching_staff', 'news', 'service', 'training', 'procedure', 'registraining'));
     }
 }

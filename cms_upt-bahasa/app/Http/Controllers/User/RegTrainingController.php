@@ -26,6 +26,15 @@ class RegTrainingController extends Controller
             'status' => 'required',
             'note' => 'required',
         ]);
+
+        $training_registration = TrainingRegistration::where([
+            ['id', '=', $request->id],
+            ['id_training', '=', $request->id_training]
+        ])->first();
+
+        if ($training_registration) {
+            return back()->with('toast_error', 'You are already registered');
+        }
         
         TrainingRegistration::create([
             'id' => $request->id,
@@ -34,6 +43,7 @@ class RegTrainingController extends Controller
             'note' => $request->note,
         ]);
 
-        return redirect('qrcode')->with('toast_success', 'Registration Successfully');
+        //$training_registration = TrainingRegistration::findorfail($request->id_training_registration);
+        return redirect()->route('qrcode', ['id' => $request->id, 'id_training' => $request->id_training])->with('toast_success', 'Registration Successfully');
     }
 }

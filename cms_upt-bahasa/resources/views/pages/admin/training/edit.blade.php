@@ -38,12 +38,17 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Service Type</label>
-                                                <select class="form-control" name="service_type" value="{{ $training->service_type }}">
+                                                <select class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type" value="{{ $training->service_type }}">
                                                     <option>- Select Service Type -</option>
-                                                    <option>Course</option>
-                                                    <option>EPT (English Proficiency Test)</option>
-                                                    <option>Placement Test</option>
+                                                    <option <?php if($training['service_type']=='Course') echo 'selected'?>>Course</option>
+                                                    <option <?php if($training['service_type']=='EPT (English Proficiency Test)') echo 'selected'?>>EPT (English Proficiency Test)</option>
+                                                    <option <?php if($training['service_type']=='Placement Test') echo 'selected'?>>Placement Test</option>
                                                 </select>
+                                                @error('service_type')
+                                                <div class="invalid-feedback">
+                                                    {{$message}}
+                                                </div>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Description</label>

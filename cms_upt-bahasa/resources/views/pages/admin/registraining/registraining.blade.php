@@ -1,15 +1,15 @@
 @extends('layouts.admin.admin')
 
-@section('titlePage', 'UPT Bahasa | Feedback')
+@section('titlePage', 'UPT Bahasa | Training Registration')
 @section('content')
                     <!-- Main Content -->
                 <div class="main-content">
                     <section class="section">
                         <div class="section-header">
-                            <h1>Feedback</h1>
+                            <h1>Training Registration</h1>
                             <div class="section-header-breadcrumb">
                                 <div class="breadcrumb-item">
-                                    <a>Feedback</a>
+                                    <a>Training Registration</a>
                                 </div>
                                 <!-- <div class="breadcrumb-item">DataTables</div> -->
                             </div>
@@ -27,7 +27,7 @@
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h4>Feedback</h4>
+                                            <h4>Training Registration</h4>
                                         </div>
                                         <div class="card-body">
                                             <div class="table-responsive">
@@ -37,28 +37,37 @@
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>Name</th>
-                                                            <th>Email</th>
-                                                            <th>Subject</th>
-                                                            <th>Feedback</th>
+                                                            <th>Training</th>
+                                                            <th>Fullname</th>
+                                                            <th>E-mail Address</th>
+                                                            <th>Status</th>
+                                                            <th>Note</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        @foreach ($registraining as $item)
                                                         <tr>
-                                                            @foreach ($feedback as $item)   
                                                             <td>{{ $loop->iteration }}</td>
+                                                            <td>{{ $item->training }}</td>
                                                             <td>{{ $item->name }}</td>
                                                             <td>{{ $item->email }}</td>
-                                                            <td>{{ $item->subject }}</td>
-                                                            <td>{{ $item->feedback }}</td>
+                                                            <td>{{ $item->status }}</td>
+                                                            <td>{{ $item->note }}</td>
                                                             <td>
-                                                                <a 
-                                                                    class="btn btn-danger"
+                                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                                <a
+                                                                    href="{{ route('registraining.edit', $item->id_training_registration) }}"
+                                                                    class="btn btn-primary"
+                                                                ><i class="fas fa-edit"></i>
+                                                                </a>
+                                                                <a
                                                                     onclick="return confirm('Are you sure?')"
-                                                                    href="{{ route('feedback.delete', $item->id_feedback) }}"
+                                                                    href="{{ route('registraining.delete', $item->id_training_registration) }}"
+                                                                    class="btn btn-danger"
                                                                 ><i class="fas fa-trash"></i>
-                                                                </a>    
+                                                                </a>
+                                                            </div>
                                                             </td>
                                                         </tr>
                                                         @endforeach

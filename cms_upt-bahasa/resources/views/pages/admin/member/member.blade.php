@@ -1,15 +1,15 @@
 @extends('layouts.admin.admin')
 
-@section('titlePage', 'UPT Bahasa | Feedback')
+@section('titlePage', 'UPT Bahasa | Member')
 @section('content')
                     <!-- Main Content -->
                 <div class="main-content">
                     <section class="section">
                         <div class="section-header">
-                            <h1>Feedback</h1>
+                            <h1>Member</h1>
                             <div class="section-header-breadcrumb">
-                                <div class="breadcrumb-item">
-                                    <a>Feedback</a>
+                                <div class="breadcrumb-item active">
+                                    <a>Member</a>
                                 </div>
                                 <!-- <div class="breadcrumb-item">DataTables</div> -->
                             </div>
@@ -27,7 +27,14 @@
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h4>Feedback</h4>
+                                            <h4>Member</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <!-- <a
+                                                href="{{--route('member.add')--}}"
+                                                class="btn btn-success"
+                                            >+ Add Data
+                                            </a> -->
                                         </div>
                                         <div class="card-body">
                                             <div class="table-responsive">
@@ -38,30 +45,44 @@
                                                         <tr>
                                                             <th>No</th>
                                                             <th>Name</th>
+                                                            <th>Identity Card</th>
+                                                            <th>Phone</th>
                                                             <th>Email</th>
-                                                            <th>Subject</th>
-                                                            <th>Feedback</th>
+                                                            <th>Gender</th>
+                                                            <th>Place Of Birth</th>
+                                                            <th>Date Of Birth</th>
+                                                            <th>Last Education</th>
+                                                            <th>Address</th>
+                                                            <th>Pas Photo</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                    @foreach ($users as $item)
                                                         <tr>
-                                                            @foreach ($feedback as $item)   
                                                             <td>{{ $loop->iteration }}</td>
                                                             <td>{{ $item->name }}</td>
+                                                            <td>{{ $item->identity_card }}</td>
+                                                            <td>{{ $item->phone }}</td>
                                                             <td>{{ $item->email }}</td>
-                                                            <td>{{ $item->subject }}</td>
-                                                            <td>{{ $item->feedback }}</td>
+                                                            <td>{{ $item->gender }}</td>
+                                                            <td>{{ $item->place_of_birth }}</td>
+                                                            <td>{{ $item->date_of_birth }}</td>
+                                                            <td>{{ $item->last_education }}</td>
+                                                            <td>{{ $item->address }}</td>
+                                                            <td>{{ $item->pas_photo }}</td>
                                                             <td>
-                                                                <a 
-                                                                    class="btn btn-danger"
+                                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                                <a
                                                                     onclick="return confirm('Are you sure?')"
-                                                                    href="{{ route('feedback.delete', $item->id_feedback) }}"
+                                                                    href="{{ route('member.delete', $item->id) }}"
+                                                                    class="btn btn-danger"
                                                                 ><i class="fas fa-trash"></i>
-                                                                </a>    
+                                                                </a>
+                                                            </div>
                                                             </td>
                                                         </tr>
-                                                        @endforeach
+                                                    @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -72,5 +93,5 @@
                         </div>
                     </section>
                 </div>
-@include('sweetalert::alert') 
+@include('sweetalert::alert')                   
 @endsection

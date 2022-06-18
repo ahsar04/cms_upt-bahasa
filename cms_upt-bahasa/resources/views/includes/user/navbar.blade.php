@@ -250,7 +250,7 @@
                             >
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="dropdown-title">
-                                    Admin
+                                    User
                                 </div>
                                 <a
                                     href="{{ route('profile.edit') }}"
