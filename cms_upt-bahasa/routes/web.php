@@ -161,4 +161,17 @@ Route::prefix('/')
             ->name('dashboard');
         Route::get('/history', 'HistoryController@index')
             ->name('history');
+        Route::get('/profile', 'UserController@edit')
+            ->name('profile.edit');
+        Route::post('/profile/update', 'UserController@update')
+            ->name('profile.update');
+
+        Route::get('/regtraining/{id_training}', 'RegTrainingController@index')
+            ->name('regtraining');
+
+        Route::post('/regconfirm', 'RegTrainingController@store')
+            ->name('regconfirm');
+        
+        Route::get('/qrcode/{id_training_registration}', 'QRCodeController@index')
+            ->name('/qrcode');
     });

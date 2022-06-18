@@ -10,9 +10,9 @@
             </div>
            
             <div class="row g-5">
+                @foreach ($teaching_staff as $item)
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                     <div class="team-item bg-light rounded overflow-hidden">
-                    @foreach ($teaching_staff as $item)
                         <div class="team-img position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="{{url('frontend/img/team-1.jpg')}}" alt="">
                             <div class="team-social">
@@ -26,9 +26,9 @@
                             <h4 class="text-primary">{{ $item->fullname }}</h4>
                             <p class="text-uppercase m-0">{{ $item->position }}</p>
                         </div>
-                    @endforeach
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>

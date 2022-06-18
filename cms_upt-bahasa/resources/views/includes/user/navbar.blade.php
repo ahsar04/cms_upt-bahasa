@@ -233,6 +233,7 @@
                             </div>
                         </li>
                         <li class="dropdown">
+                            
                             <a
                                 href="#"
                                 data-toggle="dropdown"
@@ -252,7 +253,8 @@
                                     Admin
                                 </div>
                                 <a
-                                    href="features-profile.html"
+                                    href="{{ route('profile.edit') }}"
+                                    type="button"
                                     class="dropdown-item has-icon"
                                 >
                                     <i class="far fa-user"></i> Profile

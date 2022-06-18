@@ -123,7 +123,7 @@
                                 <h5
                                     class="text-white text-uppercase mb-3 animated slideInDown"
                                 >
-                                    Wellcome to
+                                    Welcome to
                                 </h5>
                                 <h1
                                     class="display-1 text-white mb-md-4 animated zoomIn"
