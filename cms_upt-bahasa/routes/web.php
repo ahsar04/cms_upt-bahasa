@@ -15,7 +15,7 @@ Route::prefix('/')
     ->namespace('LandingPage')
     ->group(function(){
         Route::get('/', 'HomeController@index')
-            ->name('home');
+            ->name('landingpage');
 
         Route::get('/visimisi', 'VisiMisiController@index')
             ->name('visimisi');
@@ -46,6 +46,9 @@ Route::prefix('/')
         
         Route::get('course', 'CourseController@index')
             ->name('course');
+
+        Route::get('newsdetail/{id_news}', 'NewsDetailController@index')
+            ->name('newsdetail');
     });
 
 

@@ -21,12 +21,6 @@
                             milik Unit Bahasa Politeknik Negeri Jember yang bertujuan untuk membantu
                             memudahkan penyampaian informasi yang ada di UPT Bahasa kepada pengguna.
                             </p>
-                            <!-- <form action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control border-white p-3" placeholder="Your Email">
-                                <button class="btn btn-dark">Sign Up</button>
-                            </div>
-                        </form> -->
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-6">
@@ -99,23 +93,23 @@
                                 <div
                                     class="link-animated d-flex flex-column justify-content-start"
                                 >
-                                    <a class="text-light mb-2" href="#"
+                                    <a class="text-light mb-2" href="{{ route('home')}}"
                                         ><i
                                             class="bi bi-arrow-right text-primary me-2"
                                         ></i
                                         >Home</a
                                     >
-                                    <a class="text-light mb-2" href="#"
+                                    <a class="text-light mb-2" href="{{ route('visimisi')}}"
                                         ><i
                                             class="bi bi-arrow-right text-primary me-2"
                                         ></i
-                                        >Profile</a
+                                        >Visi Misi</a
                                     >
-                                    <a class="text-light mb-2" href="#"
+                                    <a class="text-light mb-2" href="{{ route('teachingstaff')}}"
                                         ><i
                                             class="bi bi-arrow-right text-primary me-2"
                                         ></i
-                                        >News</a
+                                        >Teaching Staff</a
                                     >
                                 </div>
                             </div>
@@ -133,13 +127,13 @@
                                         ></i
                                         >Our Services</a
                                     >
-                                    <a class="text-light mb-2" href="#"
+                                    <a class="text-light mb-2" href="{{ route( 'login')}}"
                                         ><i
                                             class="bi bi-arrow-right text-primary me-2"
                                         ></i
-                                        >Procedure</a
+                                        >New Account</a
                                     >
-                                    <a class="text-light" href="#"
+                                    <a class="text-light" href="{{ route('contact')}}"
                                         ><i
                                             class="bi bi-arrow-right text-primary me-2"
                                         ></i

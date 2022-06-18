@@ -112,14 +112,14 @@
                                         ><i
                                             class="far fa-calendar-alt text-primary me-2"
                                         ></i
-                                        >{{ $item->created_at }}</small
+                                        >{{ date('d-m-y',strtotime($item->created_at))}}</small
                                     >
                                 </div>
                                 <h4 class="mb-3">{{ $item->headline_news}}</h4>
                                 <p>
                                     {{ $item->description_news}}
                                 </p>
-                                <a class="text-uppercase" href="news.html"
+                                <a class="text-uppercase" href="{{ route('newsdetail', $item->id_news)}}"
                                     >Read More <i class="bi bi-arrow-right"></i
                                 ></a>
                             </div>

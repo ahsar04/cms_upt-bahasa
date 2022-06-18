@@ -30,7 +30,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="{{ route('home') }}" class="nav-item nav-link active"
+                        <a href="{{ route('landingpage') }}" class="nav-item nav-link active"
                             >Home</a
                         >
                         <div class="nav-item dropdown">
@@ -160,12 +160,12 @@
                                     Who We Are
                                 </h1>
                                 <a
-                                    href="quote.html"
+                                    href="{{ route('visimisi') }}"
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInCenter"
                                     >Visi Misi</a
                                 >
                                 <a
-                                    href=""
+                                    href="{{route('teachingstaff')}}"
                                     class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight"
                                     >Teaching Staff</a
                                 >
@@ -193,7 +193,7 @@
                                     Read News
                                 </h1>
                                 <a
-                                    href="quote.html"
+                                    href="{{ route('home')}}"
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInCenter"
                                     >Read More</a
                                 >
