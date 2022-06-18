@@ -17,12 +17,12 @@
                                 <i class="fa fa-users text-primary"></i>
                             </div>
                             <div class="ps-4">
-                                <h5 class="text-white mb-0">Member Test</h5>
+                                <h5 class="text-white mb-0">Member</h5>
                                 <h1
                                     class="text-white mb-0"
                                     data-toggle="counter-up"
                                 >
-                                    12345
+                                {{ $users }}
                                 </h1>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                             <div class="ps-4">
                                 <h5 class="text-primary mb-0">Data Teacher</h5>
                                 <h1 class="mb-0" data-toggle="counter-up">
-                                    12345
+                                {{ $teaching_staff }}
                                 </h1>
                             </div>
                         </div>
@@ -58,12 +58,12 @@
                                 <i class="fa fa-award text-primary"></i>
                             </div>
                             <div class="ps-4">
-                                <h5 class="text-white mb-0">Pass Toefl</h5>
+                                <h5 class="text-white mb-0">Training Registration</h5>
                                 <h1
                                     class="text-white mb-0"
                                     data-toggle="counter-up"
                                 >
-                                    12345
+                                {{ $regtraining }}
                                 </h1>
                             </div>
                         </div>
@@ -180,16 +180,7 @@
                                 </h5>
                             </div>
                         </div>
-                        <!-- <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                            <i class="fa fa-phone-alt text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Call to ask any question</h5>
-                            <h4 class="text-primary mb-0">+012 345 6789</h4>
-                        </div>
-                    </div> -->
-                        <!-- <a href="quote.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Request A Quote</a> -->
+                       
                     </div>
                     <div class="col-lg-5" style="min-height: 500px">
                         <div class="position-relative h-100">
