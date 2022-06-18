@@ -30,13 +30,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="{{ route('landingpage') }}" class="nav-item nav-link active"
+                        <a href="{{ route('landingpage') }}" class="nav-item nav-link {{ set_active('landingpage')}}"
                             >Home</a
                         >
                         <div class="nav-item dropdown">
                             <a
                                 href="#"
-                                class="nav-link dropdown-toggle"
+                                class="nav-link dropdown-toggle {{ set_active(['visimisi', 'teachingstaff'])}}"
                                 data-bs-toggle="dropdown"
                                 >Profile</a
                             >
@@ -55,7 +55,7 @@
                         <div class="nav-item dropdown">
                             <a
                                 href="#"
-                                class="nav-link dropdown-toggle"
+                                class="nav-link dropdown-toggle {{ set_active(['ept', 'placement-test', 'course'])}}"
                                 data-bs-toggle="dropdown"
                                 >Services</a
                             >
@@ -75,7 +75,7 @@
                         <div class="nav-item dropdown">
                             <a
                                 href="#"
-                                class="nav-link dropdown-toggle"
+                                class="nav-link dropdown-toggle {{ set_active(['new-account', 'test_skema', 'test-result', 'certificate'])}}"
                                 data-bs-toggle="dropdown"
                                 >Procedure</a
                             >
@@ -94,7 +94,7 @@
                                 >
                             </div>
                         </div>
-                        <a href="{{ route('contact')}}" class="nav-item nav-link"
+                        <a href="{{ route('contact')}}" class="nav-item nav-link {{ set_active('contact')}}"
                             >Contact</a
                         >
                     </div>
