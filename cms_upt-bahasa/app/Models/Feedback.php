@@ -10,6 +10,6 @@ class Feedback extends Model
     protected $table = 'feedback';
     protected $primaryKey = 'id_feedback';
     protected $fillable = [
-        'email', 'feedback',
+        'name' ,'email', 'subject', 'feedback',
     ];
 }

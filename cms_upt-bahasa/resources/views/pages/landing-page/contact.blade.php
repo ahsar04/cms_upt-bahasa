@@ -75,13 +75,15 @@
                 </div>
                 <div class="row g-5">
                     <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
-                        <form>
+                        <form action="{{ route('contact.store') }}" method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <input
                                         type="text"
                                         class="form-control border-0 bg-light px-4"
                                         placeholder="Your Name"
+                                        id="name" name="name"
                                         style="height: 55px"
                                     />
                                 </div>
@@ -90,6 +92,7 @@
                                         type="email"
                                         class="form-control border-0 bg-light px-4"
                                         placeholder="Your Email"
+                                        id="email" name="email"
                                         style="height: 55px"
                                     />
                                 </div>
@@ -98,6 +101,7 @@
                                         type="text"
                                         class="form-control border-0 bg-light px-4"
                                         placeholder="Subject"
+                                        id="subject" name="subject"
                                         style="height: 55px"
                                     />
                                 </div>
@@ -106,6 +110,7 @@
                                         class="form-control border-0 bg-light px-4 py-3"
                                         rows="4"
                                         placeholder="Message"
+                                        id="feedback" name="feedback"
                                     ></textarea>
                                 </div>
                                 <div class="col-12">

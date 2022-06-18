@@ -43,6 +43,8 @@ Route::prefix('/')
 
         Route::get('contact', 'ContactController@index')
             ->name('contact');
+        Route::post('/contact/save', 'ContactController@store')
+            ->name('contact.store');
         
         Route::get('course', 'CourseController@index')
             ->name('course');
