@@ -174,6 +174,6 @@ Route::prefix('/')
         Route::post('/regconfirm', 'RegTrainingController@store')
             ->name('regconfirm');
         
-        Route::get('/qrcode/{id_training_registration}', 'QRCodeController@index')
-            ->name('/qrcode');
+        Route::get('/qrcode', 'QRCodeController@index')
+            ->name('qrcode');
     });
