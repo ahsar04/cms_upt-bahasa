@@ -15,9 +15,9 @@ class CreateProcedureTable extends Migration
     {
         Schema::create('procedure', function (Blueprint $table) {
             $table->bigIncrements('id_procedure');
-            $table->text('headline_procedure');
+            $table->string('headline_procedure', 50);
             $table->longText('description_procedure');
-            $table->text('link_procedure');
+            $table->string('link_procedure', 50);
             $table->timestamps();
         });
     }

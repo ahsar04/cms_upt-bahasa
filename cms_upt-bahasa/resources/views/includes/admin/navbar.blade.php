@@ -252,7 +252,7 @@
                                     Admin
                                 </div>
                                 <a
-                                    href="features-profile.html"
+                                    href="{{ route('profileadmin') }}"
                                     class="dropdown-item has-icon"
                                 >
                                     <i class="far fa-user"></i> Profile

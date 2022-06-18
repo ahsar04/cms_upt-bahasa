@@ -16,7 +16,7 @@
                             </li>
                             <li class="menu-header">Master</li>
                             <li>
-                                <a class="nav-link" href="{{--route('teacher')--}}"
+                                <a class="nav-link" href="{{ route('administrator') }}"
                                     ><i class="fas fa-user-cog"></i>
                                     <span>Admin</span></a
                                 >
@@ -58,12 +58,12 @@
                                     <span>Procedure</span></a
                                 >
                             </li>
-                            <!-- <li>
-                                <a class="nav-link" href="{{ route('schedule') }}"
-                                    ><i class="fas fa-calendar-alt"></i>
-                                    <span>Schedule</span></a
+                            <li>
+                                <a class="nav-link" href="{{ route('registraining') }}"
+                                    ><i class="fas fa-cash-register"></i>
+                                    <span>Training Registration</span></a
                                 >
-                            </li> -->
+                            </li>
                             <li class="menu-header">Feedback</li>
                             <li>
                                 <a class="nav-link" href="{{ route('feedback') }}"

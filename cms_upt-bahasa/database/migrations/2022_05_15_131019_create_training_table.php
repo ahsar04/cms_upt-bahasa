@@ -15,8 +15,8 @@ class CreateTrainingTable extends Migration
     {
         Schema::create('training', function (Blueprint $table) {
             $table->bigIncrements('id_training');
-            $table->text('training');
-            $table->text('service_type');
+            $table->string('training', 50);
+            $table->string('service_type', 35);
             $table->longText('description_training');
             $table->integer('quota');
             $table->date('opening_date');
