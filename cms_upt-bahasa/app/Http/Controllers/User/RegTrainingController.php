@@ -33,7 +33,7 @@ class RegTrainingController extends Controller
         ])->first();
 
         if ($training_registration) {
-            return back()->with('toast_error', 'You are already registered');
+            return redirect('dashboard')->with('toast_error', 'You are already registered');
         }
         
         TrainingRegistration::create([

@@ -24,7 +24,7 @@
                                         </div>
                                         <div class="row ml-2 mr-2 mt-3 mb-3">
                                             <div class="col">
-                                                {{ QrCode::generate('Hello, Sobat Polije!') }}
+                                                {{ QrCode::style('round')->generate('Hello, Sobat Polije!') }}
                                             </div>
                                         </div>
                                     </div>

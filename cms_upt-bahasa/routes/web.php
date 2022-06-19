@@ -181,13 +181,12 @@ Route::prefix('/')
             ->name('profile.edit');
         Route::post('/profile/update', 'UserController@update')
             ->name('profile.update');
-
         Route::get('/regtraining/{id_training}', 'RegTrainingController@index')
             ->name('regtraining');
-
         Route::post('/regconfirm', 'RegTrainingController@store')
-            ->name('regconfirm');
-        
+            ->name('regconfirm');       
         Route::get('/qrcode', 'QRCodeController@index')
             ->name('qrcode');
+        Route::get('/download/{id_training_registration}', 'QRCodeController@download')
+            ->name('download');
     });

@@ -30,21 +30,14 @@
                                                         <tr>
                                                             <th>Note</th>
                                                             <th>Your Registration QR Code</th>
-                                                            <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         @foreach($training_registration as $item)
                                                         <tr>
-                                                            <td>Save your Registration QR Code</td>
+                                                            <td>Capture and Save your Registration QR Code</td>
                                                             <td>
-                                                            {!! QrCode::size(150)->generate($item->id_training_registration);!!}
-                                                            </td>
-                                                            <td>
-                                                                <a
-                                                                    class="btn btn-primary"
-                                                                ><i class="fas fa-download" style="color:white"></i>
-                                                                </a>
+                                                            {!!QrCode::size(150)->generate($item->id_training_registration)!!}
                                                             </td>
                                                         </tr>
                                                         @endforeach
