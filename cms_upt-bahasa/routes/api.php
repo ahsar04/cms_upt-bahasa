@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\DashboardApiController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,19 +13,9 @@ use App\Http\Controllers\API\DashboardApiController;
 |
 */
 
-
-Route::get('/dashboard', [DashboardApiController::class, 'index']);
-
-Route::post('/auth', function(Request $request) {
-    $user = Auth::attempt($request->all());
-
-    if($user) {
-        return Auth::user();
-    }
-
-    return response()->json([
-        'message' => 'Email & Password doesn\'t match'
-    ], 404);
-});
-
-Route::post('/user/register', 'Api\RegisterApiController@register');
+// Route::middleware('auth:api')->post('login', 'Api\UserController@login');
+Route::middleware('auth:api')->post('me', 'Api\UserController@me');
+Route::post('news', 'Api\NewsController@show');
+Route::post('service', 'Api\ServiceController@show');
+Route::post('login', 'Api\UserController@login');
+Route::post('register', 'Api\UserController@register');

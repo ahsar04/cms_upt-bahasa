@@ -51,7 +51,7 @@
                                             <div class="form-group">
                                                 <label>Author</label>
                                                 <input type="text" class="form-control"
-                                                id="author" name="author">
+                                                id="author" name="author" value="{{Auth::user()->name}}" readonly>
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a
