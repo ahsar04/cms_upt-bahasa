@@ -25,7 +25,7 @@
                                     <div class="col-12">
                                         <div class="card">
                                         <div class="card-header">
-                                            <h4>Edit Data Member</h4>
+                                            <h4>Edit Profile</h4>
                                         </div>
                                         <div class="row ml-2 mr-2 mt-3">
                                             <div class="col">

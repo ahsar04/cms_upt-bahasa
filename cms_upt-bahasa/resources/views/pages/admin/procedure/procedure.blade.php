@@ -55,7 +55,7 @@
                                                         <tr>
                                                             <td>{{ $loop->iteration }}</td>
                                                             <td>{{ $item->headline_procedure }}</td>
-                                                            <td>{{ $item->description_procedure }}</td>
+                                                            <td>{!! $item->description_procedure !!}</td>
                                                             <td>{{ $item->link_procedure }}</td>
                                                             <td>
                                                             <div class="btn-group" role="group" aria-label="Basic example">

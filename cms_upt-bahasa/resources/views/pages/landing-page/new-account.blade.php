@@ -18,7 +18,7 @@
                 <h4 class="mb-3">{{ $item->headline_procedure}}</h4>
                 
                     <p>
-                        {{ $item->description_procedure}}
+                        {!! $item->description_procedure !!}
                     </p>
                                 
                     <a class="mb-3" 

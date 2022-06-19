@@ -41,7 +41,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Description Procedure</label>
-                                                <textarea class="form-control @error('description_procedure') is-invalid @enderror"
+                                                <textarea class="form-control summernote @error('description_procedure') is-invalid @enderror"
                                                 id="exampleInputDescriptionProcedure" name="description_procedure" value="{{old('description_procedure')}}" cols="30" rows="10"></textarea>
                                                 @error('description_procedure') <span class="text-danger">{{$message}}</span> @enderror
                                             </div>

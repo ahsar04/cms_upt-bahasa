@@ -39,7 +39,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Description Procedure</label>
-                                                <textarea class="form-control" id="" cols="30" rows="10" name="description_procedure">{{ $procedure->description_procedure }}</textarea>
+                                                <textarea class="form-control summernote" id="" cols="30" rows="10" name="description_procedure">{{ $procedure->description_procedure }}</textarea>
                                             </div>
                                             <div class="form-group">
                                                 <label>Link Procedure</label>
