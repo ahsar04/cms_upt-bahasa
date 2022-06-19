@@ -58,10 +58,10 @@
                                                 <input type="number" class="form-control" id="phone" name="phone" value="{{ old('phone', Auth::user()->phone) }}" readonly>
                                             </div>
                                             <div class="form-group">
-                                                <input type="hidden" class="form-control" id="status" name="status" value="Belum Lulus" readonly>
+                                                <input type="hidden" class="form-control" id="status" name="status" value="Not Grade Yet" readonly>
                                             </div>
                                             <div class="form-group">
-                                                <input type="hidden" class="form-control" id="note" name="note" value="Belum Ada" readonly>
+                                                <input type="hidden" class="form-control" id="note" name="note" value="Not Yet" readonly>
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a
