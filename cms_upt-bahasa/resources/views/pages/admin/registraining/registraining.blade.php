@@ -38,6 +38,7 @@
                                                         <tr>
                                                             <th>No</th>
                                                             <th>Training</th>
+                                                            <th>Excercise Date</th>
                                                             <th>Fullname</th>
                                                             <th>E-mail Address</th>
                                                             <th>Status</th>
@@ -50,6 +51,7 @@
                                                         <tr>
                                                             <td>{{ $loop->iteration }}</td>
                                                             <td>{{ $item->training }}</td>
+                                                            <td>{{ $item->excercise_date }}</td>
                                                             <td>{{ $item->name }}</td>
                                                             <td>{{ $item->email }}</td>
                                                             <td>{{ $item->status }}</td>
