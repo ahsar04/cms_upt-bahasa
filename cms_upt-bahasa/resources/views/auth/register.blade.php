@@ -131,7 +131,7 @@
                   </div>
                   <div class="form-group">
                     <label for="identity_card">{{ __('Identity Card') }}</label>
-                      <input id="identity_card" type="number" class="form-control @error('identity_card') is-invalid @enderror" name="identity_card" value="{{ old('identity_card') }}" required autocomplete="identity_card" autofocus>
+                      <input id="identity_card" type="file" class="form-control @error('identity_card') is-invalid @enderror" name="identity_card" value="{{ old('identity_card') }}" required autocomplete="identity_card" autofocus>
                         @error('identity_card')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

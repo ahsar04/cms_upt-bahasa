@@ -36,6 +36,14 @@
                                                             <label>Change Pas Photo</label>
                                                             <input type="file" class="form-control" id="pas_photo" name="pas_photo" value="{{ old('pas_photo', Auth::user()->pas_photo )}}">
                                                         </div>
+                                                        <div class="form-group">
+                                                                <label>Indentity Card</label>
+                                                                <img src="{{ asset('/img/user/profile/'.Auth::user()->pas_photo) }}" width="200px" class="d-block">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Change Indentity Card</label>
+                                                                <input type="file" class="form-control" id="pas_photo" name="pas_photo" value="{{ old('pas_photo', Auth::user()->pas_photo )}}">
+                                                            </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -65,10 +73,6 @@
                                                             <div class="form-group">
                                                                 <label>Address</label>
                                                                 <input type="text" class="form-control" id="address" name="address" value="{{ old('address', Auth::user()->address) }}">
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label>Identity Card</label>
-                                                                <input type="text" class="form-control" id="identity_card" name="identity_card" value="{{ old('identity_card', Auth::user()->identity_card) }}">
                                                             </div>
                                                             <div class="card-footer text-right">
                                                                 <a
