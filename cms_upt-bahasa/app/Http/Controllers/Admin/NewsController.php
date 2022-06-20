@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\News;
 use routes\web;
+use Illuminate\Support\Str;
 
 class NewsController extends Controller
 {
@@ -40,7 +41,7 @@ class NewsController extends Controller
         ]);
 
         $news = $request->picture;
-        $namafile = Date('His').round(1,999).'_'.$news->getClientOriginalName();
+        $namafile = date('His').Str::random(10)."_".$news->getClientOriginalName();
 
         $dtUpload = new News;
         $dtUpload->headline_news = $request->headline_news;
@@ -69,7 +70,7 @@ class NewsController extends Controller
         ]);
 
         $news = News::findorfail($id_news);
-        $gambarAwal = Date('His').round(1,999).'_'.$news->picture;
+        $gambarAwal = date('His').Str::random(10)."_".$news->picture;
 
         $data = [
             'headline_news' => $request['headline_news'],

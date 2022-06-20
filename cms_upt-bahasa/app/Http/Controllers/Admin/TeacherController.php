@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Teacher;
 use routes\web;
+use Illuminate\Support\Str;
 
 class TeacherController extends Controller
 {
@@ -41,7 +42,7 @@ class TeacherController extends Controller
         ]);
 
         $teaching_staff = $request->picture;
-        $namafile = Date('His').round(1,999).'_'.$teaching_staff->getClientOriginalName();
+        $namafile = date('His').Str::random(10)."_".$teaching_staff->getClientOriginalName();
 
         $dtUpload = new Teacher;
         $dtUpload->nip = $request->nip;
@@ -78,7 +79,7 @@ class TeacherController extends Controller
         ]);
 
         $teaching_staff = Teacher::findorfail($id_teaching_staff);
-        $gambarAwal = Date('His').round(1,999).'_'.$teaching_staff->picture;
+        $gambarAwal = date('His').Str::random(10)."_".$teaching_staff->picture;
 
         $data = [
             'nip' => $request['nip'],
