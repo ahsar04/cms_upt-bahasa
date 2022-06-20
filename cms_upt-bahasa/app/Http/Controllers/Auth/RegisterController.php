@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -77,6 +78,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'api_token' => rand(1,99).'|'.Str::random(77),
             'gender' => $data['gender'],
             'place_of_birth' => $data['place_of_birth'],
             'date_of_birth' => $data['date_of_birth'],
