@@ -16,7 +16,7 @@
                         </div>
 
                         <div class="section-body">
-                        <form action="{{ route('profile.update') }}" method="POST">
+                        <form action="{{ route('profile.update',Auth::user()->id) }}" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col-12">

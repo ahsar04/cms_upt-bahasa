@@ -179,7 +179,7 @@ Route::prefix('/')
             ->name('history');
         Route::get('/profile', 'UserController@edit')
             ->name('profile.edit');
-        Route::post('/profile/update', 'UserController@update')
+        Route::post('/profile/update/{id}', 'UserController@update')
             ->name('profile.update');
         Route::get('/regtraining/{id_training}', 'RegTrainingController@index')
             ->name('regtraining');

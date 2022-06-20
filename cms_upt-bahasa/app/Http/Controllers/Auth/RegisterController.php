@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
@@ -60,9 +61,9 @@ class RegisterController extends Controller
             'last_education' => ['required', 'string', 'max:10'],
             'phone' => ['required', 'string', 'max:13'],
             'address' => ['required', 'string'],
-            'pas_photo' => ['required', 'string', 'max:255'],
+            'pas_photo' => 'required|file|image|mimes:jpeg,jpg,png|max:1024',
             'identity_card' => ['required', 'string', 'max:255'],
-            'roles' => ['string', 'max:5'],
+            // 'roles' => ['string', 'max:5'],
         ]);
     }
 
@@ -72,22 +73,29 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'api_token' => rand(1,99).'|'.Str::random(77),
-            'gender' => $data['gender'],
-            'place_of_birth' => $data['place_of_birth'],
-            'date_of_birth' => $data['date_of_birth'],
-            'last_education' => $data['last_education'],
-            'phone' => $data['phone'],
-            'address' => $data['address'],
-            'pas_photo' => $data['pas_photo'],
-            'identity_card' => $data['identity_card'],
-            'roles' => $data['roles'],
-        ]);
+
+        // dd($request->all());
+        
+        $user_photo = $request->pas_photo;
+        $namafile = date('His').Str::random(10)."_".$user_photo->getClientOriginalName();
+        $dtUpload = new User;
+        $dtUpload->name = $request->name;
+        $dtUpload->email = $request->email;
+        $dtUpload->password = Hash::make($request->password);
+        // $dtUpload->api_token = rand(1;99).'|'.Str::random(77);
+        $dtUpload->gender = $request->gender;
+        $dtUpload->place_of_birth = $request->place_of_birth;
+        $dtUpload->date_of_birth = $request->date_of_birth;
+        $dtUpload->last_education = $request->last_education;
+        $dtUpload->phone = $request->phone;
+        $dtUpload->address = $request->address;
+        $dtUpload->pas_photo = $namafile;
+        $dtUpload->identity_card = $request->identity_card;
+            // 'roles' = $data->roles;
+        
+        $user_photo->move(public_path().'/img/users', $namafile);
+        return $dtUpload->save();
     }
 }
