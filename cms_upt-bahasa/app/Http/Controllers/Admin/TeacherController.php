@@ -41,7 +41,7 @@ class TeacherController extends Controller
         ]);
 
         $teaching_staff = $request->picture;
-        $namafile = $teaching_staff->getClientOriginalName();
+        $namafile = Date('His').round(1,999).'_'.$teaching_staff->getClientOriginalName();
 
         $dtUpload = new Teacher;
         $dtUpload->nip = $request->nip;
@@ -78,7 +78,7 @@ class TeacherController extends Controller
         ]);
 
         $teaching_staff = Teacher::findorfail($id_teaching_staff);
-        $gambarAwal = $teaching_staff->picture;
+        $gambarAwal = Date('His').round(1,999).'_'.$teaching_staff->picture;
 
         $data = [
             'nip' => $request['nip'],

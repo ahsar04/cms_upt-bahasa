@@ -40,7 +40,7 @@ class NewsController extends Controller
         ]);
 
         $news = $request->picture;
-        $namafile = $news->getClientOriginalName();
+        $namafile = Date('His').round(1,999).'_'.$news->getClientOriginalName();
 
         $dtUpload = new News;
         $dtUpload->headline_news = $request->headline_news;
@@ -69,7 +69,7 @@ class NewsController extends Controller
         ]);
 
         $news = News::findorfail($id_news);
-        $gambarAwal = $news->picture;
+        $gambarAwal = Date('His').round(1,999).'_'.$news->picture;
 
         $data = [
             'headline_news' => $request['headline_news'],
