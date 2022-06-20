@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Teacher;
 use routes\web;
-use Illuminate\Support\Str;
 
 class TeacherController extends Controller
 {
