@@ -51,7 +51,7 @@
                                                         <tr>
                                                             <td>{{ $loop->iteration }}</td>
                                                             <td>{{ $item->training }}</td>
-                                                            <td>{{ $item->excercise_date }}</td>
+                                                            <td>{{ date('d-m-Y', strtotime($item->excercise_date) ) }}</td>
                                                             <td>{{ $item->name }}</td>
                                                             <td>{{ $item->email }}</td>
                                                             <td>{{ $item->status }}</td>
