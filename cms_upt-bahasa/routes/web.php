@@ -56,7 +56,7 @@ Route::prefix('/')
 
 Route::prefix('admin')
     ->namespace('Admin')
-    // ->middleware(['auth','admin'])
+    ->middleware(['auth','admin'])
     ->group(function(){
         Route::get('/dashboard', 'DashboardController@index')
             ->name('dashboard');
@@ -168,10 +168,11 @@ Route::prefix('admin')
     });
 
 Auth::routes(['verify' => true]);
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'user\DashboardController@index')->name('home');
 
 Route::prefix('/')
     ->namespace('User')
+    ->middleware(['auth','user'])
     ->group(function(){
         Route::get('/dashboard', 'DashboardController@index')
             ->name('dashboard');

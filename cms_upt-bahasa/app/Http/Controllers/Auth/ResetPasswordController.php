@@ -29,21 +29,21 @@ class ResetPasswordController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = RouteServiceProvider::Admin;
-    public function resetPassword(Request $request)
-    {
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+    protected $redirectTo = RouteServiceProvider::User;
+    // public function __construct(Request $request)
+    // {
+    //     // if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
         
-            $user = User::where('email', $request->email)->first();
-            if ($user->roles == 'ADMIN') {
-                return redirect()->route('admin');
-            } else {
-                return redirect()->route('dashboard');
-            }
+    //         $user = User::where('email', $request->email)->first();
+    //         if ($user->roles == 'ADMIN') {
+    //             return redirect()->route('admin');
+    //         } else {
+    //             return redirect()->route('dashboard');
+    //         }
             
 
-        }else{
-            return redirect()->route('login');
-        }
-    }
+    //     // }else{
+    //     //     return redirect()->route('login');
+    //     // }
+    // }
 }

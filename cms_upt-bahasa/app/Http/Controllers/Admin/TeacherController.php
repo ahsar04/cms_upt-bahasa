@@ -38,7 +38,7 @@ class TeacherController extends Controller
             'address' => 'required',
             'facebook' => 'required',
             'instagram' => 'required',
-            'picture' => 'required|file|image|mimes:jpeg,jpg,png|max:1024',
+            'picture' => 'file|image|mimes:jpeg,jpg,png|max:1024',
         ]);
 
         $teaching_staff = $request->picture;

@@ -49,8 +49,7 @@
                                                             <th>Phone</th>
                                                             <th>Email</th>
                                                             <th>Gender</th>
-                                                            <th>Place Of Birth</th>
-                                                            <th>Date Of Birth</th>
+                                                            <th>Birth</th>
                                                             <th>Last Education</th>
                                                             <th>Address</th>
                                                             <th>Pas Photo</th>
@@ -66,11 +65,10 @@
                                                             <td>{{ $item->phone }}</td>
                                                             <td>{{ $item->email }}</td>
                                                             <td>{{ $item->gender }}</td>
-                                                            <td>{{ $item->place_of_birth }}</td>
-                                                            <td>{{ $item->date_of_birth }}</td>
+                                                            <td>{{ $item->place_of_birth }}, {{ $item->date_of_birth }}</td>
                                                             <td>{{ $item->last_education }}</td>
                                                             <td>{{ $item->address }}</td>
-                                                            <td>{{ $item->pas_photo }}</td>
+                                                            <td><img src="{{url('/img/users/'.$item->pas_photo)}}" alt="picture" width="100px" height="100px"></td>
                                                             <td>
                                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                                 <a

@@ -2,7 +2,7 @@
         <!-- Navbar & Carousel Start -->
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-                <a href="index.html" class="navbar-brand p-0">
+                <a href="#" class="navbar-brand p-0">
                     <div class="m-0 row">
                         <div class="col-md-2" style="margin-right: 10px">
                             <img
@@ -132,7 +132,7 @@
                                 </h1>
                                 <!-- <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free Quote</a> -->
                                 <a
-                                    href=""
+                                    href="#"
                                     class="btn btn-outline-light py-md-3 px-md-5 animated slideInCenter"
                                     >Read More</a
                                 >
@@ -193,7 +193,7 @@
                                     Read News
                                 </h1>
                                 <a
-                                    href="{{ route('home')}}"
+                                    href="{{ route('news')}}"
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInCenter"
                                     >Read More</a
                                 >

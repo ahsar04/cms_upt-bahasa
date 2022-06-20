@@ -59,7 +59,7 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Place of Birth</label>
-                                                                    <textarea class="form-control" id="place_of_birth" name="place_of_birth" cols="30" rows="10">{{ old('place_of_birth', Auth::user()->place_of_birth) }}</textarea>
+                                                                    <input type="text" class="form-control" id="place_of_birth" name="place_of_birth" value="{{ old('place_of_birth', Auth::user()->place_of_birth) }}">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Date of Birth</label>
@@ -75,7 +75,7 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Address</label>
-                                                                    <input type="text" class="form-control" id="address" name="address" value="{{ old('address', Auth::user()->address) }}">
+                                                                    <textarea class="form-control" id="address" name="address" cols="30" rows="10">{{ old('address', Auth::user()->address) }}</textarea>
                                                                 </div>
                                                                 <div class="card-footer text-right">
                                                                     <a
