@@ -34,7 +34,10 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Status</label>
-                                                <input type="text" class="form-control" id="status" name="status" value="{{ $registraining->status }}">
+                                                <select class="form-control @error('status') is-invalid @enderror" id="status" name="status" value="{{ $registraining->status }}">
+                                                    <option <?php if($registraining['status']=='Not Grade Yet') echo 'selected'?>>Not Grade Yet</option>
+                                                    <option <?php if($registraining['status']=='Graded') echo 'selected'?>>Graded</option>
+                                                </select>
                                                 <input type="hidden" class="form-control" id="id" name="id" value="{{ $registraining->id }}" readonly>
                                                 <input type="hidden" class="form-control" id="id_training" name="id_training" value="{{ $registraining->id_training }}" readonly>
                                             </div>
