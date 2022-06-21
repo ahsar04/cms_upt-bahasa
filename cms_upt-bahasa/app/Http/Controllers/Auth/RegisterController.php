@@ -61,7 +61,7 @@ class RegisterController extends Controller
             'phone' => ['required', 'string', 'max:13'],
             'address' => ['required', 'string'],
             'pas_photo' => ['required','file','image','mimes:jpeg,jpg,png','max:1024',],
-            'identity_card' => ['required', 'string', 'max:255'],
+            'identity_card' => ['required','file','image','mimes:jpeg,jpg,png','max:1024',],
             'roles' => ['string', 'max:5'],
         ]);
     }
@@ -77,6 +77,10 @@ class RegisterController extends Controller
         $userPhoto = $data['pas_photo'];
         $namafile = date('His').Str::random(10)."_".$userPhoto->getClientOriginalName();
         $userPhoto->move(public_path().'/img/users', $namafile);
+        
+        $userCard = $data['identity_card'];
+        $namafile2 = date('His').Str::random(10)."_".$userCard->getClientOriginalName();
+        $userCard->move(public_path().'/img/users', $namafile2);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -88,7 +92,7 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'address' => $data['address'],
             'pas_photo' => $namafile,
-            'identity_card' => $data['identity_card'],
+            'identity_card' => $namafile2,
             // 'roles' => $data['roles'],
         ]);
     }

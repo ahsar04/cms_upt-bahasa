@@ -58,8 +58,8 @@ class UserController extends Controller
             'last_education' => ['required', 'string', 'max:10'],
             'phone' => ['required', 'string', 'max:13'],
             'address' => ['required', 'string'],
-            'pas_photo' => ['required', 'string', 'max:255'],
-            'identity_card' => ['required', 'string', 'max:255'],
+            // 'pas_photo' => ['required', 'string', 'max:255'],
+            // 'identity_card' => ['required', 'string', 'max:255'],
         ]);
         
         $user= User::Create([
@@ -73,8 +73,8 @@ class UserController extends Controller
         'last_education' => $request['last_education'],
         'phone' => $request['phone'],
         'address' => $request['address'],
-        'pas_photo' => $request['pas_photo'],
-        'identity_card' => $request['identity_card'],
+        // 'pas_photo' => $request['pas_photo'],
+        // 'identity_card' => $request['identity_card'],
         'roles' => 'USER',
 
     ]);

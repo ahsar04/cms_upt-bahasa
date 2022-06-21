@@ -15,5 +15,14 @@ class NewsResource extends JsonResource
     public function toArray($request)
     {
         return parent::toArray($request);
+        // [
+        //     "id_news"=> $this->id_news,
+        //     "headline_news"=> $this->headline_news,
+        //     "description_news"=> $this->description_news,
+        //     "picture"=> $this->picture,
+        //     "author"=> $this->author,
+        //     "created_at"=> $this->create_at->diffForHumans(),
+        //     "updated_at"=> $this->updated_at->diffForHumans()
+        // ];
     }
 }

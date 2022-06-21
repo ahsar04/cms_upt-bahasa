@@ -30,7 +30,7 @@
                                                     <div class="card-body">
                                                         <div class="form-group">
                                                             <label>Pas Photo</label>
-                                                            <img src="{{ asset('/img/user/profile/'.Auth::user()->pas_photo) }}" width="200px" class="d-block">
+                                                            <img src="{{ asset('/img/users/'.Auth::user()->pas_photo) }}" width="200px" class="d-block">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Change Pas Photo</label>
@@ -38,11 +38,11 @@
                                                         </div>
                                                         <div class="form-group">
                                                                 <label>Indentity Card</label>
-                                                                <img src="{{ asset('/img/user/profile/'.Auth::user()->pas_photo) }}" width="200px" class="d-block">
+                                                                <img src="{{ asset('/img/users/'.Auth::user()->identity_card) }}" width="200px" class="d-block">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Change Indentity Card</label>
-                                                                <input type="file" class="form-control" id="pas_photo" name="pas_photo" value="{{ old('pas_photo', Auth::user()->pas_photo )}}">
+                                                                <input type="file" class="form-control" id="identity_card" name="identity_card" value="{{ old('identity_card', Auth::user()->identity_card )}}">
                                                             </div>
                                                     </div>
                                                 </div>
