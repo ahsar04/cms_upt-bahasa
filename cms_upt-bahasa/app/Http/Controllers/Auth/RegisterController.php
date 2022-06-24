@@ -58,7 +58,7 @@ class RegisterController extends Controller
             'place_of_birth' => ['required', 'string', 'max:20'],
             'date_of_birth' => ['required', 'string', 'max:10'],
             'last_education' => ['required', 'string', 'max:10'],
-            'phone' => ['required', 'string', 'max:13'],
+            'phone' => ['required', 'string', 'max:13','min:9'],
             'address' => ['required', 'string'],
             'pas_photo' => ['required','file','image','mimes:jpeg,jpg,png','max:1024',],
             'identity_card' => ['required','file','image','mimes:jpeg,jpg,png','max:1024',],

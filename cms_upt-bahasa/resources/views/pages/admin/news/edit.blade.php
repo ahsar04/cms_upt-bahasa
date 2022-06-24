@@ -46,11 +46,16 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Change Picture</label>
-                                                <input type="file" class="form-control" id="picture" name="picture" value="{{ $news->picture }}">
+                                                <input type="file" class="form-control @error('picture') is-invalid @enderror" id="picture" name="picture" value="{{ $news->picture }}">
+                                                @error('picture')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Author</label>
-                                                <input type="text" class="form-control" id="author" name="author" value="{{ $news->author }}">
+                                                <input type="text" readonly class="form-control" id="author" name="author" value="{{ $news->author }}">
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a

@@ -1,19 +1,17 @@
 @extends('layouts.landing-page.index')
-@section('titlePage','English Proficiency Test | UPT - Bahasa Polije')
+@section('titlePage','Course | UPT - Bahasa Polije')
 @section('content')
-
-    <!-- Pricing Plan Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">UPT Bahasa Politeknik Negeri Jember</h5>
-                <h1 class="mb-0">English Proficiency Test</h1>
+                <h4 class="fw-bold text-primary text-uppercase">UPT Bahasa Politeknik Negeri Jember</h4>
+                <h1 class="mb-0" style="text-transform:capitalize;">  {{str_replace('%20', ' ', substr(url()->current(), strrpos(url()->current(), "/") + 1)."\n")  }}</h1>
             </div>
-           
+
             <div class="row g-5">
                 <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                     <div class="team-item bg-light rounded overflow-hidden">
-                        @foreach ($training as $item)
+                    @foreach ($training as $item)
                             <div class="p-4">
                                 <div class="d-flex mb-3">
                                     <small class="me-3"
@@ -53,7 +51,9 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
-    <!-- Pricing Plan End -->
+   
+    
 @endsection

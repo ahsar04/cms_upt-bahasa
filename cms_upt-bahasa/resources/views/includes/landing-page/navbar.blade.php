@@ -60,16 +60,11 @@
                                 >Services</a
                             >
                             <div class="dropdown-menu m-0">
-                                <a href="{{ route('ept')}}" class="dropdown-item"
-                                    >English Proficiency Test</a>
-                                <a
-                                    href="{{ route('placement-test') }}"
-                                    class="dropdown-item"
-                                    >Placement Test</a>
-                                <a
-                                    href="{{ route('course')}}"
-                                    class="dropdown-item"
-                                    >Course</a>
+                                @foreach ( $service_data as $sD)
+                                <a href="{{ route('service.data',$sD->service_type)}}" class="dropdown-item" style="text-transform:capitalize;"
+                                    >{{$sD->service_type}}</a>
+                                @endforeach
+                                    
                             </div>
                         </div>
                         <div class="nav-item dropdown">
@@ -80,18 +75,10 @@
                                 >Procedure</a
                             >
                             <div class="dropdown-menu m-0">
-                                <a href="{{ route('new-account')}}" class="dropdown-item"
-                                    >Procedure to Make Account </a
-                                >
-                                <a href="{{ route('test_skema')}}" class="dropdown-item"
-                                    >Procedure Test Skema</a
-                                >
-                                <a href="{{ route('test-result')}}" class="dropdown-item"
-                                    >Procedure to See Result Test</a
-                                >
-                                <a href="{{ route('certificate')}}" class="dropdown-item"
-                                    >Procedure to Take Certificate</a
-                                >
+                                @foreach ( $procedure_data as $sD)
+                                <a href="{{ route('procedure.data',$sD->headline_procedure)}}" class="dropdown-item" style="text-transform:capitalize;"
+                                    >{{$sD->headline_procedure}}</a>
+                                @endforeach
                             </div>
                         </div>
                         <a href="{{ route('contact')}}" class="nav-item nav-link {{ set_active('contact')}}"

@@ -45,9 +45,10 @@
                                             id="exampleInputServiceType" name="service_type" value="{{old('service_type')}}">
                                             @error('service_type') <span class="text-danger">{{$message}}</span> @enderror
                                                 <option>- Select Service Type -</option>
-                                                <option>Course</option>
-                                                <option>EPT (English Proficiency Test)</option>
-                                                <option>Placement Test</option>
+                                                @foreach ($service as $service)
+                                                <option value="{{$service->service_type}}" >{{$service->service_type}}</option>
+                                                    
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="form-group">
