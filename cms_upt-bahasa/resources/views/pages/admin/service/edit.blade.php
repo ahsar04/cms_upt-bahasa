@@ -35,11 +35,21 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Service Type</label>
-                                                <input type="text" class="form-control" name="service_type" value="{{ $service->service_type }}">
+                                                <input type="text" class="form-control @error('service_type') is-invalid @enderror" name="service_type" value="{{ $service->service_type }}">
+                                                @error('service_type')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Description Service</label>
-                                                <textarea class="form-control" id="" cols="30" rows="10" name="description_service">{{ $service->description_service }}</textarea>
+                                                <textarea class="form-control @error('description_service') is-invalid @enderror" id="" cols="30" rows="10" name="description_service">{{ $service->description_service }}</textarea>
+                                                @error('description_service')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a
