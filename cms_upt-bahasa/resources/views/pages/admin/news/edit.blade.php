@@ -34,11 +34,21 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Headline News</label>
-                                                <input type="text" class="form-control" id="headline_news" name="headline_news" value="{{ $news->headline_news }}">
+                                                <input type="text" class="form-control @error('headline_news') is-invalid @enderror" id="headline_news" name="headline_news" value="{{ $news->headline_news }}">
+                                                @error('headline_news')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Description</label>
-                                                <textarea class="form-control" id="description_news" name="description_news" cols="30" rows="10">{{ $news->description_news }}</textarea>
+                                                <textarea class="form-control @error('description_news') is-invalid @enderror" id="description_news" name="description_news" cols="30" rows="10">{{ $news->description_news }}</textarea>
+                                                @error('description_news')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Picture</label>
@@ -55,7 +65,12 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Author</label>
-                                                <input type="text" readonly class="form-control" id="author" name="author" value="{{ $news->author }}">
+                                                <input type="text" readonly class="form-control @error('author') is-invalid @enderror" id="author" name="author" value="{{ $news->author }}">
+                                                @error('author')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a
