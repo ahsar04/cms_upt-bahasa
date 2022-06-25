@@ -14,8 +14,8 @@ class NewsController extends Controller
         $news = News::all();
         // return new NewsResource($news);
         return response()->json([
-        "meta" => ["code"=>200,"status"=>"Success","message"=>'null'],
-        "data"=>new NewsResource($news)
+        "meta" => ["code"=>200,"status"=>"Success","message"=>'Data berhasil diambil'],
+        "data"=>["current_page"=>null,"news" => new NewsResource($news)]
     ]);
     }
 }

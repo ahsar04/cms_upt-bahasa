@@ -34,13 +34,36 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Status</label>
-                                                <input type="text" class="form-control" id="status" name="status" value="{{ $registraining->status }}">
-                                                <input type="hidden" class="form-control" id="id" name="id" value="{{ $registraining->id }}" readonly>
-                                                <input type="hidden" class="form-control" id="id_training" name="id_training" value="{{ $registraining->id_training }}" readonly>
+                                                <select class="form-control @error('status') is-invalid @enderror" id="status" name="status" value="{{ $registraining->status }}">
+                                                    <option <?php if($registraining['status']=='Not Grade Yet') echo 'selected'?>>Not Grade Yet</option>
+                                                    <option <?php if($registraining['status']=='Graded') echo 'selected'?>>Graded</option>
+                                                </select>
+                                                @error('status')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                                <input type="hidden" class="form-control @error('id') is-invalid @enderror" id="id" name="id" value="{{ $registraining->id }}" readonly>
+                                                @error('id')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                                <input type="hidden" class="form-control @error('id_training') is-invalid @enderror" id="id_training" name="id_training" value="{{ $registraining->id_training }}" readonly>
+                                                @error('id_training')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Note</label>
-                                                <textarea class="form-control" name="note" id="note" cols="30" rows="10">{{ $registraining->note }}</textarea>
+                                                <textarea class="form-control @error('note') is-invalid @enderror" name="note" id="note" cols="30" rows="10">{{ $registraining->note }}</textarea>
+                                                @error('note')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a

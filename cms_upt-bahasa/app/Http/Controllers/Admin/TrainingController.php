@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Training;
+use App\Models\Service;
 use routes\web;
 
 class TrainingController extends Controller
@@ -18,15 +19,17 @@ class TrainingController extends Controller
         return view('pages.admin.training.training', compact('training'));
     }
     public function add(){
-        return view('pages.admin.training.add');
+        $service = Service::all();
+        return view('pages.admin.training.add',compact('service'));
     }
     /** 
     * @param int $id_training
     * @return \Illuminate\Http\Response
     */
     public function edit($id_training){
+        $service = Service::all();
         $training = Training::findorfail($id_training);
-        return view('pages.admin.training.edit', compact('training'));
+        return view('pages.admin.training.edit', compact('training','service'));
     }
 
     public function store(Request $request)

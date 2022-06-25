@@ -31,7 +31,7 @@
               <div class="card-header"><h4>{{ __('Register') }}</h4></div>
 
               <div class="card-body">
-                <form method="POST" action="{{ route('register') }}">
+                <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                   @csrf
                   <div class="form-group">
                     <label for="name">{{ __('Name') }}</label>
@@ -131,7 +131,7 @@
                   </div>
                   <div class="form-group">
                     <label for="identity_card">{{ __('Identity Card') }}</label>
-                      <input id="identity_card" type="number" class="form-control @error('identity_card') is-invalid @enderror" name="identity_card" value="{{ old('identity_card') }}" required autocomplete="identity_card" autofocus>
+                      <input id="identity_card" type="file" class="form-control @error('identity_card') is-invalid @enderror" name="identity_card" value="{{ old('identity_card') }}" required autocomplete="identity_card" autofocus>
                         @error('identity_card')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -141,7 +141,11 @@
                   <div class="row">
                     <div class="form-group col-6">
                       <label for="password">{{ __('Password') }}</label>
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                        <input id="password" type="password" class="form-control pwstrength @error('password') is-invalid @enderror" data-indicator="pwindicator" name="password" required autocomplete="new-password">
+                        <div id="pwindicator" class="pwindicator">
+                          <div class="bar"></div>
+                          <div class="label"></div>
+                        </div>
                         @error('password')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

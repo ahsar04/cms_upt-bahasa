@@ -240,7 +240,7 @@
                             >
                                 <img
                                     alt="image"
-                                    src="{{url('backend/assets/img/avatar/avatar-1.png')}}"
+                                    src="{{url('img/users/'.Auth::user()->pas_photo)}}"
                                     class="rounded-circle mr-1"
                                 />
                                 <div class="d-sm-none d-lg-inline-block">

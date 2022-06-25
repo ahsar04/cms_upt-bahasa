@@ -35,23 +35,43 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Headline News</label>
-                                                <input type="text" class="form-control"
+                                                <input type="text" class="form-control @error('headline_news') is-invalid @enderror"
                                                 id="headline_news" name="headline_news">
+                                                @error('headline_news')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Description</label>
-                                                <textarea class="form-control"
+                                                <textarea class="form-control @error('description_news') is-invalid @enderror"
                                                 id="description_news" name="description_news" cols="30" rows="10"></textarea>
+                                                @error('description_news')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Picture</label>
-                                                <input type="file" class="form-control"
+                                                <input type="file" class="form-control @error('picture') is-invalid @enderror"
                                                 id="picture" name="picture">
+                                                @error('picture')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Author</label>
-                                                <input type="text" class="form-control"
+                                                <input type="text" class="form-control @error('author') is-invalid @enderror"
                                                 id="author" name="author" value="{{Auth::user()->name}}" readonly>
+                                                @error('author')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a

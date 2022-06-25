@@ -35,15 +35,30 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Headline Procedure</label>
-                                                <input type="text" class="form-control" name="headline_procedure" value="{{ $procedure->headline_procedure }}">
+                                                <input type="text" class="form-control @error('headline_procedure') is-invalid @enderror" name="headline_procedure" value="{{ $procedure->headline_procedure }}">
+                                                @error('headline_procedure')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Description Procedure</label>
-                                                <textarea class="form-control summernote" id="" cols="30" rows="10" name="description_procedure">{{ $procedure->description_procedure }}</textarea>
+                                                <textarea class="form-control summernote @error('description_procedure') is-invalid @enderror" id="" cols="30" rows="10" name="description_procedure">{{ $procedure->description_procedure }}</textarea>
+                                                @error('description_procedure')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Link Procedure</label>
-                                                <input type="text" class="form-control" name="link_procedure" value="{{ $procedure->link_procedure }}">
+                                                <input type="text" class="form-control @error('link_procedure') is-invalid @enderror" name="link_procedure" value="{{ $procedure->link_procedure }}">
+                                                @error('link_procedure')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a

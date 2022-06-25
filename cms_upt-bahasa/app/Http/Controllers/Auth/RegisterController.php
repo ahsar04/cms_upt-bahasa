@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -57,10 +58,10 @@ class RegisterController extends Controller
             'place_of_birth' => ['required', 'string', 'max:20'],
             'date_of_birth' => ['required', 'string', 'max:10'],
             'last_education' => ['required', 'string', 'max:10'],
-            'phone' => ['required', 'string', 'max:13'],
+            'phone' => ['required', 'string', 'max:13','min:9'],
             'address' => ['required', 'string'],
-            'pas_photo' => ['required', 'string', 'max:255'],
-            'identity_card' => ['required', 'string', 'max:255'],
+            'pas_photo' => ['required','file','image','mimes:jpeg,jpg,png','max:1024',],
+            'identity_card' => ['required','file','image','mimes:jpeg,jpg,png','max:1024',],
             'roles' => ['string', 'max:5'],
         ]);
     }
@@ -73,6 +74,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $userPhoto = $data['pas_photo'];
+        $namafile = date('His').Str::random(10)."_".$userPhoto->getClientOriginalName();
+        $userPhoto->move(public_path().'/img/users', $namafile);
+        
+        $userCard = $data['identity_card'];
+        $namafile2 = date('His').Str::random(10)."_".$userCard->getClientOriginalName();
+        $userCard->move(public_path().'/img/users', $namafile2);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -83,9 +91,9 @@ class RegisterController extends Controller
             'last_education' => $data['last_education'],
             'phone' => $data['phone'],
             'address' => $data['address'],
-            'pas_photo' => $data['pas_photo'],
-            'identity_card' => $data['identity_card'],
-            'roles' => $data['roles'],
+            'pas_photo' => $namafile,
+            'identity_card' => $namafile2,
+            // 'roles' => $data['roles'],
         ]);
     }
 }

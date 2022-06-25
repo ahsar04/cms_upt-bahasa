@@ -35,55 +35,105 @@
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>NIP</label>
-                                                <input type="number" class="form-control"
+                                                <input type="number" class="form-control @error('nip') is-invalid @enderror"
                                                 id="nip" name="nip">
+                                                @error('nip')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Fullname</label>
-                                                <input type="text" class="form-control"
+                                                <input type="text" class="form-control @error('fullname') is-invalid @enderror"
                                                 id="fullname" name="fullname">
+                                                @error('fullname')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Functional Position</label>
-                                                <input type="text" class="form-control"
+                                                <input type="text" class="form-control @error('position') is-invalid @enderror"
                                                 id="position" name="position">
+                                                @error('position')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Google Scholar</label>
-                                                <input type="text" class="form-control"
+                                                <input type="text" class="form-control @error('google_scholar') is-invalid @enderror"
                                                 id="google_scholar" name="google_scholar">
+                                                @error('google_scholar')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Phone</label>
-                                                <input type="number" class="form-control"
+                                                <input type="number" class="form-control @error('phone') is-invalid @enderror"
                                                 id="phone" name="phone">
+                                                @error('phone')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col">
                                             <div class="form-group">
                                                 <label>Email</label>
-                                                <input type="email" class="form-control"
+                                                <input type="email" class="form-control @error('email') is-invalid @enderror"
                                                 id="email" name="email">
+                                                @error('email')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Address</label>
-                                                <input type="text" class="form-control"
+                                                <input type="text" class="form-control @error('instagram') is-invalid @enderror"
                                                 id="address" name="address">
+                                                @error('address')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Facebook</label>
-                                                <input type="text" class="form-control"
+                                                <input type="text" class="form-control @error('facebook') is-invalid @enderror"
                                                 id="facebook" name="facebook">
+                                                @error('facebook')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Instagram</label>
-                                                <input type="text" class="form-control"
+                                                <input type="text" class="form-control @error('instagram') is-invalid @enderror"
                                                 id="instagram" name="instagram">
+                                                @error('instagram')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Picture</label>
-                                                <input type="file" class="form-control"
+                                                <input type="file" class="form-control @error('picture') is-invalid @enderror"
                                                 id="picture" name="picture">
+                                                @error('picture')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a

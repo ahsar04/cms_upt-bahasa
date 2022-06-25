@@ -37,30 +37,47 @@
                                             <label>Training</label>
                                             <input type="text" class="form-control @error('training') is-invalid @enderror"
                                             id="exampleInputTraining" name="training" value="{{old('training')}}">
-                                            @error('training') <span class="text-danger">{{$message}}</span> @enderror
+                                            @error('training') 
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{$message}}</strong>
+                                                </span> 
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                             <label>Service Type</label>
                                             <select type="text" class="form-control @error('service_type') is-invalid @enderror"
                                             id="exampleInputServiceType" name="service_type" value="{{old('service_type')}}">
-                                            @error('service_type') <span class="text-danger">{{$message}}</span> @enderror
+                                            @error('service_type') 
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{$message}}</strong>
+                                                </span> 
+                                            @enderror
                                                 <option>- Select Service Type -</option>
-                                                <option>Course</option>
-                                                <option>EPT (English Proficiency Test)</option>
-                                                <option>Placement Test</option>
+                                                @foreach ($service as $service)
+                                                <option value="{{$service->service_type}}" >{{$service->service_type}}</option>
+                                                    
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Description Training</label>
                                             <textarea class="form-control @error('description_training') is-invalid @enderror"
                                             id="exampleInputDescriptionTraining" name="description_training" value="{{old('description_training')}}" cols="30" rows="10"></textarea>
-                                            @error('description_training') <span class="text-danger">{{$message}}</span> @enderror
+                                            @error('description_training') 
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{$message}}</strong>
+                                                </span> 
+                                            @enderror
                                         </div>
                                         <div class="form-group">
                                                 <label>Quota</label>
                                                 <input type="text" class="form-control @error('quota') is-invalid @enderror"
                                                 id="exampleInputQuota" name="quota" value="{{old('quota')}}">
-                                                @error('quota') <span class="text-danger">{{$message}}</span> @enderror
+                                                @error('quota') 
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{$message}}</strong>
+                                                    </span> 
+                                                @enderror
                                             </div>
                                     </div>
                                         <div class="col">
@@ -69,21 +86,31 @@
                                                 <input type="date" class="form-control datetimepicker"
                                                 class="form-control @error('opening_date') is-invalid @enderror"
                                                 id="exampleInputOpeningDate" name="opening_date" value="{{old('opening_date')}}">
-                                                @error('opening_date') <span class="text-danger">{{$message}}</span> @enderror
+                                                @error('opening_date') 
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{$message}}</strong>
+                                                    </span> 
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Excercise Date</label>
                                                 <input type="date" class="form-control datetimepicker"
                                                 class="form-control @error('excercise_date') is-invalid @enderror"
                                                 id="exampleInputExcerciseDate" name="excercise_date" value="{{old('excercise_date')}}">
-                                                @error('excercise_date') <span class="text-danger">{{$message}}</span> @enderror
+                                                @error('excercise_date') 
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{$message}}</strong>
+                                                    </span> 
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Closing Date</label>
                                                 <input type="date" class="form-control datetimepicker"
                                                 class="form-control @error('closing_date') is-invalid @enderror"
                                                 id="exampleInputClosingDate" name="closing_date" value="{{old('closing_date')}}">
-                                                @error('closing_date') <span class="text-danger">{{$message}}</span> @enderror
+                                                @error('closing_date') 
+                                                    <span class="text-danger">{{$message}}</span> 
+                                                @enderror
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a

@@ -2,7 +2,7 @@
         <!-- Navbar & Carousel Start -->
         <div class="container-fluid position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-                <a href="index.html" class="navbar-brand p-0">
+                <a href="#" class="navbar-brand p-0">
                     <div class="m-0 row">
                         <div class="col-md-2" style="margin-right: 10px">
                             <img
@@ -60,16 +60,11 @@
                                 >Services</a
                             >
                             <div class="dropdown-menu m-0">
-                                <a href="{{ route('ept')}}" class="dropdown-item"
-                                    >English Proficiency Test</a>
-                                <a
-                                    href="{{ route('placement-test') }}"
-                                    class="dropdown-item"
-                                    >Placement Test</a>
-                                <a
-                                    href="{{ route('course')}}"
-                                    class="dropdown-item"
-                                    >Course</a>
+                                @foreach ( $service_data as $sD)
+                                <a href="{{ route('service.data',$sD->service_type)}}" class="dropdown-item" style="text-transform:capitalize;"
+                                    >{{$sD->service_type}}</a>
+                                @endforeach
+                                    
                             </div>
                         </div>
                         <div class="nav-item dropdown">
@@ -80,18 +75,10 @@
                                 >Procedure</a
                             >
                             <div class="dropdown-menu m-0">
-                                <a href="{{ route('new-account')}}" class="dropdown-item"
-                                    >Procedure to Make Account </a
-                                >
-                                <a href="{{ route('test_skema')}}" class="dropdown-item"
-                                    >Procedure Test Skema</a
-                                >
-                                <a href="{{ route('test-result')}}" class="dropdown-item"
-                                    >Procedure to See Result Test</a
-                                >
-                                <a href="{{ route('certificate')}}" class="dropdown-item"
-                                    >Procedure to Take Certificate</a
-                                >
+                                @foreach ( $procedure_data as $sD)
+                                <a href="{{ route('procedure.data',$sD->headline_procedure)}}" class="dropdown-item" style="text-transform:capitalize;"
+                                    >{{$sD->headline_procedure}}</a>
+                                @endforeach
                             </div>
                         </div>
                         <a href="{{ route('contact')}}" class="nav-item nav-link {{ set_active('contact')}}"
@@ -132,7 +119,7 @@
                                 </h1>
                                 <!-- <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free Quote</a> -->
                                 <a
-                                    href=""
+                                    href="#"
                                     class="btn btn-outline-light py-md-3 px-md-5 animated slideInCenter"
                                     >Read More</a
                                 >
@@ -193,7 +180,7 @@
                                     Read News
                                 </h1>
                                 <a
-                                    href="{{ route('home')}}"
+                                    href="{{ route('news')}}"
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInCenter"
                                     >Read More</a
                                 >

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\Teacher;
 use routes\web;
 
@@ -37,11 +38,11 @@ class TeacherController extends Controller
             'address' => 'required',
             'facebook' => 'required',
             'instagram' => 'required',
-            'picture' => 'required|file|image|mimes:jpeg,jpg,png|max:1024',
+            'picture' => 'file|image|mimes:jpeg,jpg,png|max:1024',
         ]);
 
         $teaching_staff = $request->picture;
-        $namafile = $teaching_staff->getClientOriginalName();
+        $namafile = date('His').Str::random(10)."_".$teaching_staff->getClientOriginalName();
 
         $dtUpload = new Teacher;
         $dtUpload->nip = $request->nip;
@@ -78,7 +79,7 @@ class TeacherController extends Controller
         ]);
 
         $teaching_staff = Teacher::findorfail($id_teaching_staff);
-        $gambarAwal = $teaching_staff->picture;
+        $gambarAwal = date('His').Str::random(10)."_".$teaching_staff->picture;
 
         $data = [
             'nip' => $request['nip'],

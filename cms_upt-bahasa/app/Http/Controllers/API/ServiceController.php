@@ -14,8 +14,8 @@ class ServiceController extends Controller
         $service = Service::all();
         // return new ServiceResource($service);
         return response()->json([
-        "meta" => ["code"=>200,"status"=>"Success","message"=>'null'],
-        "data"=>new ServiceResource($service)
+        "meta" => ["code"=>200,"status"=>"Success","message"=>'Data berhasil diambil'],
+        "data"=>["current_page"=>1,"service" => new ServiceResource($service)]
     ]);
     }
 }

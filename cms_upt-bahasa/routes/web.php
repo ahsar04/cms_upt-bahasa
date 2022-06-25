@@ -17,28 +17,34 @@ Route::prefix('/')
         Route::get('/', 'HomeController@index')
             ->name('landingpage');
 
-        Route::get('/visimisi', 'VisiMisiController@index')
+        Route::get('visimisi', 'VisiMisiController@index')
             ->name('visimisi');
 
-        Route::get('/teachingstaff', 'TeachingStaffController@index')
+        Route::get('teachingstaff', 'TeachingStaffController@index')
             ->name('teachingstaff');
         
-        Route::get('/ept', 'EptController@index')
-            ->name('ept');
-            
-        Route::get('placement-test', 'PlacementtestController@index')
-            ->name('placement-test');
+        Route::get('service/{service}', 'ServiceController@index')
+            ->name('service.data');
         
-        Route::get('new-account', 'NewAccountController@index')
+        Route::get('procedure/{procedure_menu}', 'ProcedureController@index')
+            ->name('procedure.data');
+            
+        // Route::get('placement-test', 'ServiceController@placementTest')
+        //     ->name('placement-test');
+        
+        // Route::get('course', 'ServiceController@course')
+        //     ->name('course');
+
+        Route::get('new-account', 'ProcedureController@makeAccount')
             ->name('new-account');
             
-        Route::get('test_skema', 'TestSkemaController@index')
+        Route::get('test_skema', 'ProcedureController@testSkeme')
             ->name('test_skema');
 
-        Route::get('test-result', 'TestResultController@index')
+        Route::get('test-result', 'ProcedureController@seeResult')
             ->name('test-result');
 
-        Route::get('certificate', 'CertificateController@index')
+        Route::get('certificate', 'ProcedureController@takeCertificate')
             ->name('certificate');
 
         Route::get('contact', 'ContactController@index')
@@ -46,8 +52,6 @@ Route::prefix('/')
         Route::post('/contact/save', 'ContactController@store')
             ->name('contact.store');
         
-        Route::get('course', 'CourseController@index')
-            ->name('course');
 
         Route::get('newsdetail/{id_news}', 'NewsDetailController@index')
             ->name('newsdetail');
@@ -56,7 +60,7 @@ Route::prefix('/')
 
 Route::prefix('admin')
     ->namespace('Admin')
-    // ->middleware(['auth','admin'])
+    ->middleware(['auth','admin'])
     ->group(function(){
         Route::get('/dashboard', 'DashboardController@index')
             ->name('dashboard');
@@ -168,10 +172,11 @@ Route::prefix('admin')
     });
 
 Auth::routes(['verify' => true]);
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'user\DashboardController@index')->name('home');
 
 Route::prefix('/')
     ->namespace('User')
+    ->middleware(['auth','user'])
     ->group(function(){
         Route::get('/dashboard', 'DashboardController@index')
             ->name('dashboard');
@@ -179,7 +184,7 @@ Route::prefix('/')
             ->name('history');
         Route::get('/profile', 'UserController@edit')
             ->name('profile.edit');
-        Route::post('/profile/update', 'UserController@update')
+        Route::post('/profile/update/{id}', 'UserController@update')
             ->name('profile.update');
         Route::get('/regtraining/{id_training}', 'RegTrainingController@index')
             ->name('regtraining');

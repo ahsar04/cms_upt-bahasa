@@ -37,13 +37,21 @@
                                                 <label>Service Type</label>
                                                 <input type="text" class="form-control @error('service_type') is-invalid @enderror"
                                                 id="exampleInputServiceType" name="service_type" value="{{old('service_type')}}">
-                                                @error('service_type') <span class="text-danger">{{$message}}</span> @enderror
+                                                @error('service_type') 
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{$message}}</strong>
+                                                    </span> 
+                                                @enderror
                                             </div>
                                             <div class="form-group">
                                                 <label>Description Service</label>
                                                 <textarea class="form-control @error('description_service') is-invalid @enderror"
                                                 id="exampleInputDescriptionService" name="description_service" value="{{old('description_service')}}" cols="30" rows="10"></textarea>
-                                                @error('description_service') <span class="text-danger">{{$message}}</span> @enderror
+                                                @error('description_service') 
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{$message}}</strong>
+                                                    </span> 
+                                                @enderror
                                             </div>
                                             <div class="card-footer text-right">
                                                 <a

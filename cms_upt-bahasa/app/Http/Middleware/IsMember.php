@@ -16,7 +16,7 @@ class IsMember
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::user() && Auth::user()->role == 'USER') {
+        if (Auth::user() && Auth::user()->roles == 'USER') {
             return $next($request);
         }
         return redirect('/');
