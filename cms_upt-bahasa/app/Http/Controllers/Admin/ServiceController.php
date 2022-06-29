@@ -14,7 +14,7 @@ class ServiceController extends Controller
         $this->middleware(['auth','verified']);
     }
     public function index(){
-        $service = Service::all();
+        $service = Service::orderBy('id_service', 'desc')->get();
         return view('pages.admin.service.service', compact('service'));
     }
     public function add(){

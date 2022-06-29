@@ -74,8 +74,8 @@
         <!-- Facts Start -->
 
         <!-- Blog Start -->
-        <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container py-5">
+        <div class="container-fluid wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container ">
                 <div
                     class="section-title text-center position-relative pb-3 mb-5 mx-auto"
                     style="max-width: 600px"
@@ -84,16 +84,21 @@
                     <h1 class="mb-0">Announcement</h1>
                 </div>
                 <div class="row g-5">
-                    <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                        <div class="blog-item bg-light rounded overflow-hidden">
                         @foreach ($news as $item)
+                    <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                        <a class="text-uppercase" href="{{ route('newsdetail', $item->id_news)}}"
+                                    >
+                        <div class="blog-item bg-light rounded overflow-hidden">
                             <div
                                 class="blog-img position-relative overflow-hidden">
-                                <img
+                                <center>
+                                    <img 
+                                    style="height: 350px;"
                                     class="img-fluid"
-                                    src="{{url('frontend/img/img_bahasa4.jpg')}}"
+                                    src="{{url('img/news/'.$item->picture)}}"
                                     alt=""
                                 />
+                                </center>
                                 <a
                                     class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-2 py-2 px-4"
                                     href=""
@@ -112,21 +117,28 @@
                                         ><i
                                             class="far fa-calendar-alt text-primary me-2"
                                         ></i
-                                        >{{ date('d-m-y',strtotime($item->created_at))}}</small
+                                        >{{ $item->created_at->diffForHumans()}}</small
                                     >
                                 </div>
-                                <h4 class="mb-3">{{ $item->headline_news}}</h4>
-                                <p>
+                                <h4 class="mb-3">{{ substr($item->headline_news,0,20)}}@if (Str::length($item->headline_news)>20)
+                                   ... 
+                                @endif</h4>
+                                {{-- <p>
                                     {{ $item->description_news}}
-                                </p>
-                                <a class="text-uppercase" href="{{ route('newsdetail', $item->id_news)}}"
+                                </p> --}}
+                                <div class="row">
+                                    <div class="col-7"></div>
+                                    <div class="col-5"><a class="text-uppercase" href="{{ route('newsdetail', $item->id_news)}}"
                                     >Read More <i class="bi bi-arrow-right"></i
-                                ></a>
+                                ></a></div>
+                                </div>
                             </div>
-                        @endforeach
                         </div>
+                        </a>
                     </div>
-                </div>
+                        @endforeach
+                </div><br>
+                {{$news->links()}}
             </div>
         </div>
         <!-- Blog Start -->

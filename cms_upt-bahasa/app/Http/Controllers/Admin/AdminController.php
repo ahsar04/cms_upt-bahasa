@@ -14,7 +14,7 @@ class AdminController extends Controller
         $this->middleware(['auth','verified']);
     }
     public function index(){
-        $admin = User::where('roles', 'ADMIN')->get();
+        $admin = User::where('roles', 'ADMIN')->orderBy('id', 'desc')->get();
         return view('pages.admin.administrator.administrator', compact('admin'));
     }
     public function destroy($id)

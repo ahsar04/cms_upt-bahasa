@@ -20,14 +20,13 @@
                             @csrf
                             <div class="row">
                                 <div class="col-12">
-                                    <div class="card card-success">
-                                        <div class="row">
-                                            <div class="col-12 col-md-6 col-lg-6">
-                                                <div class="card">
+                                    <div class="card card-primary">
                                                     <div class="card-header">
                                                         <h4>Edit Data Profile</h4>
                                                     </div>
                                                     <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-6">
                                                         <div class="form-group">
                                                             <label>Pas Photo</label>
                                                             <img src="{{ asset('/img/users/'.Auth::user()->pas_photo) }}" width="200px" class="d-block">
@@ -54,12 +53,8 @@
                                                                 </span>
                                                                 @enderror
                                                             </div>
-                                                    </div>
-                                                </div>
                                             </div>
-                                            <div class="col-12 col-md-6 col-lg-6">
-                                                <div class="card">
-                                                    <div class="card-body">
+                                            <div class="col-6">
                                                             <div class="form-group">
                                                                 <label>Name</label>
                                                                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', Auth::user()->name) }}">

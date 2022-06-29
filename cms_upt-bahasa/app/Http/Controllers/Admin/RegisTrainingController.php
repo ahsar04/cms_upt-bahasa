@@ -20,7 +20,7 @@ class RegisTrainingController extends Controller
         $registraining = DB::table('training_registration')
                         ->join('users', 'users.id', '=', 'training_registration.id')
                         ->join('training', 'training.id_training', '=', 'training_registration.id_training')
-                        ->get();
+                        ->orderBy('id_training_registration', 'desc')->get();
         return view('pages.admin.registraining.registraining', compact('registraining'));
     }
     public function edit($id_training_registration){

@@ -14,7 +14,7 @@ class FeedbackController extends Controller
         $this->middleware(['auth','verified']);
     }
     public function index(){
-        $feedback = Feedback::all();
+        $feedback = Feedback::orderBy('id_feedback', 'desc')->get();
         return view('pages.admin.feedback.feedback', compact('feedback'));
     }
 

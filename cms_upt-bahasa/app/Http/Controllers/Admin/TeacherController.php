@@ -42,7 +42,7 @@ class TeacherController extends Controller
         ]);
 
         $teaching_staff = $request->picture;
-        $namafile = date('His').Str::random(10)."_".$teaching_staff->getClientOriginalName();
+        $namafile = date('His').Str::random(10).".".$teaching_staff->extension();
 
         $dtUpload = new Teacher;
         $dtUpload->nip = $request->nip;
@@ -75,11 +75,24 @@ class TeacherController extends Controller
             'address' => 'required',
             'facebook' => 'required',
             'instagram' => 'required',
-            'picture' => 'required|file|image|mimes:jpeg,jpg,png|max:1024',
+            'picture' => 'file|image|mimes:jpeg,jpg,png|max:1024',
         ]);
 
         $teaching_staff = Teacher::findorfail($id_teaching_staff);
-        $gambarAwal = date('His').Str::random(10)."_".$teaching_staff->picture;
+        if ($request->picture==null) {
+            $data = [
+            'nip' => $request['nip'],
+            'fullname' => $request['fullname'],
+            'position' => $request['position'],
+            'google_scholar' => $request['google_scholar'],
+            'phone' => $request['phone'],
+            'email' => $request['email'],
+            'address' => $request['address'],
+            'facebook' => $request['facebook'],
+            'instagram' => $request['instagram'],
+        ];
+        } else {
+        $newPict = date('His').Str::random(10).".".$request->picture->extension();
 
         $data = [
             'nip' => $request['nip'],
@@ -91,10 +104,14 @@ class TeacherController extends Controller
             'address' => $request['address'],
             'facebook' => $request['facebook'],
             'instagram' => $request['instagram'],
-            'picture' => $gambarAwal,
+            'picture' => $newPict,
         ];
-
-        $request->picture->move(public_path().'/img/teacher', $gambarAwal);
+        $file = public_path('/img/teacher/').$teaching_staff->picture;
+        if (file_exists($file)) {
+            @unlink($file);
+        }
+        $request->picture->move(public_path().'/img/teacher', $newPict);
+        }
         $teaching_staff->update($data);
         return redirect('admin/teacher')->with('toast_success', 'Data Updated Successfully');
     }

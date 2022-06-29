@@ -52,7 +52,6 @@
                                                     <strong>{{$message}}</strong>
                                                 </span> 
                                             @enderror
-                                                <option>- Select Service Type -</option>
                                                 @foreach ($service as $service)
                                                 <option value="{{$service->service_type}}" >{{$service->service_type}}</option>
                                                     

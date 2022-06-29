@@ -27,9 +27,6 @@
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h4>News</h4>
-                                        </div>
-                                        <div class="card-body">
                                             <a
                                                 href="{{ route('news.add') }}"
                                                 class="btn btn-success"

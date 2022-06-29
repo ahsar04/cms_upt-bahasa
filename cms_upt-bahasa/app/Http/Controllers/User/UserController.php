@@ -32,20 +32,51 @@ class UserController extends Controller
             'pas_photo' => ['file','image','mimes:jpeg,jpg,png','max:1024',],
             'identity_card' => ['file','image','mimes:jpeg,jpg,png','max:1024',]
         ]);
-        // if ($request->pas_photo==null) {
-        //     # code...
-        // }elseif($request->identity_card==null){
-            
-        // }
-        $userPhoto = $request['pas_photo'];
-        $namafile = date('His').Str::random(10)."_".$userPhoto->getClientOriginalName();
         
-        $userCard = $request['identity_card'];
-        $namafile2 = date('His').Str::random(10)."_".$userCard->getClientOriginalName();
         $users = User::findorfail($id);
-        // $gambarAwal = $users->picture;
-
-        $data=[
+        if ($request->pas_photo==null&&$request->identity_card==null) {
+            $data=[
+            'name' => $request['name'],
+            'gender' => $request['gender'],
+            'place_of_birth' => $request['place_of_birth'],
+            'date_of_birth' => $request['date_of_birth'],
+            'last_education' => $request['last_education'],
+            'phone' => $request['phone'],
+            'address' => $request['address'],
+            
+            ];  
+        }elseif ($request->pas_photo==null) {
+        $namafile2 = date('His').Str::random(10).".".$request->identity_card->extension();
+            $data=[
+            'name' => $request['name'],
+            'gender' => $request['gender'],
+            'place_of_birth' => $request['place_of_birth'],
+            'date_of_birth' => $request['date_of_birth'],
+            'last_education' => $request['last_education'],
+            'phone' => $request['phone'],
+            'address' => $request['address'],
+            'identity_card' => $namafile2,
+            
+        ];
+        $request->identity_card->move(public_path().'/img/users', $namafile2);
+        }elseif($request->identity_card==null){
+        $namafile = date('His').Str::random(10).".".$request->pas_photo->extension();
+            $data=[
+            'name' => $request['name'],
+            'gender' => $request['gender'],
+            'place_of_birth' => $request['place_of_birth'],
+            'date_of_birth' => $request['date_of_birth'],
+            'last_education' => $request['last_education'],
+            'phone' => $request['phone'],
+            'address' => $request['address'],
+            'pas_photo' => $namafile,
+            
+        ];
+        $request->pas_photo->move(public_path().'/img/users', $namafile);
+        }else{
+        $namafile = date('His').Str::random(10).".".$request->pas_photo->extension();
+        $namafile2 = date('His').Str::random(10).".".$request->identity_card->extension();
+            $data=[
             'name' => $request['name'],
             'gender' => $request['gender'],
             'place_of_birth' => $request['place_of_birth'],
@@ -55,10 +86,11 @@ class UserController extends Controller
             'address' => $request['address'],
             'pas_photo' => $namafile,
             'identity_card' => $namafile2,
+            
         ];
-        
-        $userPhoto->move(public_path().'/img/users', $namafile);
-        $userCard->move(public_path().'/img/users', $namafile2);
+        $request->pas_photo->move(public_path().'/img/users', $namafile);
+        $request->identity_card->move(public_path().'/img/users', $namafile2);
+        }
         $users->update($data);
         return redirect('dashboard')->with('toast_success', 'Data Updated Successfully');
 

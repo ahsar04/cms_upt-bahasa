@@ -1,5 +1,5 @@
 
-                <div class="navbar bg-success"></div>
+                <div class="navbar-bg"></div>
                 <nav class="navbar navbar-expand-lg main-navbar">
                     <form class="form-inline mr-auto">
                         <ul class="navbar-nav mr-3">
@@ -233,7 +233,6 @@
                             </div>
                         </li>
                         <li class="dropdown">
-                            
                             <a
                                 href="#"
                                 data-toggle="dropdown"
@@ -250,11 +249,10 @@
                             >
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="dropdown-title">
-                                    User
+                                    Member
                                 </div>
                                 <a
                                     href="{{ route('profile.edit') }}"
-                                    type="button"
                                     class="dropdown-item has-icon"
                                 >
                                     <i class="far fa-user"></i> Profile

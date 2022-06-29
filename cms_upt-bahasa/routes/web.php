@@ -93,9 +93,9 @@ Route::prefix('admin')
             ->name('administrator.delete');
         
         //Profile Admin
-        Route::get('/profileadmin', 'ProfileAdminController@index')
+        Route::get('/profileadmin', 'UserController@index')
             ->name('profileadmin');
-        Route::post('/profileadmin/update', 'ProfileAdminController@update')
+        Route::post('/profileadmin/update/{id}', 'UserController@update')
             ->name('profileadmin.update');
 
         //News

@@ -74,13 +74,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $userPhoto = $data['pas_photo'];
-        $namafile = date('His').Str::random(10)."_".$userPhoto->getClientOriginalName();
-        $userPhoto->move(public_path().'/img/users', $namafile);
+        $namafile = date('His').Str::random(10).".".$data['pas_photo']->extension();
+        $data['pas_photo']->move(public_path().'/img/users', $namafile);
         
-        $userCard = $data['identity_card'];
-        $namafile2 = date('His').Str::random(10)."_".$userCard->getClientOriginalName();
-        $userCard->move(public_path().'/img/users', $namafile2);
+        $namafile2 = date('His').Str::random(10).".".$data['identity_card']->extension();
+        $data['identity_card']->move(public_path().'/img/users', $namafile2);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

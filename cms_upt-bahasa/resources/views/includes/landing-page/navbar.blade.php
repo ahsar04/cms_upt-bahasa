@@ -180,7 +180,7 @@
                                     Read News
                                 </h1>
                                 <a
-                                    href="{{ route('news')}}"
+                                    href="{{ route('landingpage')}}"
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInCenter"
                                     >Read More</a
                                 >

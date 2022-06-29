@@ -19,21 +19,21 @@
                             <!-- <p class="section-lead">
                                 Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
                             </p> -->
-                            <form action="{{ route('profileadmin.update') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('profileadmin.update',Auth::user()->id) }}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="card card-primary">
-                                            <div class="row">
-                                                <div class="col-12 col-md-6 col-lg-6">
-                                                    <div class="card">
+                                            
                                                         <div class="card-header">
                                                             <h4>Edit Data Profile</h4>
                                                         </div>
                                                         <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-6">
                                                             <div class="form-group">
                                                                 <label>Pas Photo</label>
-                                                                <img src="{{ asset('/img/user/profile/'.Auth::user()->pas_photo) }}" width="200px" class="d-block">
+                                                                <img src="{{ asset('/img/users/'.Auth::user()->pas_photo) }}" width="200px" class="d-block">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Change Pas Photo</label>
@@ -41,18 +41,14 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Indentity Card</label>
-                                                                <img src="{{ asset('/img/user/profile/'.Auth::user()->pas_photo) }}" width="200px" class="d-block">
+                                                                <img src="{{ asset('/img/users/'.Auth::user()->identity_card) }}" width="200px" class="d-block">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Change Indentity Card</label>
-                                                                <input type="file" class="form-control" id="pas_photo" name="pas_photo" value="{{ old('pas_photo', Auth::user()->pas_photo )}}">
+                                                                <input type="file" class="form-control" id="identity_card" name="identity_card" value="{{ old('identity_card', Auth::user()->identity_card )}}">
                                                             </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
-                                                <div class="col-12 col-md-6 col-lg-6">
-                                                    <div class="card">
-                                                        <div class="card-body">
+                                                <div class="col-6">
                                                                 <div class="form-group">
                                                                     <label>Name</label>
                                                                     <input type="text" class="form-control" id="name" name="name" value="{{ old('name', Auth::user()->name) }}">

@@ -14,7 +14,7 @@ class ProcedureController extends Controller
         $this->middleware(['auth','verified']);
     }
     public function index(){
-        $procedure = Procedure::all();
+        $procedure = Procedure::orderBy('id_procedure', 'desc')->get();
         return view('pages.admin.procedure.procedure', compact('procedure'));
     }
     public function add(){

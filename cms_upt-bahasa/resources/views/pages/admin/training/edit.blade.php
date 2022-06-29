@@ -43,11 +43,10 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Service Type</label>
-                                                <select class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type" value="{{ $training->service_type }}">
-                                                    <option>- Select Service Type -</option>
-                                                    <option <?php if($training['service_type']=='Course') echo 'selected'?>>Course</option>
-                                                    <option <?php if($training['service_type']=='EPT (English Proficiency Test)') echo 'selected'?>>EPT (English Proficiency Test)</option>
-                                                    <option <?php if($training['service_type']=='Placement Test') echo 'selected'?>>Placement Test</option>
+                                                <select class="form-control @error('service_type') is-invalid @enderror" id="service_type" name="service_type"  required>
+                                                    @foreach ($service as $service)
+                                                    <option @if($training['service_type']==$service->service_type) selected @endif>{{$service->service_type}}</option>
+                                                    @endforeach
                                                 </select>
                                                 @error('service_type')
                                                 <div class="invalid-feedback">

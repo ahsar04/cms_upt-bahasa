@@ -15,7 +15,7 @@ class NewsController extends Controller
         $this->middleware(['auth','verified']);
     }
     public function index(){
-        $news = News::all();
+        $news = News::orderBy('id_news', 'desc')->get();
         return view('pages.admin.news.news', compact('news'));
     }
     public function add(){
@@ -41,7 +41,7 @@ class NewsController extends Controller
         ]);
 
         $news = $request->picture;
-        $namafile = date('His').Str::random(10)."_".$news->getClientOriginalName();
+        $namafile = date('His').Str::random(10).".".$news->extension();
 
         $dtUpload = new News;
         $dtUpload->headline_news = $request->headline_news;
@@ -65,21 +65,33 @@ class NewsController extends Controller
         $this->validate($request, [
             'headline_news' => 'required',
             'description_news' => 'required',
-            'picture' => 'required|file|image|mimes:jpeg,jpg,png|max:1024',
+            'picture' => 'file|image|mimes:jpeg,jpg,png|max:1024',
             'author' => 'required',
         ]);
 
         $news = News::findorfail($id_news);
-        $gambarAwal = date('His').Str::random(10)."_".$news->picture;
-
-        $data = [
-            'headline_news' => $request['headline_news'],
-            'description_news' => $request['description_news'],
-            'picture' => $gambarAwal,
-            'author' => $request['author'],
-        ];
-
-        $request->picture->move(public_path().'/img/news', $gambarAwal);
+        if ($request->picture==null) {
+            $data = [
+                'headline_news' => $request['headline_news'],
+                'description_news' => $request['description_news'],
+                // 'picture' => $newPict,
+                'author' => $request['author'],
+            ];
+        }else{
+            $newPict = date('His').Str::random(10).".".$request->picture->extension();
+            $data = [
+                'headline_news' => $request['headline_news'],
+                'description_news' => $request['description_news'],
+                'picture' => $newPict,
+                'author' => $request['author'],
+            ];
+            $file = public_path('/img/news/').$news->picture;
+            if (file_exists($file)) {
+                @unlink($file);
+            }
+            $request->picture->move(public_path().'/img/news', $newPict);
+        }
+        
         $news->update($data);
         return redirect('admin/news')->with('toast_success', 'Data Updated Successfully');
     }

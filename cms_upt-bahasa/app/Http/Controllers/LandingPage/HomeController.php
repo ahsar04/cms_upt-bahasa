@@ -14,7 +14,7 @@ class HomeController extends Controller
         
         $service_data = Service::all();
         $procedure_data = Procedure::all();
-        $news = News::all();
+        $news = News::orderby('id_news','desc')->paginate(3);
         $users = DB::table('users')->Where('roles', 'USER')->count();
         $teaching_staff = DB::table('teaching_staff')->count();
         $regtraining = DB::table('training_registration')->count();

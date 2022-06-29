@@ -14,7 +14,7 @@ class MemberController extends Controller
         $this->middleware(['auth','verified']);
     }
     public function index(){
-        $users = User::where('roles', 'USER')->get();
+        $users = User::where('roles', 'USER')->orderBy('id', 'desc')->get();
         return view('pages.admin.member.member', compact('users'));
     }
     public function destroy($id)

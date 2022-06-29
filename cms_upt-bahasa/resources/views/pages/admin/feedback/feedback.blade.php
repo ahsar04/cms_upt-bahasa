@@ -51,7 +51,7 @@
                                                             <td>{{ $item->name }}</td>
                                                             <td>{{ $item->email }}</td>
                                                             <td>{{ $item->subject }}</td>
-                                                            <td>{{ $item->feedback }}</td>
+                                                            <td>{{ $item->feedback }}. <i class="text-small">{{ $item->created_at->diffForHumans() }}</i></td>
                                                             <td>
                                                                 <a 
                                                                     class="btn btn-danger"

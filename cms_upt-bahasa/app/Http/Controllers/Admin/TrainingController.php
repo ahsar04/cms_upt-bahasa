@@ -15,19 +15,15 @@ class TrainingController extends Controller
         $this->middleware(['auth','verified']);
     }
     public function index(){
-        $training = Training::all();
+        $training = Training::orderBy('id_training', 'desc')->get();
         return view('pages.admin.training.training', compact('training'));
     }
     public function add(){
-        $service = Service::all();
+        $service = Service::orderBy('id_service', 'desc')->get();
         return view('pages.admin.training.add',compact('service'));
     }
-    /** 
-    * @param int $id_training
-    * @return \Illuminate\Http\Response
-    */
     public function edit($id_training){
-        $service = Service::all();
+        $service = Service::orderBy('id_service', 'desc')->get();
         $training = Training::findorfail($id_training);
         return view('pages.admin.training.edit', compact('training','service'));
     }
