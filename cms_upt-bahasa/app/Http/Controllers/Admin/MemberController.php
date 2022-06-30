@@ -17,6 +17,10 @@ class MemberController extends Controller
         $users = User::where('roles', 'USER')->orderBy('id', 'desc')->get();
         return view('pages.admin.member.member', compact('users'));
     }
+    public function detail($id){
+        $users = User::findorfail($id);
+        return view('pages.admin.member.detail', compact('users'));
+    }
     public function destroy($id)
     {
         $users = User::findorfail($id);

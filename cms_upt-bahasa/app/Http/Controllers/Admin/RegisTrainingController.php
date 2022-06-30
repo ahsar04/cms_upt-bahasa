@@ -27,6 +27,10 @@ class RegisTrainingController extends Controller
         $registraining = TrainingRegistration::findorfail($id_training_registration);
         return view('pages.admin.registraining.edit', compact('registraining'));
     }
+    public function detail($id_training_registration){
+        $registraining = TrainingRegistration::findorfail($id_training_registration);
+        return view('pages.admin.registraining.detail', compact('registraining'));
+    }
     public function update(Request $request, $id_training_registration)
     {
         $registraining = TrainingRegistration::findorfail($id_training_registration);

@@ -17,6 +17,10 @@ class AdminController extends Controller
         $admin = User::where('roles', 'ADMIN')->orderBy('id', 'desc')->get();
         return view('pages.admin.administrator.administrator', compact('admin'));
     }
+    public function detail($id){
+        $admin = User::findorfail($id);
+        return view('pages.admin.administrator.detail', compact('admin'));
+    }
     public function destroy($id)
     {
         $admin = User::findorfail($id);

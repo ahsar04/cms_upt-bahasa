@@ -56,9 +56,9 @@
                                                             <td>
                                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                                 <a
-                                                                    href="{{ route('registraining.edit', $item->id_training_registration) }}"
+                                                                    href="{{ route('registraining.detail', $item->id_training_registration) }}"
                                                                     class="btn btn-primary"
-                                                                ><i class="fas fa-edit"></i>
+                                                                ><i class="fas fa-info"></i>
                                                                 </a>
                                                                 <a
                                                                     onclick="return confirm('Are you sure?')"

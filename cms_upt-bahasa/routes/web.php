@@ -73,6 +73,8 @@ Route::prefix('admin')
             ->name('teacher.add');
         Route::get('/teacher/edit/{id_teaching_staff}', 'TeacherController@edit')
             ->name('teacher.edit');
+        Route::get('/teacher/detail/{id_teaching_staff}', 'TeacherController@detail')
+            ->name('teacher.detail');
         Route::post('/teacher/save', 'TeacherController@store')
             ->name('teacher.store');
         Route::post('/teacher/update/{id_teaching_staff}', 'TeacherController@update')
@@ -83,12 +85,16 @@ Route::prefix('admin')
         //Member
         Route::get('/member', 'MemberController@index')
             ->name('member');
+        Route::get('/member/detail/{id}', 'MemberController@detail')
+            ->name('member.detail');
         Route::get('/member/delete/{id}', 'MemberController@destroy')
             ->name('member.delete');
 
         //Admin
         Route::get('/administrator', 'AdminController@index')
             ->name('administrator');
+        Route::get('/administrator/detail/{id}', 'AdminController@detail')
+            ->name('administrator.detail');
         Route::get('/administrator/delete/{id}', 'AdminController@destroy')
             ->name('administrator.delete');
         
@@ -131,6 +137,8 @@ Route::prefix('admin')
             ->name('registraining');
         Route::get('/registraining/edit/{id_training_registration}', 'RegisTrainingController@edit')
             ->name('registraining.edit');
+        Route::get('/registraining/detail/{id_training_registration}', 'RegisTrainingController@detail')
+            ->name('registraining.detail');
         Route::post('/registraining/update/{id_training_registration}', 'RegisTrainingController@update')
             ->name('registraining.update');
         Route::get('/registraining/delete/{id_training_registration}', 'RegisTrainingController@destroy')

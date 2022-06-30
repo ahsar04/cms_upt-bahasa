@@ -29,16 +29,13 @@
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>Name</th>
-                                                            <th>Identity Card</th>
-                                                            <th>Phone</th>
-                                                            <th>Email</th>
-                                                            <th>Gender</th>
-                                                            <th>Place Of Birth</th>
-                                                            <th>Date Of Birth</th>
-                                                            <th>Last Education</th>
-                                                            <th>Address</th>
                                                             <th>Pas Photo</th>
+                                                            <th>Name</th>
+                                                            <th>Gender</th>
+                                                            <th>Email</th>
+                                                            <th>Phone</th>
+                                                            <th>Place and Date Of Birth</th>
+                                                            <th>Address</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
@@ -46,18 +43,25 @@
                                                     @foreach ($admin as $item)
                                                         <tr>
                                                             <td>{{ $loop->iteration }}</td>
+                                                            <td><img src="{{url('/img/users/'.$item->pas_photo)}}" alt="picture" width="100px"></td>
                                                             <td>{{ $item->name }}</td>
-                                                            <td>{{ $item->identity_card }}</td>
-                                                            <td>{{ $item->phone }}</td>
+                                                            <td><?php if ($item->gender == 'F') {
+                                                                    print('Female');
+                                                                } else {
+                                                                    print('Male');
+                                                                } ?>
+                                                            </td>
                                                             <td>{{ $item->email }}</td>
-                                                            <td>{{ $item->gender }}</td>
-                                                            <td>{{ $item->place_of_birth }}</td>
-                                                            <td>{{ $item->date_of_birth }}</td>
-                                                            <td>{{ $item->last_education }}</td>
+                                                            <td>{{ $item->phone }}</td>
+                                                            <td>{{ $item->place_of_birth }}, {{ date('d-m-Y', strtotime($item->date_of_birth)) }}</td>
                                                             <td>{{ $item->address }}</td>
-                                                            <td>{{ $item->pas_photo }}</td>
                                                             <td>
                                                             <div class="btn-group" role="group" aria-label="Basic example">
+                                                                <a
+                                                                    href="{{ route('administrator.detail', $item->id) }}"
+                                                                    class="btn btn-primary"
+                                                                ><i class="fas fa-info"></i>
+                                                                </a>
                                                                 <a
                                                                     onclick="return confirm('Are you sure?')"
                                                                     href="{{ route('administrator.delete', $item->id) }}"

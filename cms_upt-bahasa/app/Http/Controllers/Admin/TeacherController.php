@@ -21,6 +21,10 @@ class TeacherController extends Controller
     public function add(){
         return view('pages.admin.teacher.add');
     }
+    public function detail($id_teaching_staff){
+        $teaching_staff = Teacher::findorfail($id_teaching_staff);
+        return view('pages.admin.teacher.detail', compact('teaching_staff'));
+    }
     public function edit($id_teaching_staff){
         $teaching_staff = Teacher::findorfail($id_teaching_staff);
         return view('pages.admin.teacher.edit', compact('teaching_staff'));

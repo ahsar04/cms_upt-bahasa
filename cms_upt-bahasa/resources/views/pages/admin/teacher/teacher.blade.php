@@ -41,16 +41,13 @@
                                                     <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>NIP</th>
-                                                            <th>Fullname</th>
-                                                            <th>Functional Position</th>
-                                                            <th>Google Scholar</th>
-                                                            <th>Phone</th>
-                                                            <th>Email</th>
-                                                            <th>Address</th>
-                                                            <th>Facebook</th>
-                                                            <th>Instagram</th>
                                                             <th>Picture</th>
+                                                            <th>Fullname</th>
+                                                            <th>NIP</th>
+                                                            <th>Functional Position</th>
+                                                            <th>Email</th>
+                                                            <th>Phone</th>
+                                                            <th>Address</th>
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
@@ -58,22 +55,19 @@
                                                         @foreach ($teaching_staff as $item)
                                                         <tr>
                                                             <td>{{ $loop->iteration }}</td>
-                                                            <td>{{ $item->nip }}</td>
-                                                            <td>{{ $item->fullname }}</td>
-                                                            <td>{{ $item->position }}</td>
-                                                            <td>{{ $item->google_scholar }}</td>
-                                                            <td>{{ $item->phone }}</td>
-                                                            <td>{{ $item->email }}</td>
-                                                            <td>{{ $item->address }}</td>
-                                                            <td>{{ $item->facebook }}</td>
-                                                            <td>{{ $item->instagram }}</td>
                                                             <td><img src="{{ url('/img/teacher/'.$item->picture) }}" alt="picture" width="100px"></td>
+                                                            <td>{{ $item->fullname }}</td>
+                                                            <td>{{ $item->nip }}</td>
+                                                            <td>{{ $item->position }}</td>
+                                                            <td>{{ $item->email }}</td>
+                                                            <td>{{ $item->phone }}</td>
+                                                            <td>{{ $item->address }}</td>
                                                             <td>
                                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                                 <a
-                                                                    href="{{ route('teacher.edit', $item->id_teaching_staff) }}"
+                                                                    href="{{ route('teacher.detail', $item->id_teaching_staff) }}"
                                                                     class="btn btn-primary"
-                                                                ><i class="fas fa-edit"></i>
+                                                                ><i class="fas fa-info"></i>
                                                                 </a>
                                                                 <a
                                                                     onclick="return confirm('Are you sure?')"
