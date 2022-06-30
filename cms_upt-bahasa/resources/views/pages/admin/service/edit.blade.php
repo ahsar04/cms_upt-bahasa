@@ -44,7 +44,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Description Service</label>
-                                                <textarea class="form-control @error('description_service') is-invalid @enderror" id="" cols="30" rows="10" name="description_service">{{ $service->description_service }}</textarea>
+                                                <textarea class="form-control summernote @error('description_service') is-invalid @enderror" id="" cols="30" rows="10" name="description_service">{{ $service->description_service }}</textarea>
                                                 @error('description_service')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
