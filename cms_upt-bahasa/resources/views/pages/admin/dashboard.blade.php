@@ -148,7 +148,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
@@ -161,7 +161,68 @@
                             </div>
                         </div>
                     </div>
+                </div> -->
+            <div class="col-12 col-md-12 col-lg-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3>QnA Admin</h3>
+                  </div>
+                  <div class="card-body">
+                    <div id="accordion">
+                      <div class="accordion">
+                        <div class="accordion-header" role="button" data-toggle="collapse" data-target="#panel-body-1" aria-expanded="true">
+                          <h4>Bagaimana cara Edit/Update data Profile?</h4>
+                        </div>
+                        <div class="accordion-body collapse show" id="panel-body-1" data-parent="#accordion">
+                          <p class="mb-0">Pergi ke menu Profile, klik nama akun di pojok kanan atas lalu pilih dropdown menu Profile.<br>
+                                    Lakukan perubahan sesuai kebutuhan perubahan data,klik button Update untuk menyimpan dan Cancel untuk membatalkan.
+                                    </p>
+                        </div>
+                      </div>
+                      <div class="accordion">
+                        <div class="accordion-header" role="button" data-toggle="collapse" data-target="#panel-body-2">
+                          <h4>Bagaimana cara penggunaan action Add,Detail,Edit dan Delete pada menu - menu admin?</h4>
+                        </div>
+                        <div class="accordion-body collapse" id="panel-body-2" data-parent="#accordion">
+                          <p class="mb-3" style="text-align: justify">
+                                            <b>Add</b> <br>
+                                            klik button +Add Data (berwarna Hijau). <br>
+                                            Isi form sesuai dengan kebutuhan data yang diminta pada field, <br>
+                                            kemudian klik save untuk menyimpan dan cancel untuk membatalkan.
+                                            Lalu akan muncul notifikasi jika data berhasil disimpan.</p>
+                          <p class="mb-3" style="text-align: justify">
+                                            <b>Detail</b> <br>
+                                            klik button action Detail(icon i ) di samping kanan data yang ingin dilihat.<br>
+                                            Kemudian akan tampil detail dari data tersebut, klik button Back untuk Kembali ke halaman sebelumnya.</p>
+                          <p class="mb-3" style="text-align: justify">
+                                            <b>Delete data</b> <br> 
+                                            klik button Delete (berwarna merah) <br>
+                                            kemudian akan muncul notifikasi apakah yakin untuk melakukan delete data.<br>
+                                            Klik yes jika yakin, kemudian cancel untuk membatalkan.
+                          </p>
+                          <p class="mb-3" style="text-align: justify">
+                                          	<b>Edit data</b> <br>
+                                            klik button action Detail(icon i) <br>
+                                            di samping kanan data. Lihat detail data yang dipilih.<br>
+                                            Kemudian klik button Edit (berwarna biru), Lakukan perubahan sesuai kebutuhan perubahan data,<br>
+                                            klik button Update untuk menyimpan dan Cancel untuk membatalkan.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="accordion">
+                        <div class="accordion-header" role="button" data-toggle="collapse" data-target="#panel-body-3">
+                          <h4>Bagaimana cara  merubah Status Training dan memberikan Notes pada peserta?</h4>
+                        </div>
+                        <div class="accordion-body collapse" id="panel-body-3" data-parent="#accordion">
+                          <p class="mb-0">Pilih menu Training Registration<br>
+                                          Klik button Edit,silahkan merubah Status atau memberikan Notes pada data Peserta
+                                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+            </div>    
         </section>
       </div>
 @include('sweetalert::alert')  
