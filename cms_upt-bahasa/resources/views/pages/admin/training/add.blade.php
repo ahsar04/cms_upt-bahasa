@@ -60,7 +60,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Description Training</label>
-                                            <textarea class="form-control @error('description_training') is-invalid @enderror"
+                                            <textarea class="form-control summernote @error('description_training') is-invalid @enderror"
                                             id="exampleInputDescriptionTraining" name="description_training" value="{{old('description_training')}}" cols="30" rows="10"></textarea>
                                             @error('description_training') 
                                                 <span class="invalid-feedback" role="alert">

@@ -50,7 +50,7 @@
                                                             <td>{{ $loop->iteration }}</td>
                                                             <td>{{ $item->training }}</td>
                                                             <td>{{ $item->service_type }}</td>
-                                                            <td>{{ $item->description_training }}</td>
+                                                            <td>{!! $item->description_training !!}</td>
                                                             <td>{{ $item->quota }}</td>
                                                             <td>{{ date('d-m-Y', strtotime($item->opening_date)) }}</td>
                                                             <td>{{ date('d-m-Y', strtotime($item->excercise_date)) }}</td>

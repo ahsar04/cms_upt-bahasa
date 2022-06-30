@@ -44,7 +44,7 @@
                                                         <tr>
                                                             <td>{{ $loop->iteration }}</td>
                                                             <td>{{ $item->service_type }}</td>
-                                                            <td>{{ $item->description_service }}</td>
+                                                            <td>{!! $item->description_service !!}</td>
                                                             <td>
                                                             <div class="btn-group" role="group" aria-label="Basic example">
                                                                 <a

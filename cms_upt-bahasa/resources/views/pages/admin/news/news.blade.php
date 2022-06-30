@@ -53,7 +53,7 @@
                                                         <tr>
                                                             <td>{{ $loop->iteration }}</td>
                                                             <td>{{ $item->headline_news }}</td>
-                                                            <td>{{ $item->description_news }}</td>
+                                                            <td>{!! $item->description_news !!}</td>
                                                             <td><img src="{{ url('/img/news/'.$item->picture) }}" alt="picture" width="100px"></td>
                                                             <td>{{ $item->author}}</td>
                                                             <td>

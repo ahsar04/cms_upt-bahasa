@@ -38,8 +38,8 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Description</label>
-                                                <textarea class="form-control @error('description_news') is-invalid @enderror"
-                                                id="description_news" name="description_news" cols="30" rows="10"></textarea>
+                                                <textarea class="form-control summernote @error('description_news') is-invalid @enderror"
+                                                id="exampleInputDescriptionNews" name="description_news"></textarea>
                                                 @error('description_news')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
