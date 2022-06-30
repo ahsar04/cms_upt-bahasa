@@ -19,10 +19,6 @@
                         </div>
 
                         <div class="section-body">
-                            <!-- <p class="section-lead">
-                                Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
-                            </p> -->
-                            
                             <form action="{{ route('news.store') }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="row">

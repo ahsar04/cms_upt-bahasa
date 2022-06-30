@@ -16,25 +16,10 @@
                         </div>
 
                         <div class="section-body">
-                            <!-- <h2 class="section-title">DataTables</h2>
-                            <p class="section-lead">
-                                We use 'DataTables' made by @SpryMedia. You can
-                                check the full documentation
-                                <a href="https://datatables.net/">here</a>.
-                            </p> -->
-
                             <div class="row">
                                 <div class="col-12">
                                     <div class="card">
-                                        <div class="card-header">
-                                            <h4>Admin</h4>
-                                        </div>
                                         <div class="card-body">
-                                            <!-- <a
-                                                href="{{--route('member.add')--}}"
-                                                class="btn btn-success"
-                                            >+ Add Data
-                                            </a> -->
                                         </div>
                                         <div class="card-body">
                                             <div class="table-responsive">
