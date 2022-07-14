@@ -35,11 +35,27 @@
                                             <table class="table"
                                             id="table-1" style="color: black;">
                                                 <tr>
-                                                    <th>Name</th>
+                                                    <th>Training</th>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Excercise Date</th>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Fullname</th>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Email Address</th>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Status</th>
                                                     <td>{{ $registraining->status }}</td>
                                                 </tr>
                                                 <tr>
-                                                    <th>NIP</th>
+                                                    <th>Note</th>
                                                     <td>{{ $registraining->note }}</td>
                                                 </tr>
                                             </table>
