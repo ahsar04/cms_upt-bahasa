@@ -35,11 +35,11 @@
                                                     <div class="col-3">
                                                         <div class="form-group">
                                                             <label><b>Pas Photo</b></label>
-                                                            <img src="{{url('/img/users/'.$users->pas_photo)}}" alt="picture" width="150px" class="d-block">
+                                                            <img src="{{url('/img/users/'.$users->pas_photo)}}" alt="picture" width="150px" class="d-block" onclick="window.open(this.src)">
                                                         </div>
                                                         <div class="form-group">
                                                             <label><b>Indentity Card</b></label>
-                                                            <img src="{{url('/img/users/'.$users->identity_card)}}" alt="picture" width="150px" class="d-block">
+                                                            <img src="{{url('/img/users/'.$users->identity_card)}}" alt="picture" width="150px" class="d-block" onclick="window.open(this.src)">
                                                         </div>
                                                     </div>
                                                     <div class="col-9">

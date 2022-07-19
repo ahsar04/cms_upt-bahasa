@@ -17,8 +17,7 @@ class RegisTrainingController extends Controller
         $this->middleware(['auth','verified']);
     }
     public function index(){
-        $registraining = DB::table('training_registration')
-                        ->join('users', 'users.id', '=', 'training_registration.id')
+        $registraining = TrainingRegistration::join('users', 'users.id', '=', 'training_registration.id')
                         ->join('training', 'training.id_training', '=', 'training_registration.id_training')
                         ->orderBy('id_training_registration', 'desc')->get();
         return view('pages.admin.registraining.registraining', compact('registraining'));
@@ -28,8 +27,13 @@ class RegisTrainingController extends Controller
         return view('pages.admin.registraining.edit', compact('registraining'));
     }
     public function detail($id_training_registration){
-        $registraining = TrainingRegistration::findorfail($id_training_registration);
+        $cek = TrainingRegistration::findorfail($id_training_registration);
+        if ($cek!=null) {
+            $registraining = TrainingRegistration::where('training_registration.id_training_registration','=',$id_training_registration)
+                        ->join('users', 'users.id', '=', 'training_registration.id')
+                        ->join('training', 'training.id_training', '=', 'training_registration.id_training')->get();
         return view('pages.admin.registraining.detail', compact('registraining'));
+        }
     }
     public function update(Request $request, $id_training_registration)
     {

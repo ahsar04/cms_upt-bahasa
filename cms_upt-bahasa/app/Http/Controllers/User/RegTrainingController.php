@@ -17,6 +17,15 @@ class RegTrainingController extends Controller
         $user = User::all();
         return view('pages.user.regtraining', compact('training', 'user'));
     }
+    public function printCard($id_training_registration){
+        $cek = TrainingRegistration::findorfail($id_training_registration);
+        if ($cek!=null) {
+            $registraining = TrainingRegistration::where('training_registration.id_training_registration','=',$id_training_registration)
+                        ->join('users', 'users.id', '=', 'training_registration.id')
+                        ->join('training', 'training.id_training', '=', 'training_registration.id_training')->get();
+        return view('pages.user.printCard', compact('registraining'));
+        }
+    }
 
     public function store(Request $request) 
     {

@@ -1,6 +1,6 @@
 @extends('layouts.admin.admin')
 
-@section('titlePage', 'UPT Bahasa | Add Member')
+@section('titlePage', 'UPT Bahasa | Profile')
 @section('content')
                     <!-- Main Content -->
                 <div class="main-content">

@@ -18,6 +18,8 @@ class IsMember
     {
         if (Auth::user() && Auth::user()->roles == 'USER') {
             return $next($request);
+        }elseif (Auth::user() && Auth::user()->roles == 'ADMIN') { 
+            return redirect('admin/dashboard');
         }
         return redirect('/');
     }

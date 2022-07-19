@@ -2,6 +2,8 @@
 
 @section('titlePage', 'UPT Bahasa | Detail Training Registration')
 @section('content')
+                @foreach ($registraining as $item)
+                    
                     <!-- Main Content -->
                 <div class="main-content">
                     <section class="section">
@@ -22,7 +24,7 @@
                             <!-- <p class="section-lead">
                                 Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
                             </p> -->
-                            <form action="{{ route('registraining.update', $registraining->id_training_registration) }}" method="POST">
+                            <form action="{{ route('registraining.update', $item->id_training_registration) }}" method="POST">
                             {{ csrf_field() }}
                             <div class="row">
                                 <div class="col-12">
@@ -36,36 +38,37 @@
                                             id="table-1" style="color: black;">
                                                 <tr>
                                                     <th>Training</th>
-                                                    <td></td>
+                                                    <td>{{ $item->training }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Excercise Date</th>
-                                                    <td></td>
+                                                    <td>{{ $item->excercise_date }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Fullname</th>
-                                                    <td></td>
+                                                    <td>{{ $item->name }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Email Address</th>
-                                                    <td></td>
+                                                    <td>{{ $item->email }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Status</th>
-                                                    <td>{{ $registraining->status }}</td>
+                                                    <td>{{ $item->status }}</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Note</th>
-                                                    <td>{{ $registraining->note }}</td>
+                                                    <td>{{ $item->note }}</td>
                                                 </tr>
                                             </table>
+                                            
                                             <div class="card-footer text-right">
                                                 <a
                                                     href="{{ route('registraining') }}"
                                                     class="btn btn-success"
                                                 ><i class="fas fa-angle-left"></i> Back</a>
                                                 <a
-                                                    href="{{ route('registraining.edit', $registraining->id_training_registration) }}"
+                                                    href="{{ route('registraining.edit', $item->id_training_registration) }}"
                                                     class="btn btn-primary"
                                                 ><i class="fas fa-edit"></i> Edit
                                                 </a>
@@ -78,4 +81,6 @@
                             </div>
                     </section>
                 </div>
+                
+                @endforeach
 @endsection

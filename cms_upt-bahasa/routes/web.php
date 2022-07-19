@@ -101,7 +101,7 @@ Route::prefix('admin')
         //Profile Admin
         Route::get('/profileadmin', 'UserController@index')
             ->name('profileadmin');
-        Route::post('/profileadmin/update/{id}', 'UserController@update')
+        Route::post('/profileadmin/update/{id}', 'AdminController@update')
             ->name('profileadmin.update');
 
         //News
@@ -197,7 +197,9 @@ Route::prefix('/')
         Route::get('/regtraining/{id_training}', 'RegTrainingController@index')
             ->name('regtraining');
         Route::post('/regconfirm', 'RegTrainingController@store')
-            ->name('regconfirm');       
+            ->name('regconfirm');
+        Route::get('/printCard/{id_training_registration}', 'RegTrainingController@printCard')
+            ->name('printCard');       
         Route::get('/qrcode', 'QRCodeController@index')
             ->name('qrcode');
         Route::get('/download/{id_training_registration}', 'QRCodeController@download')

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+        <link rel="icon" type="image/png" sizes="16x16" href="{{url('frontend/img/logo_polije.png')}}">
+
   <head>
     <title>Bukti Pendaftaran | UPT - Bahasa Polije</title>
   </head>
@@ -10,18 +12,20 @@
   </style>
   <body>
     <h2 align="center"></h1>
+        @foreach ($registraining as $item)
+            
     <table align="center" border="1">
         <tr>
             <td>
                 <table align="center">
         <tr>
-            <td width="120" align="center"> <img style="width: 80px; height: 80px;" src="file:///C:/My%20File/MATKUL/SMT%204/cms_upt-bahasa/cms_upt-bahasa/public/frontend/img/logo_polije.png" alt=""></td>
+            <td width="120" align="center"> <img style="width: 80px; height: 80px;" src="{{url('frontend/img/logo_polije.png')}}" alt=""></td>
         <td >
             <p><strong class="size">Bukti Pendaftaran</strong><br>
                 UPT - Bahasa Politeknik Negeri Jember <br>
             2022</p>
         </td>
-            <td width="120" align="center"><img style="width: 100px; height: 100px;" src="file:///C:/My%20File/MATKUL/SMT%204/cms_upt-bahasa/cms_upt-bahasa/public/frontend/img/qr.png" alt=""></td>
+            <td width="120" align="center">{!!QrCode::size(80)->generate($item->id_training_registration)!!}</td>
         </tr>
         <tr>
             <td colspan="5"><hr></td>
@@ -32,42 +36,46 @@
                 <tr height="35">
                 <td>Nama</td>
                 <td>:</td>
-                <td>Ahmad Saifur Rohman</td>
+                <td>{{$item->name}}</td>
                 <td rowspan="6" align="center" width="100">
-                    <img src="file:///C:/My%20File/MATKUL/SMT%204/cms_upt-bahasa/cms_upt-bahasa/public/frontend/img/team-3.jpg" width="150px" height="200px" />
+                    <img src="{{url('img/users/'.$item->pas_photo)}}" width="150px" height="200px" />
                 </td>
                 </tr>
                 <tr height="35">
                 <td>Jenis Kelamin</td>
                 <td>:</td>
-                <td>Male</td>
+                <td>@if ($item->gender=='M')Laki-laki
+                        
+                    @elseif($item->gender=='F')Perempuan
+                        
+                    @endif
+                </td>
                 </tr>
                 <tr height="35">
                 <td>Tempat, Tanggal Lahir</td>
                 <td>:</td>
-                <td>Jember, 04-09-2001</td>
+                <td>{{$item->place_of_birth}}, {{$item->date_of_birth}}</td>
                 </tr>
                 <tr height="35">
                 <td>Pendidikan Terakhir</td>
                 <td>:</td>
-                <td>SMA/SMK</td>
+                <td>{{$item->last_education}}</td>
                 </tr>
                 <tr height="35">
                 <td>No Telephone</td>
                 <td>:</td>
-                <td>082214100363</td>
+                <td>{{$item->phone}}</td>
                 </tr>
                 <tr height="35">
                 <td>Email</td>
                 <td>:</td>
-                <td>asrsaif04@gmail.com</td>
+                <td>{{$item->email}}</td>
                 </tr>
                 <tr height="35">
                 <td>Alamat</td>
                 <td>:</td>
                 <td rowspan="4" width="400">
-                    Jl. Pasekan, Br. Batuaji, Batubulan Kangin, Sukawati, Gianyar -
-                    Bali
+                    {{$item->address}}
                 </td>
                 </tr>
                 <tr></tr>
@@ -80,13 +88,13 @@
                 <tr height="35">
                 <td>Layanan</td>
                 <td>:</td>
-                <td>Placement Test</td>
-                <td><strong>Tanggal Kegiatan : 07-07-2022</strong></td>
+                <td>{{$item->service_type}}</td>
+                <td><strong>Tanggal Kegiatan : {{$item->excercise_date}}</strong></td>
                 </tr>
                 <tr height="35">
                 <td>Pelatihan</td>
                 <td>:</td>
-                <td>Toeic</td>
+                <td>{{$item->training}}</td>
                 </tr>
                 <tr height="35">
                 <td>Tempat Pelaksanaan</td>
@@ -115,6 +123,7 @@
             </td>
         </tr>
     </table>
+    @endforeach
   </body>
   <script>
     window.print();

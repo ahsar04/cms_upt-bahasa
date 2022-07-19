@@ -35,11 +35,11 @@
                   @csrf
                   <div class="form-group">
                     <label for="email">{{ __('E-Mail Address') }}</label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" required autofocus>
-                    @error('email')                      
-                    <div class="invalid-feedback"role="alert">
-                      <strong>{{ $message }}</strong>
-                    </div>
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" tabindex="1" name="email" value="{{ old('email') }}" autocomplete="email" required autofocus>
+                    @error('email')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
                     @enderror
                   </div>
 
@@ -55,10 +55,10 @@
                       </div>
                     </div>
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" tabindex="2" required autocomplete="current-password">
-                    @error('password')                      
-                    <div class="invalid-feedback"role="alert">
-                      <strong>{{ $message }}</strong>
-                    </div>
+                    @error('password')
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                      </span>
                     @enderror
                   </div>
 

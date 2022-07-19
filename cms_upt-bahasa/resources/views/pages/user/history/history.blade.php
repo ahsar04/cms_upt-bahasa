@@ -50,12 +50,14 @@
                                                             <td>{{ $item->status }}</td>
                                                             <td>{{ $item->note }}</td>
                                                             <td>
-                                                            <div class="btn-group" role="group" aria-label="Basic example">
                                                                 <a
                                                                     class="btn btn-primary"
                                                                 ><i class="fas fa-download" style="color:white"></i>
+                                                                </a> 
+                                                                <a href="{{route('printCard',$item->id_training_registration)}}" target="_blank"
+                                                                    class="btn btn-success"
+                                                                ><i  class="fas fa-newspaper" style="color:white"></i>
                                                                 </a>
-                                                            </div>
                                                             </td>
                                                         </tr>
                                                         @endforeach

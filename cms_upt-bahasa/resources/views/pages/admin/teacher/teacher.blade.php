@@ -67,7 +67,7 @@
                                                                 <a
                                                                     href="{{ route('teacher.detail', $item->id_teaching_staff) }}"
                                                                     class="btn btn-primary"
-                                                                ><i class="fas fa-info"></i>
+                                                                ><i class="fas fa-newspaper"></i>
                                                                 </a>
                                                                 <a
                                                                     onclick="return confirm('Are you sure?')"

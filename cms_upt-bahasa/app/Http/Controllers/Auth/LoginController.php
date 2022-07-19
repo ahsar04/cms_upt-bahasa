@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\User;
-// use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\Input;
+use Symfony\Component\Console\Input\Input as InputInput;
 
 class LoginController extends Controller
 {
@@ -41,12 +43,10 @@ class LoginController extends Controller
             } else {
                 return redirect()->route('dashboard');
             }
-            
-
         }else{
-            return redirect()->route('login');
+            $errors = new MessageBag(['email' => ['Email and/or password invalid.'],'password' => null]);
+            return redirect()->route('login')->withErrors($errors);
         }
-
     }
 
     /**

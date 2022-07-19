@@ -100,10 +100,18 @@
                     <select type="text" class="form-control @error('service_type') is-invalid @enderror"
                     id="last_education" name="last_education" value="{{old('last_education')}}">
                       <option>- Select Your Last Education -</option>
-                      <option>SMA / SMK</option>
-                      <option>S1</option>
-                      <option>S2</option>
-                      <option>S3</option>
+                      <option @if (old('last_education')=='SMA / SMK')
+                            selected
+                          @endif >SMA / SMK</option>
+                      <option @if (old('last_education')=='S1 / D4')
+                            selected
+                          @endif>S1 / D4</option>
+                      <option @if (old('last_education')=='S2')
+                            selected
+                          @endif>S2</option>
+                      <option @if (old('last_education')=='S3')
+                            selected
+                          @endif>S3</option>
                     </select>
                     @error('last_education')
                       <span class="invalid-feedback" role="alert">
@@ -113,7 +121,7 @@
                   </div>
                   <div class="form-group">
                     <label for="address">{{ __('Address') }}</label>
-                      <textarea id="address" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus cols="30" rows="10"></textarea>
+                      <textarea id="address" class="form-control @error('address') is-invalid @enderror" name="address" value="" required autocomplete="address" autofocus cols="30" rows="10">{{ old('address') }}</textarea>
                         @error('address')
                           <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

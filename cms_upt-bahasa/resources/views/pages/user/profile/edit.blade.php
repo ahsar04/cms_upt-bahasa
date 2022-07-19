@@ -29,7 +29,7 @@
                                             <div class="col-6">
                                                         <div class="form-group">
                                                             <label>Pas Photo</label>
-                                                            <img src="{{ asset('/img/users/'.Auth::user()->pas_photo) }}" width="200px" class="d-block">
+                                                            <img src="{{ asset('/img/users/'.Auth::user()->pas_photo) }}" width="200px" class="d-block"  onclick="window.open(this.src)">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Change Pas Photo (Max 1MB)</label>
@@ -42,7 +42,7 @@
                                                         </div>
                                                         <div class="form-group">
                                                                 <label>Indentity Card</label>
-                                                                <img src="{{ asset('/img/users/'.Auth::user()->identity_card) }}" width="200px" class="d-block">
+                                                                <img src="{{ asset('/img/users/'.Auth::user()->identity_card) }}" width="200px" class="d-block"  onclick="window.open(this.src)">
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Change Indentity Card (Max 1MB)</label>

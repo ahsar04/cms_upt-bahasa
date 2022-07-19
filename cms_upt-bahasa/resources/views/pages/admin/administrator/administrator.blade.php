@@ -60,7 +60,7 @@
                                                                 <a
                                                                     href="{{ route('administrator.detail', $item->id) }}"
                                                                     class="btn btn-primary"
-                                                                ><i class="fas fa-info"></i>
+                                                                ><i class="fas fa-newspaper"></i>
                                                                 </a>
                                                                 <a
                                                                     onclick="return confirm('Are you sure?')"

@@ -58,7 +58,7 @@
                                                                 <a
                                                                     href="{{ route('registraining.detail', $item->id_training_registration) }}"
                                                                     class="btn btn-primary"
-                                                                ><i class="fas fa-info"></i>
+                                                                ><i class="fas fa-newspaper"></i>
                                                                 </a>
                                                                 <a
                                                                     onclick="return confirm('Are you sure?')"
