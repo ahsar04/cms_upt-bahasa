@@ -13,6 +13,8 @@
         "laravel/framework": "^6.20.26",
         "laravel/tinker": "^2.5",
         "realrashid/sweet-alert": "^5.1",
+        "setasign/fpdf": "^1.8",
+        "setasign/fpdi": "^2.3",
         "simplesoftwareio/simple-qrcode": "^4.2"
     },
     "require-dev": {
@@ -34,7 +36,7 @@
         }
     },
     "autoload": {
-        "files" :[
+        "files": [
             "app/Helpers/Helper.php"
         ],
         "psr-4": {

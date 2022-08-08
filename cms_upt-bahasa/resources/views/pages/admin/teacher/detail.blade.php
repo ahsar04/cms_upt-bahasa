@@ -36,7 +36,7 @@
                                             <div class="col-3">
                                                 <div class="form-group">
                                                     <label><b>Picture</b></label>
-                                                    <img src="{{url('/img/teacher/'.$teaching_staff->picture)}}" alt="picture" width="150px" class="d-block">
+                                                    <img src="{{url('/img/teacher/'.$teaching_staff->picture)}}" alt="picture" width="150px" class="d-block " onclick="window.open(this.src)">
                                                 </div>
                                             </div>
                                             <div class="col-9">

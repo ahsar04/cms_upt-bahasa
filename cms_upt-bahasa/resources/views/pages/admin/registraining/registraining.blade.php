@@ -1,6 +1,6 @@
 @extends('layouts.admin.admin')
 
-@section('titlePage', 'UPT Bahasa | Training Registration')
+@section('titlePage', ' Training Registration | UPT - Bahasa Polije')
 @section('content')
                     <!-- Main Content -->
                 <div class="main-content">
