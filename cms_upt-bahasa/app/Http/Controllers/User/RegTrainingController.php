@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\TrainingRegistration;
 use App\Models\Training;
 use App\Models\User;
+use routes\web;
 use setasign\Fpdi\Fpdi;
+use DB;
 
 class RegTrainingController extends Controller
 {
@@ -25,31 +27,31 @@ class RegTrainingController extends Controller
         return view('pages.user.printCard', compact('registraining'));
         }
     }
-    public function Cetificate(Request $request)
+    public function Certificate(Request $request)
     {
-        $nama = $request->post('name'); 
+        $nama = 'Azizatul Mashwafah';
         $outputFile = public_path().'dcc.pdf';
-        $this->fillPdf(public_path().'/master/dcc.pdf',$outputFile,$nama);
+        $this->fillPDF(public_path().'/master/dcc.pdf', $outputFile, $nama);
 
         return response()->file($outputFile);
     }
-    public function fillPdf($file, $outputFile,$nama)
+    public function fillPDF($file, $outputFile, $nama)
     {
-            $fpdi = new FPDI;
-            $fpdi->setSourcefile($file);
-            $template = $fpdi->importPage(1);
-            $size = $fpdi->getTemplateSize($template);
-            $fpdi->addPage($size['orientation'],array($size['width'],$size['height']));
-            $fpdi->useTemplate($template);
-            $top = 105;
-            $right = 135;
-            $name = $nama;
-            $fpdi=SetFont('helvetica','',17);
-            $fpdi->SetTextColor(25,25,25);
-            $fpdi ->Text($right, $top, $name);
+        $fpdi = new FPDI;
+        $fpdi->setSourcefile($file);
+        $template = $fpdi->importPage(1);
+        $size = $fpdi->getTemplateSize($template);
+        $fpdi->addPage($size['orientation'], array($size['width'], $size['height']));
+        $fpdi->useTemplate($template);
+        $top = 74;
+        $right = 120;
+        $name = $nama;
+        $fpdi->SetXY(30, 30);
+        $fpdi->setFont('helvetica', '', '17');
+        $fpdi->setTextColor(25, 26, 25);
+        $fpdi->Text($right, $top, $name);
 
-            return $fpdi->Output($outputFile,'F');
-            
+        return $fpdi->Output($outputFile, 'F');
     }
     public function store(Request $request) 
     {
