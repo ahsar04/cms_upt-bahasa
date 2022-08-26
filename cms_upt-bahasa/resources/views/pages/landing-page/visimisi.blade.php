@@ -18,11 +18,7 @@
                                 <h4 class="mb-3" style="text-align: center">VISI 2020-2024</h4>
                             
                                     <p style="text-align: center">
-                                        "Mendukung Visi dan Misi Kementrian Pendidikan
-                                        dan Kebudayaan dengan Mewujudkan </br> Pendidikan 
-                                        Tinggi Vokasi Yang Unggul dan Berdaya Saing 
-                                        Dibidang Teknologi Yang </br> Menghasilkan Lulusan 
-                                        Berkarakter"
+                                        "Supporting Politeknik Negeri Jember to become a Leading Polytechnic in Asia Level through the Implementation of International Standard Language Services."
                                     </p> 
                                     
                                 
@@ -31,16 +27,16 @@
                         </div>
                         <div class="d-flex">
                             <div class="col-2"></div>
-                        <div class="col-8">
+                        {{-- <div class="col-8">
                             <h4 class="mb-3 mt-5" style="text-align: center">MEWUJUDKAN VISI 2020-2035</h4>
 
                                 <p style="text-align: center">
 
                                 "Menjadi Politeknik Unggul Di Asia Tahun 2035"
                                 </p>   
-                        </div>
+                        </div> --}}
                         </div>      
-                        <div class="d-flex">
+                        {{-- <div class="d-flex">
                             <div class="col-2"></div>
                             <div class="col-8">
                                 <h4 class="mb-3 mt-5" style="text-align: center">MISI</h4>
@@ -58,7 +54,7 @@
                                     4. Mengembangkan Kerjasama Tingkat Nasional Maupun Internasional.
                                     </p>   
                             </div>
-                        </div>                                
+                        </div>                                 --}}
                     </div>
         </div>
     </div>

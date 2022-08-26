@@ -117,8 +117,8 @@
                                         ><i
                                             class="far fa-calendar-alt text-primary me-2"
                                         ></i
-                                        >{{ $item->created_at->diffForHumans()}}</small
-                                    >
+                                        {{-- >{{ $item->created_at->difForHumans()}}</small --}}
+                                    {{-- > --}}
                                 </div>
                                 <h4 class="mb-3">{{ substr($item->headline_news,0,20)}}@if (Str::length($item->headline_news)>20)
                                    ... 
@@ -157,14 +157,10 @@
                             </h1>
                         </div>
                         <p class="mb-4">
-                            UPT Bahasa merupakan sistem informasi berbasis control management system
-                            milik Unit Bahasa Politeknik Negeri Jember yang bertujuan untuk membantu
-                            memudahkan penyampaian informasi yang ada di UPT Bahasa kepada pengguna.
-                            UPT Bahasa merupakan unit pelaksana teknis di bidang pengembangan 
-                            pembelajaran dan layanan kebahasaan yang berada di bawah dan bertanggung jawab
-                            kepada Direktur dan dikoordinasikan oleh Wakil Direktur Bidang Akademik.
+                            UPT Bahasa Polije is a language services in Politeknik Negeri Jember. It was named the Language Services and Training Unit or can be called UP2B, then raised its status to the Technical Execution Unit or can be called UPT on 2020. The main function and purpose of the establishment of UPT Bahasa is to support the achievement of the vision of the institution in particular in the provision of language services to improve the readiness of academic creativity in the internationalization process in order to achieve the vision of the Polije. The next function is expected to be expanded to provide services for external public. We provide several English services for internal and external parties, such as student, staff, and public. Our services are English Proficiency Test (EPT), TOEFL, ITP, IELTS, Public Speaking, Academic Speaking and Writing, and BIPA Teaching.
+                            UPT Bahasa has experienced tutors, where all tutors who provide material are lecturers from the Department of Language, Communication, and Tourism. We have provided an English Proficiency Test (EPT) service for Polije students as a graduation requirement and this service is expected to provide benefits for students to prepare themselves for the workplace. In addition, UPT Bahasa will also expand access for the public so that the available services can be accessed by all people who need these programs.
                         </p>
-                        <div class="row g-0 mb-3">
+                        {{-- <div class="row g-0 mb-3">
                             <div
                                 class="col-sm-6 wow zoomIn"
                                 data-wow-delay="0.2s"
@@ -191,7 +187,7 @@
                                     >Toefl Test
                                 </h5>
                             </div>
-                        </div>
+                        </div> --}}
                        
                     </div>
                     <div class="col-lg-5" style="min-height: 500px">
@@ -199,7 +195,7 @@
                             <img
                                 class="position-absolute w-100 h-100 rounded wow zoomIn"
                                 data-wow-delay="0.9s"
-                                src="{{url('frontend/img/about.jpg')}}"
+                                src="{{url('frontend/img/about1.jpg')}}"
                                 style="object-fit: cover"
                             />
                         </div>

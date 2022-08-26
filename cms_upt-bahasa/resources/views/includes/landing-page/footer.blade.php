@@ -17,9 +17,7 @@
                                 </h3>
                             </a>
                             <p class="mt-3 mb-4">
-                            UPT Bahasa merupakan sistem informasi berbasis control management system
-                            milik Unit Bahasa Politeknik Negeri Jember yang bertujuan untuk membantu
-                            memudahkan penyampaian informasi yang ada di UPT Bahasa kepada pengguna.
+                                UPT Bahasa Polije is a language services in Politeknik Negeri Jember. It was named the Language Services and Training Unit or can be called UP2B, then raised its status to the Technical Execution Unit or can be called UPT on 2020.
                             </p>
                         </div>
                     </div>
