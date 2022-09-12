@@ -29,7 +29,7 @@
                                             <div class="form-group">
                                                 <label>Headline News</label>
                                                 <input type="text" class="form-control @error('headline_news') is-invalid @enderror"
-                                                id="headline_news" name="headline_news">
+                                                id="headline_news" name="headline_news" value="{{ old('headline_news') }}">
                                                 @error('headline_news')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -39,7 +39,7 @@
                                             <div class="form-group">
                                                 <label>Description</label>
                                                 <textarea class="form-control summernote @error('description_news') is-invalid @enderror"
-                                                id="exampleInputDescriptionNews" name="description_news"></textarea>
+                                                id="exampleInputDescriptionNews" name="description_news">{{ old('description') }}</textarea>
                                                 @error('description_news')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -49,8 +49,19 @@
                                             <div class="form-group">
                                                 <label>Picture</label>
                                                 <input type="file" class="form-control @error('picture') is-invalid @enderror"
-                                                id="picture" name="picture">
+                                                id="picture" name="picture" value="{{ old('picture') }}">
                                                 @error('picture')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label>Video</label>
+                                                <input type="text" class="form-control @error('video') is-invalid @enderror"
+                                                id="video" name="video" value="{{ old('video') }}">
+                                                @error('video')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>

@@ -14,7 +14,9 @@ class DashboardController extends Controller
         $this->middleware(['auth','verified']);
     }
     public function index(Request $request){
-        $training = Training::all();
+        $training = Training::where([
+                                    ['closing_date', '>=', date('Y-m-d')],
+                                    ])->get();  
         return view('pages.user.dashboard', compact('training'));
     }
 

@@ -50,7 +50,7 @@
                                                             <td>{{ $item->status }}</td>
                                                             <td>{{ $item->note }}</td>
                                                             <td>
-                                                                <a
+                                                                <a href="{{route('certificate',$item->id_training_registration)}}" target="_blank"
                                                                     class="btn btn-primary"
                                                                 ><i class="fas fa-download" style="color:white"></i>
                                                                 </a> 

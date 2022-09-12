@@ -29,6 +29,8 @@
                                     </div>
                                     <div class="row ml-2 mr-2 mt-3">
                                         <div class="class col">
+                                        <input type="hidden" class="form-control" id="quota" name="quota" value="{{ $training->quota }}" readonly>
+
                                         <input type="hidden" class="form-control" id="id" name="id" value="{{ old('id', Auth::user()->id) }}" readonly>
                                             <div class="form-group">
                                                 <label>Name</label>

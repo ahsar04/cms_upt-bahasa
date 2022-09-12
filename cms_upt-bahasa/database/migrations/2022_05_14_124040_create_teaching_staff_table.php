@@ -18,13 +18,13 @@ class CreateTeachingStaffTable extends Migration
             $table->string('nip', 25);
             $table->string('fullname', 50);
             $table->string('position', 20);
-            $table->string('google_scholar', 30);
-            $table->string('phone', 12);
-            $table->string('email', 30);
-            $table->string('address', 50);
-            $table->string('facebook', 20);
-            $table->string('instagram', 20);
-            $table->string('picture', 30);
+            $table->string('google_scholar');
+            $table->string('phone', 13);
+            $table->string('email', 50);
+            $table->longtext('address');
+            $table->string('facebook');
+            $table->string('instagram');
+            $table->string('picture', 50);
             $table->timestamps();
         });
     }

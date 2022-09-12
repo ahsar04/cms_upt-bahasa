@@ -17,7 +17,7 @@ class CreateFeedbackTable extends Migration
             $table->bigIncrements('id_feedback');
             $table->string('name', 30);
             $table->string('email', 30);
-            $table->string('subject', 20);
+            $table->string('subject', 50);
             $table->longText('feedback');
             $table->timestamps();
         });

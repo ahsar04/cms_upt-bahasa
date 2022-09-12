@@ -36,22 +36,30 @@ class NewsController extends Controller
         $this->validate($request, [
             'headline_news' => 'required',
             'description_news' => 'required',
-            'picture' => 'required|file|image|mimes:jpeg,jpg,png|max:1024',
+            'picture' => 'file|image|mimes:jpeg,jpg,png|max:1024',
             'author' => 'required',
         ]);
+        if ($request->picture==null) {
+            
+            $dtUpload = new News;
+            $dtUpload->headline_news = $request->headline_news;
+            $dtUpload->description_news = $request->description_news;
+            $dtUpload->video = $request->video;
+            $dtUpload->author = $request->author;
+        }else{
+            $news = $request->picture;
+            $namafile = date('His').Str::random(10).".".$news->extension();
 
-        $news = $request->picture;
-        $namafile = date('His').Str::random(10).".".$news->extension();
+            $dtUpload = new News;
+            $dtUpload->headline_news = $request->headline_news;
+            $dtUpload->description_news = $request->description_news;
+            $dtUpload->picture = $namafile;
+            $dtUpload->video = $request->video;
+            $dtUpload->author = $request->author;
 
-        $dtUpload = new News;
-        $dtUpload->headline_news = $request->headline_news;
-        $dtUpload->description_news = $request->description_news;
-        $dtUpload->picture = $namafile;
-        $dtUpload->author = $request->author;
-
-        $news->move(public_path().'/img/news', $namafile);
+            $news->move(public_path().'/img/news', $namafile);
+        }
         $dtUpload->save();
-
         return redirect('admin/news')->with('toast_success', 'Data Added Successfully');
     }
 
@@ -75,6 +83,7 @@ class NewsController extends Controller
                 'headline_news' => $request['headline_news'],
                 'description_news' => $request['description_news'],
                 // 'picture' => $newPict,
+                'video' => $request['video'],
                 'author' => $request['author'],
             ];
         }else{
@@ -83,6 +92,7 @@ class NewsController extends Controller
                 'headline_news' => $request['headline_news'],
                 'description_news' => $request['description_news'],
                 'picture' => $newPict,
+                'video' => $request['video'],
                 'author' => $request['author'],
             ];
             $file = public_path('/img/news/').$news->picture;

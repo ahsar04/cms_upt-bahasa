@@ -202,7 +202,7 @@ Route::prefix('/')
             ->name('printCard');       
         Route::get('/qrcode', 'QRCodeController@index')
             ->name('qrcode');
-        Route::get('/certificate', 'RegTrainingController@Certificate')
+        Route::get('/certificate/{id_training_registration}', 'RegTrainingController@Certificate')
             ->name('certificate');
         // Route::get('/sertif',[\App\Http\Controllers\User\RegTrainingController::class, 'Certificate']);
         Route::get('/download/{id_training_registration}', 'QRCodeController@download')

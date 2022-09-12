@@ -60,6 +60,16 @@
                                                 </span>
                                                 @enderror
                                             </div>
+                                            
+                                            <div class="form-group">
+                                                <label>Video</label>
+                                                <input type="text" class="form-control @error('video') is-invalid @enderror" id="video" name="video" value="{{ $news->video }}">
+                                                @error('video')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
                                             <div class="form-group">
                                                 <label>Author</label>
                                                 <input type="text" readonly class="form-control @error('author') is-invalid @enderror" id="author" name="author" value="{{ $news->author }}">

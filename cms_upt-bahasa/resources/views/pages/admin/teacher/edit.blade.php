@@ -61,15 +61,6 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label>Google Scholar</label>
-                                                <input type="text" class="form-control @error('google_scholar') is-invalid @enderror" id="google_scholar" name="google_scholar" value="{{ $teaching_staff->google_scholar }}">
-                                                @error('google_scholar')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
-                                            </div>
-                                            <div class="form-group">
                                                 <label>Phone</label>
                                                 <input type="number" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ $teaching_staff->phone }}">
                                                 @error('phone')
@@ -78,8 +69,7 @@
                                                     </span>
                                                 @enderror
                                             </div>
-                                        </div>
-                                        <div class="col">
+                                            
                                             <div class="form-group">
                                                 <label>Email</label>
                                                 <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ $teaching_staff->email }}">
@@ -89,10 +79,22 @@
                                                     </span>
                                                 @enderror
                                             </div>
+                                        </div>
+                                        <div class="col">
                                             <div class="form-group">
                                                 <label>Address</label>
                                                 <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ $teaching_staff->address }}">
                                                 @error('address')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label>Google Scholar</label>
+                                                <input type="text" class="form-control @error('google_scholar') is-invalid @enderror" id="google_scholar" name="google_scholar" value="{{ $teaching_staff->google_scholar }}">
+                                                @error('google_scholar')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>

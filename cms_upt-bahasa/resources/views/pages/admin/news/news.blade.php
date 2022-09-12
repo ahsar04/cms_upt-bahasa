@@ -54,7 +54,11 @@
                                                             <td>{{ $loop->iteration }}</td>
                                                             <td>{{ $item->headline_news }}</td>
                                                             <td>{!! $item->description_news !!}</td>
-                                                            <td><img src="{{ url('/img/news/'.$item->picture) }}" alt="picture" width="100px"></td>
+                                                            <td>@if ($item->picture==null)
+                                                                <iframe width="100" height="100" src="{{$item->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                                @elseif($item->video==null)
+                                                                <img src="{{ url('/img/news/'.$item->picture) }}" alt="picture" width="100px">
+                                                            @endif</td>
                                                             <td>{{ $item->author}}</td>
                                                             <td>
                                                             <div class="btn-group" role="group" aria-label="Basic example">

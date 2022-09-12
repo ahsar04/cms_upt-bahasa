@@ -14,7 +14,10 @@ class ServiceController extends Controller
         $service_data = Service::all();
         $procedure_data = Procedure::all();
         $title=$service;
-        $training = Training::where('service_type', $service)->get();
+        $training = Training::where([
+                                    ['service_type', '=', $service],
+                                    ['closing_date', '>=', date('Y-m-d')],
+                                    ])->get();  
         return view('pages.landing-page.service', compact('training','service_data','procedure_data','title'));
     }
 }

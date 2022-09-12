@@ -29,6 +29,7 @@ class RegTrainingController extends Controller
     }
     public function Certificate(Request $request)
     {
+        
         $nama = 'Azizatul Mashwafah';
         $outputFile = public_path().'dcc.pdf';
         $this->fillPDF(public_path().'/master/dcc.pdf', $outputFile, $nama);
@@ -70,13 +71,23 @@ class RegTrainingController extends Controller
         if ($training_registration) {
             return redirect('dashboard')->with('toast_error', 'You are already registered');
         }
+        $trainingData = Training::where([
+            ['id_training', '=', $request->id_training]
+        ])->first();
+        // dd($trainingData);
         
-        TrainingRegistration::create([
+        $cekRegistration=TrainingRegistration::create([
             'id' => $request->id,
             'id_training' => $request->id_training,
             'status' => $request->status,
             'note' => $request->note,
         ]);
+        // if ($cekRegistration) {
+        //     $training=Training::findorfail($request->id_training);
+        //     echo $quota=$request->quota-1;
+        //     $data=['quota'=>$quota];
+        //     $training=update($data);
+        // }
 
         //$training_registration = TrainingRegistration::findorfail($request->id_training_registration);
         return redirect()->route('qrcode', ['id' => $request->id, 'id_training' => $request->id_training])->with('toast_success', 'Registration Successfully');

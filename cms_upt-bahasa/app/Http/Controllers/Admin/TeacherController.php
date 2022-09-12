@@ -36,12 +36,9 @@ class TeacherController extends Controller
             'nip' => 'required',
             'fullname' => 'required',
             'position' => 'required',
-            'google_scholar' => 'required',
-            'phone' => 'required',
+            'phone' => 'required|min:9|max:13',
             'email' => 'required',
             'address' => 'required',
-            'facebook' => 'required',
-            'instagram' => 'required',
             'picture' => 'file|image|mimes:jpeg,jpg,png|max:1024',
         ]);
 
@@ -73,12 +70,9 @@ class TeacherController extends Controller
             'nip' => 'required',
             'fullname' => 'required',
             'position' => 'required',
-            'google_scholar' => 'required',
-            'phone' => 'required',
+            'phone' => 'required|min:9|max:13',
             'email' => 'required',
             'address' => 'required',
-            'facebook' => 'required',
-            'instagram' => 'required',
             'picture' => 'file|image|mimes:jpeg,jpg,png|max:1024',
         ]);
 

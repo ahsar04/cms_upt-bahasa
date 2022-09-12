@@ -92,12 +92,19 @@
                             <div
                                 class="blog-img position-relative overflow-hidden">
                                 <center>
-                                    <img 
-                                    style="height: 350px;"
+                                @if ($item->picture==null)
+                                
+                                <br><br>
+                                <iframe height="350" src="{{$item->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                @elseif($item->video==null)
+                                <img 
+                                    style="height: 405px;"
                                     class="img-fluid"
                                     src="{{url('img/news/'.$item->picture)}}"
                                     alt=""
                                 />
+                                @endif
+                                
                                 </center>
                                 <a
                                     class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-2 py-2 px-4"
@@ -117,8 +124,8 @@
                                         ><i
                                             class="far fa-calendar-alt text-primary me-2"
                                         ></i
-                                        {{-- >{{ $item->created_at->difForHumans()}}</small --}}
-                                    {{-- > --}}
+                                        >{{ $item->created_at}}</small
+                                    >
                                 </div>
                                 <h4 class="mb-3">{{ substr($item->headline_news,0,20)}}@if (Str::length($item->headline_news)>20)
                                    ... 
